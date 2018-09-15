@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SURVIVAL_SurvivalGameMode_generated_h
 
-#define Survival_Source_Survival_SurvivalGameMode_h_12_RPC_WRAPPERS
-#define Survival_Source_Survival_SurvivalGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define Survival_Source_Survival_SurvivalGameMode_h_12_INCLASS_NO_PURE_DECLS \
+#define Survival_Source_Survival_SurvivalGameMode_h_14_RPC_WRAPPERS
+#define Survival_Source_Survival_SurvivalGameMode_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define Survival_Source_Survival_SurvivalGameMode_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASurvivalGameMode(); \
 	friend struct Z_Construct_UClass_ASurvivalGameMode_Statics; \
@@ -24,7 +24,7 @@ public: \
 	DECLARE_SERIALIZER(ASurvivalGameMode)
 
 
-#define Survival_Source_Survival_SurvivalGameMode_h_12_INCLASS \
+#define Survival_Source_Survival_SurvivalGameMode_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesASurvivalGameMode(); \
 	friend struct Z_Construct_UClass_ASurvivalGameMode_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(ASurvivalGameMode)
 
 
-#define Survival_Source_Survival_SurvivalGameMode_h_12_STANDARD_CONSTRUCTORS \
+#define Survival_Source_Survival_SurvivalGameMode_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	SURVIVAL_API ASurvivalGameMode(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASurvivalGameMode) \
@@ -46,7 +46,7 @@ private: \
 public:
 
 
-#define Survival_Source_Survival_SurvivalGameMode_h_12_ENHANCED_CONSTRUCTORS \
+#define Survival_Source_Survival_SurvivalGameMode_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	SURVIVAL_API ASurvivalGameMode(ASurvivalGameMode&&); \
@@ -57,26 +57,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASurvivalGameMode); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASurvivalGameMode)
 
 
-#define Survival_Source_Survival_SurvivalGameMode_h_12_PRIVATE_PROPERTY_OFFSET
-#define Survival_Source_Survival_SurvivalGameMode_h_9_PROLOG
-#define Survival_Source_Survival_SurvivalGameMode_h_12_GENERATED_BODY_LEGACY \
+#define Survival_Source_Survival_SurvivalGameMode_h_14_PRIVATE_PROPERTY_OFFSET
+#define Survival_Source_Survival_SurvivalGameMode_h_11_PROLOG
+#define Survival_Source_Survival_SurvivalGameMode_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_SurvivalGameMode_h_12_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_SurvivalGameMode_h_12_RPC_WRAPPERS \
-	Survival_Source_Survival_SurvivalGameMode_h_12_INCLASS \
-	Survival_Source_Survival_SurvivalGameMode_h_12_STANDARD_CONSTRUCTORS \
+	Survival_Source_Survival_SurvivalGameMode_h_14_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_SurvivalGameMode_h_14_RPC_WRAPPERS \
+	Survival_Source_Survival_SurvivalGameMode_h_14_INCLASS \
+	Survival_Source_Survival_SurvivalGameMode_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Survival_Source_Survival_SurvivalGameMode_h_12_GENERATED_BODY \
+#define Survival_Source_Survival_SurvivalGameMode_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_SurvivalGameMode_h_12_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_SurvivalGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	Survival_Source_Survival_SurvivalGameMode_h_12_INCLASS_NO_PURE_DECLS \
-	Survival_Source_Survival_SurvivalGameMode_h_12_ENHANCED_CONSTRUCTORS \
+	Survival_Source_Survival_SurvivalGameMode_h_14_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_SurvivalGameMode_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	Survival_Source_Survival_SurvivalGameMode_h_14_INCLASS_NO_PURE_DECLS \
+	Survival_Source_Survival_SurvivalGameMode_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

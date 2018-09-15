@@ -24,10 +24,17 @@
 /wd4838
 /we4668
 /I .
-/I "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Inc\Survival"
-/I "D:\Dokumente\Github Repos\Survival\Survival\Source"
-/I "D:\Dokumente\Github Repos\Survival\Survival\Source\Survival"
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\CoreUObject
 /I Runtime
+/I Runtime\CoreUObject\Public
+/I Runtime\CoreUObject
+/I Runtime\CoreUObject\Public\Blueprint
+/I Runtime\CoreUObject\Public\Internationalization
+/I Runtime\CoreUObject\Public\Misc
+/I Runtime\CoreUObject\Public\Serialization
+/I Runtime\CoreUObject\Public\Serialization\Formatters
+/I Runtime\CoreUObject\Public\Templates
+/I Runtime\CoreUObject\Public\UObject
 /I Runtime\Core\Public
 /I Runtime\Core
 /I Runtime\Core\Public\Algo
@@ -57,16 +64,6 @@
 /I Runtime\Core\Public\Traits
 /I Runtime\Core\Public\UObject
 /I Runtime\Core\Public\Windows
-/I ..\Intermediate\Build\Win64\UE4Editor\Inc\CoreUObject
-/I Runtime\CoreUObject\Public
-/I Runtime\CoreUObject
-/I Runtime\CoreUObject\Public\Blueprint
-/I Runtime\CoreUObject\Public\Internationalization
-/I Runtime\CoreUObject\Public\Misc
-/I Runtime\CoreUObject\Public\Serialization
-/I Runtime\CoreUObject\Public\Serialization\Formatters
-/I Runtime\CoreUObject\Public\Templates
-/I Runtime\CoreUObject\Public\UObject
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
 /I Runtime\Engine\Classes
 /I Runtime\Engine\Public
@@ -404,6 +401,9 @@
 /I ThirdParty
 /I ThirdParty\libSampleRate\Public
 /I ThirdParty\libSampleRate
+/I "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Inc\Survival"
+/I "D:\Dokumente\Github Repos\Survival\Survival\Source"
+/I "D:\Dokumente\Github Repos\Survival\Survival\Source\Survival"
 /I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"
@@ -413,7 +413,7 @@
 /FI"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\Development\Engine\SharedPCH.Engine.h"
 /Yu"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\Development\Engine\SharedPCH.Engine.h"
 /Fp"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\Development\Engine\SharedPCH.Engine.h.pch"
-"D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\SurvivalCharacter.cpp"
+"D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character\SurvivalCharacter.cpp"
 /FI"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Definitions.Survival.h"
 /Fo"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalCharacter.cpp.obj"
 /TP

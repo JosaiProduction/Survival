@@ -2,8 +2,10 @@
 
 #include "SurvivalGameMode.h"
 #include "SurvivalHUD.h"
-#include "SurvivalCharacter.h"
+#include "Character/SurvivalCharacter.h"
 #include "UObject/ConstructorHelpers.h"
+
+#include "Items/Globals/ItemRegister.h"
 
 ASurvivalGameMode::ASurvivalGameMode()
 	: Super()
@@ -14,4 +16,12 @@ ASurvivalGameMode::ASurvivalGameMode()
 
 	// use our custom HUD class
 	HUDClass = ASurvivalHUD::StaticClass();
+
+
+	m_itemRegister = NewObject<UItemRegister>();
+}
+
+UItemRegister * ASurvivalGameMode::GetRegister() const
+{
+	return m_itemRegister;
 }

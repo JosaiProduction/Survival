@@ -1,0 +1,30 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Survival-9675.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Survival.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalGameMode.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalHUD.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalProjectile.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Inventory.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalCharacter.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Item.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\ItemActor.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Weapon.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Knife.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Item.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\ItemActor.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Knife.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Survival.init.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalCharacter.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalGameMode.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalHUD.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalProjectile.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Weapon.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\PCLaunch.rc.res"
+/OUT:"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\UE4Editor-Survival-9675.lib"

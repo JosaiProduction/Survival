@@ -1,4 +1,14 @@
-D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\SurvivalCharacter.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character\Inventory.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character\SurvivalCharacter.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Globals\Helpers.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Globals\ItemRegister.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\Consumables.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\Item.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\MeleeWeapon.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\RangeWeapon.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\Weapon.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Projectiles\Projectile.h
+D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Weapons\Knife.h
 D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\SurvivalGameMode.h
 D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\SurvivalHUD.h
 D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\SurvivalProjectile.h

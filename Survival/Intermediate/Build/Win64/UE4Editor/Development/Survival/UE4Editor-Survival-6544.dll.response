@@ -1,0 +1,93 @@
+/MANIFEST:NO
+/NOLOGO
+/DEBUG
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/FIXED:No
+/NXCOMPAT
+/STACK:5000000
+/DELAY:UNLOAD
+/DLL
+/PDBALTPATH:%_PDB%
+/OPT:NOREF
+/OPT:NOICF
+/INCREMENTAL:NO
+/ignore:4199
+/ignore:4099
+/DELAYLOAD:"d3d12.dll"
+/LIBPATH:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\lib\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6\lib\um\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.16299.0\ucrt\x64"
+/LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.16299.0\um\x64"
+/NODEFAULTLIB:"LIBCMT"
+/NODEFAULTLIB:"LIBCPMT"
+/NODEFAULTLIB:"LIBCMTD"
+/NODEFAULTLIB:"LIBCPMTD"
+/NODEFAULTLIB:"MSVCRTD"
+/NODEFAULTLIB:"MSVCPRTD"
+/NODEFAULTLIB:"LIBC"
+/NODEFAULTLIB:"LIBCP"
+/NODEFAULTLIB:"LIBCD"
+/NODEFAULTLIB:"LIBCPD"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Survival.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalGameMode.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalHUD.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalProjectile.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Inventory.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalCharacter.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Consumables.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Item.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\MeleeWeapon.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\RangeWeapon.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Weapon.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Projectile.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Knife.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Consumables.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Inventory.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Item.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Knife.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\MeleeWeapon.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Projectile.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\RangeWeapon.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Survival.init.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalCharacter.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalGameMode.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalHUD.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\SurvivalProjectile.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\Weapon.gen.cpp.obj"
+"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\PCLaunch.rc.res"
+"delayimp.lib"
+"wininet.lib"
+"rpcrt4.lib"
+"ws2_32.lib"
+"dbghelp.lib"
+"comctl32.lib"
+"Winmm.lib"
+"kernel32.lib"
+"user32.lib"
+"gdi32.lib"
+"winspool.lib"
+"comdlg32.lib"
+"advapi32.lib"
+"shell32.lib"
+"ole32.lib"
+"oleaut32.lib"
+"uuid.lib"
+"odbc32.lib"
+"odbccp32.lib"
+"netapi32.lib"
+"iphlpapi.lib"
+"setupapi.lib"
+"dwmapi.lib"
+"imm32.lib"
+"D:\Unreal Engine\UE_4.20\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
+"D:\Unreal Engine\UE_4.20\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
+"D:\Unreal Engine\UE_4.20\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
+"D:\Unreal Engine\UE_4.20\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
+"D:\Unreal Engine\UE_4.20\Engine\Intermediate\Build\Win64\UE4Editor\Development\HeadMountedDisplay\UE4Editor-HeadMountedDisplay.lib"
+/OUT:"D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-6544.dll"
+/IMPLIB:"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Development\Survival\UE4Editor-Survival-6544.suppressed.lib"
+/PDB:"D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-6544.pdb"
+/ignore:4078
