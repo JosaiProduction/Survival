@@ -2,6 +2,7 @@
 
 #include "Inventory.h"
 #include "Character/SurvivalCharacter.h"
+#include "Items/Interfaces/Item.h"
 
 UInventory::UInventory()
 	:m_isActive(false)

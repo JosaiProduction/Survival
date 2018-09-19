@@ -410,6 +410,8 @@
     <NMakeOutput>..\..\Binaries\HTML5\Survival-HTML5-Shipping.js</NMakeOutput>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Survival\World\DayCycle.cpp" />
+    <ClInclude Include="..\..\Source\Survival\World\DayCycle.h" />
     <None Include="..\..\Survival.uproject" />
     <None Include="..\..\Source\Survival.Target.cs" />
     <None Include="..\..\Source\SurvivalEditor.Target.cs" />
@@ -419,6 +421,7 @@
     <None Include="..\..\Config\DefaultGame.ini" />
     <None Include="..\..\Config\DefaultInput.ini" />
     <None Include="..\..\Source\Survival\Survival.Build.cs" />
+    <ClCompile Include="..\..\Source\Survival\Character\Abilities.cpp" />
     <ClCompile Include="..\..\Source\Survival\Character\Inventory.cpp" />
     <ClCompile Include="..\..\Source\Survival\Character\SurvivalCharacter.cpp" />
     <ClCompile Include="..\..\Source\Survival\Items\Globals\Helpers.cpp" />
@@ -431,6 +434,7 @@
     <ClCompile Include="..\..\Source\Survival\Items\Projectiles\Projectile.cpp" />
     <ClCompile Include="..\..\Source\Survival\Items\Weapons\Knife.cpp" />
     <ClCompile Include="..\..\Source\Survival\Survival.cpp" />
+    <ClInclude Include="..\..\Source\Survival\Character\Abilities.h" />
     <ClInclude Include="..\..\Source\Survival\Character\Inventory.h" />
     <ClInclude Include="..\..\Source\Survival\Character\SurvivalCharacter.h" />
     <ClInclude Include="..\..\Source\Survival\Items\Globals\Helpers.h" />

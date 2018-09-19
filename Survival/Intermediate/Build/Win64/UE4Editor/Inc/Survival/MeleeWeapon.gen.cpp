@@ -67,7 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeMeleeWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMeleeWeapon, 1339875962);
+	IMPLEMENT_CLASS(AMeleeWeapon, 3096589030);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AMeleeWeapon(Z_Construct_UClass_AMeleeWeapon, &AMeleeWeapon::StaticClass, TEXT("/Script/Survival"), TEXT("AMeleeWeapon"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMeleeWeapon);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

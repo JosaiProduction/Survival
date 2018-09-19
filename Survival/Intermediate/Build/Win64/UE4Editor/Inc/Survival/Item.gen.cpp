@@ -17,8 +17,9 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 	SURVIVAL_API UClass* Z_Construct_UClass_AItem();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Survival();
+	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	SURVIVAL_API UScriptStruct* Z_Construct_UScriptStruct_FItemProperties();
-	ENGINE_API UClass* Z_Construct_UClass_UShapeComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 // End Cross Module References
@@ -35,6 +36,10 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_root_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_m_root;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_itemProps_MetaData[];
 #endif
@@ -66,6 +71,14 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_m_root_MetaData[] = {
+		{ "Category", "Item" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Items/Interfaces/Item.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_m_root = { UE4CodeGen_Private::EPropertyClass::Object, "m_root", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0040000000080009, 1, nullptr, STRUCT_OFFSET(AItem, m_root), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_m_root_MetaData, ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_m_root_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_m_itemProps_MetaData[] = {
 		{ "Category", "Item" },
 		{ "ModuleRelativePath", "Items/Interfaces/Item.h" },
@@ -79,7 +92,7 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 		{ "ModuleRelativePath", "Items/Interfaces/Item.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_m_trigger = { UE4CodeGen_Private::EPropertyClass::Object, "m_trigger", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0040000000080009, 1, nullptr, STRUCT_OFFSET(AItem, m_trigger), Z_Construct_UClass_UShapeComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_m_trigger_MetaData, ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_m_trigger_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_m_trigger = { UE4CodeGen_Private::EPropertyClass::Object, "m_trigger", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0040000000080009, 1, nullptr, STRUCT_OFFSET(AItem, m_trigger), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_m_trigger_MetaData, ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_m_trigger_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AItem_Statics::NewProp_m_mesh_MetaData[] = {
 		{ "Category", "Item" },
@@ -96,6 +109,7 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_m_image = { UE4CodeGen_Private::EPropertyClass::Object, "m_image", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0040000000000001, 1, nullptr, STRUCT_OFFSET(AItem, m_image), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AItem_Statics::NewProp_m_image_MetaData, ARRAY_COUNT(Z_Construct_UClass_AItem_Statics::NewProp_m_image_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AItem_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_m_root,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_m_itemProps,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_m_trigger,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_m_mesh,
@@ -124,7 +138,7 @@ void EmptyLinkFunctionForGeneratedCodeItem() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AItem, 3718336704);
+	IMPLEMENT_CLASS(AItem, 7975076);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AItem(Z_Construct_UClass_AItem, &AItem::StaticClass, TEXT("/Script/Survival"), TEXT("AItem"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AItem);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

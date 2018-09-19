@@ -9,6 +9,7 @@
 class UInputComponent;
 class UInventory;
 class UCharacterMovementComponent;
+class UAbilities;
 
 UCLASS(config=Game)
 class ASurvivalCharacter : public ACharacter
@@ -84,6 +85,8 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Tools)
 		UInventory* m_inventory;
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Tools)
+		UAbilities* m_abilities;
 	UPROPERTY()
 		UCharacterMovementComponent* m_charMovement;
 
@@ -145,6 +148,8 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 		UInventory* GetInventory() const;
+	UFUNCTION(BlueprintCallable)
+		UAbilities* GetAbilities() const; 
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;

@@ -15,7 +15,7 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 // Cross Module References
 	SURVIVAL_API UClass* Z_Construct_UClass_UInventory_NoRegister();
 	SURVIVAL_API UClass* Z_Construct_UClass_UInventory();
-	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
+	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	UPackage* Z_Construct_UPackage__Script_Survival();
 	SURVIVAL_API UFunction* Z_Construct_UFunction_UInventory_GetItemProps();
 	SURVIVAL_API UScriptStruct* Z_Construct_UScriptStruct_FItemProperties();
@@ -128,7 +128,7 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_UInventory_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_UObject,
+		(UObject* (*)())Z_Construct_UClass_UActorComponent,
 		(UObject* (*)())Z_Construct_UPackage__Script_Survival,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UInventory_Statics::FuncInfo[] = {
@@ -143,6 +143,7 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive_MetaData[] = {
+		{ "Category", "Items" },
 		{ "ModuleRelativePath", "Character/Inventory.h" },
 	};
 #endif
@@ -150,14 +151,14 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 	{
 		((UInventory*)Obj)->m_isActive = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive = { UE4CodeGen_Private::EPropertyClass::Bool, "m_isActive", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0040000000000000, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(UInventory), &Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive_MetaData, ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive = { UE4CodeGen_Private::EPropertyClass::Bool, "m_isActive", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0040000000020001, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(UInventory), &Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive_MetaData, ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UInventory_Statics::NewProp_m_itemProps_MetaData[] = {
 		{ "Category", "Items" },
 		{ "ModuleRelativePath", "Character/Inventory.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_m_itemProps = { UE4CodeGen_Private::EPropertyClass::Array, "m_itemProps", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0040000000030001, 1, nullptr, STRUCT_OFFSET(UInventory, m_itemProps), METADATA_PARAMS(Z_Construct_UClass_UInventory_Statics::NewProp_m_itemProps_MetaData, ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::NewProp_m_itemProps_MetaData)) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_m_itemProps = { UE4CodeGen_Private::EPropertyClass::Array, "m_itemProps", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0040000000020001, 1, nullptr, STRUCT_OFFSET(UInventory, m_itemProps), METADATA_PARAMS(Z_Construct_UClass_UInventory_Statics::NewProp_m_itemProps_MetaData, ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::NewProp_m_itemProps_MetaData)) };
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UInventory_Statics::NewProp_m_itemProps_Inner = { UE4CodeGen_Private::EPropertyClass::Struct, "m_itemProps", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0000000000020000, 1, nullptr, 0, Z_Construct_UScriptStruct_FItemProperties, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UInventory_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventory_Statics::NewProp_m_isActive,
@@ -170,7 +171,7 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_UInventory_Statics::ClassParams = {
 		&UInventory::StaticClass,
 		DependentSingletons, ARRAY_COUNT(DependentSingletons),
-		0x001000A0u,
+		0x00B000A0u,
 		FuncInfo, ARRAY_COUNT(FuncInfo),
 		Z_Construct_UClass_UInventory_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UClass_UInventory_Statics::PropPointers),
 		nullptr,
@@ -187,7 +188,7 @@ void EmptyLinkFunctionForGeneratedCodeInventory() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UInventory, 2985316268);
+	IMPLEMENT_CLASS(UInventory, 303295615);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UInventory(Z_Construct_UClass_UInventory, &UInventory::StaticClass, TEXT("/Script/Survival"), TEXT("UInventory"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UInventory);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

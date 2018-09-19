@@ -107,7 +107,7 @@ void EmptyLinkFunctionForGeneratedCodeRangeWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ARangeWeapon, 3395376863);
+	IMPLEMENT_CLASS(ARangeWeapon, 1026524739);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ARangeWeapon(Z_Construct_UClass_ARangeWeapon, &ARangeWeapon::StaticClass, TEXT("/Script/Survival"), TEXT("ARangeWeapon"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ARangeWeapon);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -67,7 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeKnife() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AKnife, 2941741215);
+	IMPLEMENT_CLASS(AKnife, 2743528907);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AKnife(Z_Construct_UClass_AKnife, &AKnife::StaticClass, TEXT("/Script/Survival"), TEXT("AKnife"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AKnife);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

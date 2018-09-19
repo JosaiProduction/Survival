@@ -23,12 +23,14 @@ public:
 		EItemType Type;
 	UPROPERTY(EditAnywhere, Category = Properties)
 		FString Name;
-	UPROPERTY(EditAnywhere, Category = Properties)
+
 		unsigned int ID;
 	UPROPERTY(EditAnywhere, Category = Properties)
 		UTexture2D* Image;
 	UPROPERTY(EditAnywhere, Category = Properties)
 		unsigned int RegisteredID;
+	UPROPERTY(EditAnywhere, Category = Properties)
+		unsigned int RequiredSlots;
 };
 
 /**

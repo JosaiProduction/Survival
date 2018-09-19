@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeSurvival_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/Survival",
 				PKG_CompiledIn | 0x00000000,
-				0xBFD43A77,
-				0x55D890B0,
+				0xF6109483,
+				0x1D54564A,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
 			};

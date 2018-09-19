@@ -3,26 +3,27 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Items/Interfaces/Item.h"
+#include "Items/Globals/Helpers.h"
 #include "Inventory.generated.h"
 
 class ASurvivalCharacter;
+class AItem;
 
 /**
  * 
  */
 UCLASS()
-class SURVIVAL_API UInventory : public UObject
+class SURVIVAL_API UInventory : public UActorComponent
 {
 	GENERATED_BODY()
 public:
 	UInventory();
 
 private: 
-	UPROPERTY(VisibleDefaultsOnly, Category = Items)
+	UPROPERTY(VisibleAnywhere, Category = Items)
 		TArray<FItemProperties> m_itemProps;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere, Category = Items)
 		bool m_isActive;
 public:
 	void AddItem(AItem* item);

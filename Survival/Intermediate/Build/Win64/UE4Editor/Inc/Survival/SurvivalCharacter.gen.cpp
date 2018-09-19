@@ -17,6 +17,8 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 	SURVIVAL_API UClass* Z_Construct_UClass_ASurvivalCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_Survival();
+	SURVIVAL_API UFunction* Z_Construct_UFunction_ASurvivalCharacter_GetAbilities();
+	SURVIVAL_API UClass* Z_Construct_UClass_UAbilities_NoRegister();
 	SURVIVAL_API UFunction* Z_Construct_UFunction_ASurvivalCharacter_GetInventory();
 	SURVIVAL_API UClass* Z_Construct_UClass_UInventory_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCharacterMovementComponent_NoRegister();
@@ -34,16 +36,20 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 	{
 		UClass* Class = ASurvivalCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetAbilities", &ASurvivalCharacter::execGetAbilities },
 			{ "GetInventory", &ASurvivalCharacter::execGetInventory },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
 	}
-	struct Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics
+	struct Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics
 	{
-		struct SurvivalCharacter_eventGetInventory_Parms
+		struct SurvivalCharacter_eventGetAbilities_Parms
 		{
-			UInventory* ReturnValue;
+			UAbilities* ReturnValue;
 		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[];
+#endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
@@ -51,7 +57,52 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Object, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000580, 1, nullptr, STRUCT_OFFSET(SurvivalCharacter_eventGetInventory_Parms, ReturnValue), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Object, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000080588, 1, nullptr, STRUCT_OFFSET(SurvivalCharacter_eventGetAbilities_Parms, ReturnValue), Z_Construct_UClass_UAbilities_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::NewProp_ReturnValue_MetaData, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::NewProp_ReturnValue_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "GetAbilities", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x54080401, sizeof(SurvivalCharacter_eventGetAbilities_Parms), Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASurvivalCharacter_GetAbilities()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics
+	{
+		struct SurvivalCharacter_eventGetInventory_Parms
+		{
+			UInventory* ReturnValue;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::NewProp_ReturnValue = { UE4CodeGen_Private::EPropertyClass::Object, "ReturnValue", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000080588, 1, nullptr, STRUCT_OFFSET(SurvivalCharacter_eventGetInventory_Parms, ReturnValue), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::NewProp_ReturnValue_MetaData, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::NewProp_ReturnValue_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::NewProp_ReturnValue,
 	};
@@ -93,6 +144,10 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_charMovement_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_m_charMovement;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_abilities_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_m_abilities;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_inventory_MetaData[];
 #endif
@@ -167,7 +222,8 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Survival,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ASurvivalCharacter_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ASurvivalCharacter_GetInventory, "GetInventory" }, // 1118078895
+		{ &Z_Construct_UFunction_ASurvivalCharacter_GetAbilities, "GetAbilities" }, // 2463475126
+		{ &Z_Construct_UFunction_ASurvivalCharacter_GetInventory, "GetInventory" }, // 915269303
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::Class_MetaDataParams[] = {
@@ -198,12 +254,21 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_charMovement = { UE4CodeGen_Private::EPropertyClass::Object, "m_charMovement", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000080008, 1, nullptr, STRUCT_OFFSET(ASurvivalCharacter, m_charMovement), Z_Construct_UClass_UCharacterMovementComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_charMovement_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_charMovement_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_abilities_MetaData[] = {
 		{ "Category", "Tools" },
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory = { UE4CodeGen_Private::EPropertyClass::Object, "m_inventory", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000030015, 1, nullptr, STRUCT_OFFSET(ASurvivalCharacter, m_inventory), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_abilities = { UE4CodeGen_Private::EPropertyClass::Object, "m_abilities", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00100000000b001d, 1, nullptr, STRUCT_OFFSET(ASurvivalCharacter, m_abilities), Z_Construct_UClass_UAbilities_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_abilities_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_abilities_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory_MetaData[] = {
+		{ "Category", "Tools" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory = { UE4CodeGen_Private::EPropertyClass::Object, "m_inventory", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00100000000b001d, 1, nullptr, STRUCT_OFFSET(ASurvivalCharacter, m_inventory), Z_Construct_UClass_UInventory_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_bUsingMotionControllers_MetaData[] = {
 		{ "Category", "Gameplay" },
@@ -343,6 +408,7 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_crouchMultiplier,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_runMultiplier,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_charMovement,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_abilities,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_inventory,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_bUsingMotionControllers,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_FireAnimation,
@@ -383,7 +449,7 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASurvivalCharacter, 2270481677);
+	IMPLEMENT_CLASS(ASurvivalCharacter, 561896575);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASurvivalCharacter(Z_Construct_UClass_ASurvivalCharacter, &ASurvivalCharacter::StaticClass, TEXT("/Script/Survival"), TEXT("ASurvivalCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASurvivalCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

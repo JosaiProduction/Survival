@@ -13,6 +13,7 @@
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
 
 #include "Character/Inventory.h"
+#include "Character/Abilities.h"
 #include "Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
@@ -93,6 +94,7 @@ ASurvivalCharacter::ASurvivalCharacter()
 
 
 	m_inventory = CreateDefaultSubobject<UInventory>(TEXT("Inventory"));
+	m_abilities = CreateDefaultSubobject<UAbilities>(TEXT("Abilities"));
 }
 
 void ASurvivalCharacter::BeginPlay()
@@ -283,6 +285,11 @@ void ASurvivalCharacter::ToggleInventory()
 UInventory* ASurvivalCharacter::GetInventory() const
 {
 	return m_inventory;
+}
+
+UAbilities * ASurvivalCharacter::GetAbilities() const
+{
+	return m_abilities;
 }
 
 //Commenting this section out to be consistent with FPS BP template.

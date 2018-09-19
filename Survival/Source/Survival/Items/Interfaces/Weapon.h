@@ -19,7 +19,14 @@ public:
 	UPROPERTY(EditAnywhere, Category = Stats)
 		float m_damage;
 
+	virtual void PostInit() final;
+
+
+
+
 public: 
 	UFUNCTION()
 		void Attack(); 
+
+
 };

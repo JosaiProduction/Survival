@@ -79,6 +79,9 @@
     <Filter Include="Source\Survival\Items\Globals">
       <UniqueIdentifier>{fef3e0ad-fe93-4bec-8735-f797f0723f54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Survival\World">
+      <UniqueIdentifier>{653763ad-0d8c-413a-bde8-9aa0ff2b819c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\Survival\Character\SurvivalCharacter.h">
@@ -114,6 +117,12 @@
     <ClInclude Include="..\..\Source\Survival\Items\Globals\ItemRegister.h">
       <Filter>Source\Survival\Items\Globals</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\Character\Abilities.h">
+      <Filter>Source\Survival\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\World\DayCycle.h">
+      <Filter>Source\Survival\World</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Survival\Character\SurvivalCharacter.cpp">
@@ -148,6 +157,12 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Survival\Items\Globals\ItemRegister.cpp">
       <Filter>Source\Survival\Items\Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\Character\Abilities.cpp">
+      <Filter>Source\Survival\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\World\DayCycle.cpp">
+      <Filter>Source\Survival\World</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

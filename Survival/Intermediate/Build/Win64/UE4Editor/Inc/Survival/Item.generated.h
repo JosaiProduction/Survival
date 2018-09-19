@@ -61,7 +61,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AItem); \
 	FORCEINLINE static uint32 __PPO__m_image() { return STRUCT_OFFSET(AItem, m_image); } \
 	FORCEINLINE static uint32 __PPO__m_mesh() { return STRUCT_OFFSET(AItem, m_mesh); } \
 	FORCEINLINE static uint32 __PPO__m_trigger() { return STRUCT_OFFSET(AItem, m_trigger); } \
-	FORCEINLINE static uint32 __PPO__m_itemProps() { return STRUCT_OFFSET(AItem, m_itemProps); }
+	FORCEINLINE static uint32 __PPO__m_itemProps() { return STRUCT_OFFSET(AItem, m_itemProps); } \
+	FORCEINLINE static uint32 __PPO__m_root() { return STRUCT_OFFSET(AItem, m_root); }
 
 
 #define Survival_Source_Survival_Items_Interfaces_Item_h_16_PROLOG

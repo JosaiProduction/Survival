@@ -2,6 +2,11 @@
 
 #include "Weapon.h"
 
+void AWeapon::PostInit()
+{
+}
+
+
 void AWeapon::Attack()
 {
 }

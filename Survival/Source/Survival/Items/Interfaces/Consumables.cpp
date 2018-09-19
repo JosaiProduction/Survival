@@ -3,5 +3,8 @@
 #include "Consumables.h"
 
 
+void AConsumables::AConsumables::PostInit()
+{
 
+}
 

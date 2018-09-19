@@ -50,7 +50,7 @@ void EmptyLinkFunctionForGeneratedCodeConsumables() {}
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_AConsumables_Statics::ClassParams = {
 		&AConsumables::StaticClass,
 		DependentSingletons, ARRAY_COUNT(DependentSingletons),
-		0x009000A0u,
+		0x009000A1u,
 		nullptr, 0,
 		nullptr, 0,
 		nullptr,
@@ -67,7 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeConsumables() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AConsumables, 3932984777);
+	IMPLEMENT_CLASS(AConsumables, 2732902165);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AConsumables(Z_Construct_UClass_AConsumables, &AConsumables::StaticClass, TEXT("/Script/Survival"), TEXT("AConsumables"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AConsumables);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

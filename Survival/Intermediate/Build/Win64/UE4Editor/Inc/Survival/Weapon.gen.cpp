@@ -126,7 +126,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWeapon, 2270692845);
+	IMPLEMENT_CLASS(AWeapon, 4261205388);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AWeapon(Z_Construct_UClass_AWeapon, &AWeapon::StaticClass, TEXT("/Script/Survival"), TEXT("AWeapon"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AWeapon);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

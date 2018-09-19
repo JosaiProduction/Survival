@@ -15,7 +15,4 @@ class SURVIVAL_API AMeleeWeapon : public AWeapon
 	GENERATED_BODY()
 public: 
 
-	
-	
-	
 };

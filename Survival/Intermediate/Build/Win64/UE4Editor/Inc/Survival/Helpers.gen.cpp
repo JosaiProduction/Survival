@@ -97,6 +97,10 @@ static struct FScriptStruct_Survival_StaticRegisterNativesFItemProperties
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RequiredSlots_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedUIntPropertyParams NewProp_RequiredSlots;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RegisteredID_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FUnsizedUIntPropertyParams NewProp_RegisteredID;
@@ -104,10 +108,6 @@ static struct FScriptStruct_Survival_StaticRegisterNativesFItemProperties
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Image_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Image;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ID_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedUIntPropertyParams NewProp_ID;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Name_MetaData[];
 #endif
@@ -131,6 +131,13 @@ static struct FScriptStruct_Survival_StaticRegisterNativesFItemProperties
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FItemProperties>();
 	}
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_RequiredSlots_MetaData[] = {
+		{ "Category", "Properties" },
+		{ "ModuleRelativePath", "Items/Globals/Helpers.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedUIntPropertyParams Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_RequiredSlots = { UE4CodeGen_Private::EPropertyClass::UInt32, "RequiredSlots", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(FItemProperties, RequiredSlots), METADATA_PARAMS(Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_RequiredSlots_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_RequiredSlots_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_RegisteredID_MetaData[] = {
 		{ "Category", "Properties" },
 		{ "ModuleRelativePath", "Items/Globals/Helpers.h" },
@@ -144,13 +151,6 @@ static struct FScriptStruct_Survival_StaticRegisterNativesFItemProperties
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Image = { UE4CodeGen_Private::EPropertyClass::Object, "Image", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(FItemProperties, Image), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Image_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Image_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_ID_MetaData[] = {
-		{ "Category", "Properties" },
-		{ "ModuleRelativePath", "Items/Globals/Helpers.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedUIntPropertyParams Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_ID = { UE4CodeGen_Private::EPropertyClass::UInt32, "ID", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(FItemProperties, ID), METADATA_PARAMS(Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_ID_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_ID_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Name_MetaData[] = {
 		{ "Category", "Properties" },
@@ -167,9 +167,9 @@ static struct FScriptStruct_Survival_StaticRegisterNativesFItemProperties
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Type = { UE4CodeGen_Private::EPropertyClass::Enum, "Type", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(FItemProperties, Type), Z_Construct_UEnum_Survival_EItemType, METADATA_PARAMS(Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Type_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Type_MetaData)) };
 	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Type_Underlying = { UE4CodeGen_Private::EPropertyClass::Byte, "UnderlyingType", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FItemProperties_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_RequiredSlots,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_RegisteredID,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Image,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_ID,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Name,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Type,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FItemProperties_Statics::NewProp_Type_Underlying,
@@ -201,7 +201,7 @@ static struct FScriptStruct_Survival_StaticRegisterNativesFItemProperties
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FItemProperties_CRC() { return 1956925631U; }
+	uint32 Get_Z_Construct_UScriptStruct_FItemProperties_CRC() { return 3413003305U; }
 	void UHelpers::StaticRegisterNativesUHelpers()
 	{
 	}

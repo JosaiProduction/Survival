@@ -20,7 +20,7 @@ private: \
 	static void StaticRegisterNativesAConsumables(); \
 	friend struct Z_Construct_UClass_AConsumables_Statics; \
 public: \
-	DECLARE_CLASS(AConsumables, AItem, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Survival"), NO_API) \
+	DECLARE_CLASS(AConsumables, AItem, COMPILED_IN_FLAGS(CLASS_Abstract), CASTCLASS_None, TEXT("/Script/Survival"), NO_API) \
 	DECLARE_SERIALIZER(AConsumables)
 
 
@@ -29,7 +29,7 @@ private: \
 	static void StaticRegisterNativesAConsumables(); \
 	friend struct Z_Construct_UClass_AConsumables_Statics; \
 public: \
-	DECLARE_CLASS(AConsumables, AItem, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Survival"), NO_API) \
+	DECLARE_CLASS(AConsumables, AItem, COMPILED_IN_FLAGS(CLASS_Abstract), CASTCLASS_None, TEXT("/Script/Survival"), NO_API) \
 	DECLARE_SERIALIZER(AConsumables)
 
 
