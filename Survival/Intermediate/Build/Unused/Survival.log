@@ -1,12 +1,12 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
-  Creating makefile for SurvivalEditor (no existing makefile)
-  Using Visual Studio 2017 14.15.26726 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-2515-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-2515-Win64-DebugGame.pdb".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-5307-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-5307-Win64-DebugGame.pdb".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-7845-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-7845-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-1009-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-1009-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-3257-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-3257-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-4698-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-4698-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-9849-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-9849-Win64-DebugGame.pdb".
   Distributing 2 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
@@ -17,7 +17,7 @@
   --------------------Project: Default-------------------------------------------
   UE4Editor-Survival-Win64-DebugGame.dll (0:00.87 at +0:00)
      Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.suppressed.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.suppressed.exp
-  UE4Editor-Survival-Win64-DebugGame.lib (0:00.09 at +0:00)
+  UE4Editor-Survival-Win64-DebugGame.lib (0:00.48 at +0:00)
      Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.exp
   ---------------------- Done ----------------------
   
@@ -27,4 +27,4 @@
      - License is invalid
   
   Deploying SurvivalEditor Win64 DebugGame...
-  Total build time: 4,23 seconds (XGE executor: 1,08 seconds)
+  Total build time: 2,34 seconds (XGE executor: 1,49 seconds)

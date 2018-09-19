@@ -18,7 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeDayCycle() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Survival();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_ADirectionalLight_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UDirectionalLightComponent_NoRegister();
 // End Cross Module References
 	void ADayCycle::StaticRegisterNativesADayCycle()
 	{
@@ -66,10 +66,11 @@ void EmptyLinkFunctionForGeneratedCodeDayCycle() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADayCycle_Statics::NewProp_m_sun_MetaData[] = {
 		{ "Category", "Sun" },
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "World/DayCycle.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADayCycle_Statics::NewProp_m_sun = { UE4CodeGen_Private::EPropertyClass::Object, "m_sun", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(ADayCycle, m_sun), Z_Construct_UClass_ADirectionalLight_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ADayCycle_Statics::NewProp_m_sun_MetaData, ARRAY_COUNT(Z_Construct_UClass_ADayCycle_Statics::NewProp_m_sun_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADayCycle_Statics::NewProp_m_sun = { UE4CodeGen_Private::EPropertyClass::Object, "m_sun", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000080009, 1, nullptr, STRUCT_OFFSET(ADayCycle, m_sun), Z_Construct_UClass_UDirectionalLightComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ADayCycle_Statics::NewProp_m_sun_MetaData, ARRAY_COUNT(Z_Construct_UClass_ADayCycle_Statics::NewProp_m_sun_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADayCycle_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADayCycle_Statics::NewProp_m_root,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADayCycle_Statics::NewProp_m_sun,
@@ -97,7 +98,7 @@ void EmptyLinkFunctionForGeneratedCodeDayCycle() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ADayCycle, 2612586940);
+	IMPLEMENT_CLASS(ADayCycle, 245520183);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ADayCycle(Z_Construct_UClass_ADayCycle, &ADayCycle::StaticClass, TEXT("/Script/Survival"), TEXT("ADayCycle"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ADayCycle);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

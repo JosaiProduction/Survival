@@ -28,7 +28,7 @@ public:
 	int m_dayDuration; 
 	int m_nightDuration;
 	UPROPERTY(EditAnywhere, Category = Sun)
-	class ADirectionalLight* m_sun;
+	class UDirectionalLightComponent* m_sun;
 	UPROPERTY(EditAnywhere, Category = Sun)
 	class USceneComponent* m_root;
 };
