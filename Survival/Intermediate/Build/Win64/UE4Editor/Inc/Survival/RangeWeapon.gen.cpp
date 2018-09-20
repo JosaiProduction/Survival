@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Survival/Items/Interfaces/RangeWeapon.h"
+#include "Survival/Items/Interfaces/Weapons/RangeWeapon.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -54,28 +54,28 @@ void EmptyLinkFunctionForGeneratedCodeRangeWeapon() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARangeWeapon_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "Items/Interfaces/RangeWeapon.h" },
-		{ "ModuleRelativePath", "Items/Interfaces/RangeWeapon.h" },
+		{ "IncludePath", "Items/Interfaces/Weapons/RangeWeapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/RangeWeapon.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_projectile_MetaData[] = {
 		{ "Category", "Item" },
-		{ "ModuleRelativePath", "Items/Interfaces/RangeWeapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/RangeWeapon.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_projectile = { UE4CodeGen_Private::EPropertyClass::Object, "m_projectile", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(ARangeWeapon, m_projectile), Z_Construct_UClass_AProjectile_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_projectile_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_projectile_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_bulletSpeed_MetaData[] = {
 		{ "Category", "Stats" },
-		{ "ModuleRelativePath", "Items/Interfaces/RangeWeapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/RangeWeapon.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_bulletSpeed = { UE4CodeGen_Private::EPropertyClass::Float, "m_bulletSpeed", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(ARangeWeapon, m_bulletSpeed), METADATA_PARAMS(Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_bulletSpeed_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_bulletSpeed_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_maxAmmo_MetaData[] = {
 		{ "Category", "Stats" },
-		{ "ModuleRelativePath", "Items/Interfaces/RangeWeapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/RangeWeapon.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FUnsizedUIntPropertyParams Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_maxAmmo = { UE4CodeGen_Private::EPropertyClass::UInt32, "m_maxAmmo", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(ARangeWeapon, m_maxAmmo), METADATA_PARAMS(Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_maxAmmo_MetaData, ARRAY_COUNT(Z_Construct_UClass_ARangeWeapon_Statics::NewProp_m_maxAmmo_MetaData)) };
@@ -107,7 +107,7 @@ void EmptyLinkFunctionForGeneratedCodeRangeWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ARangeWeapon, 1026524739);
+	IMPLEMENT_CLASS(ARangeWeapon, 3295816160);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ARangeWeapon(Z_Construct_UClass_ARangeWeapon, &ARangeWeapon::StaticClass, TEXT("/Script/Survival"), TEXT("ARangeWeapon"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ARangeWeapon);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

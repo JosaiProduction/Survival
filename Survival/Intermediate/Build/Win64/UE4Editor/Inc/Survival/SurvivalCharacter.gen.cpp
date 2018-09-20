@@ -17,15 +17,21 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 	SURVIVAL_API UClass* Z_Construct_UClass_ASurvivalCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_Survival();
+	SURVIVAL_API UFunction* Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo();
+	SURVIVAL_API UEnum* Z_Construct_UEnum_Survival_EInteractionType();
 	SURVIVAL_API UFunction* Z_Construct_UFunction_ASurvivalCharacter_GetAbilities();
 	SURVIVAL_API UClass* Z_Construct_UClass_UAbilities_NoRegister();
 	SURVIVAL_API UFunction* Z_Construct_UFunction_ASurvivalCharacter_GetInventory();
 	SURVIVAL_API UClass* Z_Construct_UClass_UInventory_NoRegister();
+	SURVIVAL_API UFunction* Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	SURVIVAL_API UFunction* Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo();
+	SURVIVAL_API UFunction* Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory();
 	ENGINE_API UClass* Z_Construct_UClass_UCharacterMovementComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
-	SURVIVAL_API UClass* Z_Construct_UClass_ASurvivalProjectile_NoRegister();
+	SURVIVAL_API UClass* Z_Construct_UClass_AProjectile_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	HEADMOUNTEDDISPLAY_API UClass* Z_Construct_UClass_UMotionControllerComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
@@ -36,10 +42,57 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 	{
 		UClass* Class = ASurvivalCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "DropInteractionInfo", &ASurvivalCharacter::execDropInteractionInfo },
 			{ "GetAbilities", &ASurvivalCharacter::execGetAbilities },
 			{ "GetInventory", &ASurvivalCharacter::execGetInventory },
+			{ "ReceiveInteraction", &ASurvivalCharacter::execReceiveInteraction },
+			{ "ReceiveInteractionInfo", &ASurvivalCharacter::execReceiveInteractionInfo },
+			{ "ToggleInventory", &ASurvivalCharacter::execToggleInventory },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics
+	{
+		struct SurvivalCharacter_eventDropInteractionInfo_Parms
+		{
+			EInteractionType interactionType;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_interactionType_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_interactionType;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_interactionType_Underlying;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::NewProp_interactionType_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::NewProp_interactionType = { UE4CodeGen_Private::EPropertyClass::Enum, "interactionType", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000008000182, 1, nullptr, STRUCT_OFFSET(SurvivalCharacter_eventDropInteractionInfo_Parms, interactionType), Z_Construct_UEnum_Survival_EInteractionType, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::NewProp_interactionType_MetaData, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::NewProp_interactionType_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::NewProp_interactionType_Underlying = { UE4CodeGen_Private::EPropertyClass::Byte, "UnderlyingType", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::NewProp_interactionType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::NewProp_interactionType_Underlying,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "DropInteractionInfo", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00420401, sizeof(SurvivalCharacter_eventDropInteractionInfo_Parms), Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics
 	{
@@ -71,7 +124,7 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "GetAbilities", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x54080401, sizeof(SurvivalCharacter_eventGetAbilities_Parms), Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "GetAbilities", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x54020401, sizeof(SurvivalCharacter_eventGetAbilities_Parms), Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetAbilities_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ASurvivalCharacter_GetAbilities()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -111,13 +164,125 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "GetInventory", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x54080401, sizeof(SurvivalCharacter_eventGetInventory_Parms), Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "GetInventory", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x54020401, sizeof(SurvivalCharacter_eventGetInventory_Parms), Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ASurvivalCharacter_GetInventory()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASurvivalCharacter_GetInventory_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics
+	{
+		struct SurvivalCharacter_eventReceiveInteraction_Parms
+		{
+			EInteractionType interactionType;
+			AActor* actor;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_actor;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_interactionType_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_interactionType;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_interactionType_Underlying;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_actor = { UE4CodeGen_Private::EPropertyClass::Object, "actor", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000080, 1, nullptr, STRUCT_OFFSET(SurvivalCharacter_eventReceiveInteraction_Parms, actor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_interactionType_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_interactionType = { UE4CodeGen_Private::EPropertyClass::Enum, "interactionType", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000008000182, 1, nullptr, STRUCT_OFFSET(SurvivalCharacter_eventReceiveInteraction_Parms, interactionType), Z_Construct_UEnum_Survival_EInteractionType, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_interactionType_MetaData, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_interactionType_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_interactionType_Underlying = { UE4CodeGen_Private::EPropertyClass::Byte, "UnderlyingType", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_actor,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_interactionType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::NewProp_interactionType_Underlying,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "ReceiveInteraction", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00420401, sizeof(SurvivalCharacter_eventReceiveInteraction_Parms), Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics
+	{
+		struct SurvivalCharacter_eventReceiveInteractionInfo_Parms
+		{
+			EInteractionType interactionType;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_interactionType_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_interactionType;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_interactionType_Underlying;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::NewProp_interactionType_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::NewProp_interactionType = { UE4CodeGen_Private::EPropertyClass::Enum, "interactionType", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000008000182, 1, nullptr, STRUCT_OFFSET(SurvivalCharacter_eventReceiveInteractionInfo_Parms, interactionType), Z_Construct_UEnum_Survival_EInteractionType, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::NewProp_interactionType_MetaData, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::NewProp_interactionType_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::NewProp_interactionType_Underlying = { UE4CodeGen_Private::EPropertyClass::Byte, "UnderlyingType", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0000000000000000, 1, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::NewProp_interactionType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::NewProp_interactionType_Underlying,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "ReceiveInteractionInfo", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00420401, sizeof(SurvivalCharacter_eventReceiveInteractionInfo_Parms), Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::PropPointers), 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASurvivalCharacter, "ToggleInventory", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00020401, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -132,6 +297,10 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_availableInteractions_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUInt32PropertyParams NewProp_m_availableInteractions;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_crouchMultiplier_MetaData[];
 #endif
@@ -222,8 +391,12 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Survival,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ASurvivalCharacter_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ASurvivalCharacter_GetAbilities, "GetAbilities" }, // 2463475126
-		{ &Z_Construct_UFunction_ASurvivalCharacter_GetInventory, "GetInventory" }, // 915269303
+		{ &Z_Construct_UFunction_ASurvivalCharacter_DropInteractionInfo, "DropInteractionInfo" }, // 1824404943
+		{ &Z_Construct_UFunction_ASurvivalCharacter_GetAbilities, "GetAbilities" }, // 1725225846
+		{ &Z_Construct_UFunction_ASurvivalCharacter_GetInventory, "GetInventory" }, // 3263993975
+		{ &Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteraction, "ReceiveInteraction" }, // 3509524820
+		{ &Z_Construct_UFunction_ASurvivalCharacter_ReceiveInteractionInfo, "ReceiveInteractionInfo" }, // 2854077040
+		{ &Z_Construct_UFunction_ASurvivalCharacter_ToggleInventory, "ToggleInventory" }, // 4083775088
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::Class_MetaDataParams[] = {
@@ -232,6 +405,13 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_availableInteractions_MetaData[] = {
+		{ "Category", "Interaction" },
+		{ "ModuleRelativePath", "Character/SurvivalCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUInt32PropertyParams Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_availableInteractions = { UE4CodeGen_Private::EPropertyClass::UInt32, "m_availableInteractions", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000020001, 1, nullptr, STRUCT_OFFSET(ASurvivalCharacter, m_availableInteractions), METADATA_PARAMS(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_availableInteractions_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_availableInteractions_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_crouchMultiplier_MetaData[] = {
 		{ "Category", "Movement" },
@@ -304,7 +484,7 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		{ "ToolTip", "Projectile class to spawn" },
 	};
 #endif
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_ProjectileClass = { UE4CodeGen_Private::EPropertyClass::Class, "ProjectileClass", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0014000000010001, 1, nullptr, STRUCT_OFFSET(ASurvivalCharacter, ProjectileClass), Z_Construct_UClass_ASurvivalProjectile_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_ProjectileClass_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_ProjectileClass_MetaData)) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_ProjectileClass = { UE4CodeGen_Private::EPropertyClass::Class, "ProjectileClass", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0014000000010001, 1, nullptr, STRUCT_OFFSET(ASurvivalCharacter, ProjectileClass), Z_Construct_UClass_AProjectile_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_ProjectileClass_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_ProjectileClass_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_GunOffset_MetaData[] = {
 		{ "Category", "Gameplay" },
@@ -405,6 +585,7 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_Mesh1P = { UE4CodeGen_Private::EPropertyClass::Object, "Mesh1P", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x00400000000b0009, 1, nullptr, STRUCT_OFFSET(ASurvivalCharacter, Mesh1P), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_Mesh1P_MetaData, ARRAY_COUNT(Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_Mesh1P_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASurvivalCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_availableInteractions,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_crouchMultiplier,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_runMultiplier,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASurvivalCharacter_Statics::NewProp_m_charMovement,
@@ -449,7 +630,7 @@ void EmptyLinkFunctionForGeneratedCodeSurvivalCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASurvivalCharacter, 561896575);
+	IMPLEMENT_CLASS(ASurvivalCharacter, 2938809381);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASurvivalCharacter(Z_Construct_UClass_ASurvivalCharacter, &ASurvivalCharacter::StaticClass, TEXT("/Script/Survival"), TEXT("ASurvivalCharacter"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASurvivalCharacter);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -2,6 +2,7 @@
 
 #include "Abilities.h"
 
-
-
-
+UAbilities::UAbilities()
+{
+	m_abilities = {};
+}

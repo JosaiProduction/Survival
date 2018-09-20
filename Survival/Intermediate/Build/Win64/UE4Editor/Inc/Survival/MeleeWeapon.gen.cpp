@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Survival/Items/Interfaces/MeleeWeapon.h"
+#include "Survival/Items/Interfaces/Weapons/MeleeWeapon.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -40,8 +40,8 @@ void EmptyLinkFunctionForGeneratedCodeMeleeWeapon() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMeleeWeapon_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "Items/Interfaces/MeleeWeapon.h" },
-		{ "ModuleRelativePath", "Items/Interfaces/MeleeWeapon.h" },
+		{ "IncludePath", "Items/Interfaces/Weapons/MeleeWeapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/MeleeWeapon.h" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMeleeWeapon_Statics::StaticCppClassTypeInfo = {
@@ -67,7 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeMeleeWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMeleeWeapon, 3096589030);
+	IMPLEMENT_CLASS(AMeleeWeapon, 2366730531);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AMeleeWeapon(Z_Construct_UClass_AMeleeWeapon, &AMeleeWeapon::StaticClass, TEXT("/Script/Survival"), TEXT("AMeleeWeapon"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMeleeWeapon);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

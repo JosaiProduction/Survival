@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SURVIVAL_RangeWeapon_generated_h
 
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_RPC_WRAPPERS
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_RPC_WRAPPERS_NO_PURE_DECLS
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_INCLASS_NO_PURE_DECLS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_RPC_WRAPPERS
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesARangeWeapon(); \
 	friend struct Z_Construct_UClass_ARangeWeapon_Statics; \
@@ -24,7 +24,7 @@ public: \
 	DECLARE_SERIALIZER(ARangeWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_INCLASS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesARangeWeapon(); \
 	friend struct Z_Construct_UClass_ARangeWeapon_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(ARangeWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_STANDARD_CONSTRUCTORS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ARangeWeapon(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ARangeWeapon) \
@@ -46,7 +46,7 @@ private: \
 public:
 
 
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_ENHANCED_CONSTRUCTORS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ARangeWeapon(ARangeWeapon&&); \
@@ -57,32 +57,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ARangeWeapon); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ARangeWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_PRIVATE_PROPERTY_OFFSET
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_14_PROLOG
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_GENERATED_BODY_LEGACY \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_PRIVATE_PROPERTY_OFFSET
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_14_PROLOG
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_RPC_WRAPPERS \
-	Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_INCLASS \
-	Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_STANDARD_CONSTRUCTORS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_RPC_WRAPPERS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_INCLASS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_GENERATED_BODY \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_INCLASS_NO_PURE_DECLS \
-	Survival_Source_Survival_Items_Interfaces_RangeWeapon_h_17_ENHANCED_CONSTRUCTORS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_INCLASS_NO_PURE_DECLS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID Survival_Source_Survival_Items_Interfaces_RangeWeapon_h
+#define CURRENT_FILE_ID Survival_Source_Survival_Items_Interfaces_Weapons_RangeWeapon_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

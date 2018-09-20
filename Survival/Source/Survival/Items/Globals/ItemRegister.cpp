@@ -3,9 +3,9 @@
 #include "ItemRegister.h"
 
 #include "Items/Interfaces/Consumables.h"
-#include "Items/Interfaces/MeleeWeapon.h"
-#include "Items/Interfaces/RangeWeapon.h"
-#include "Items/Globals/Helpers.h"
+#include "Items/Interfaces/Weapons/MeleeWeapon.h"
+#include "Items/Interfaces/Weapons/RangeWeapon.h"
+#include "Items/Globals/ItemHelpers.h"
 
 
 unsigned int UItemRegister::RegisterItem(AItem * item)

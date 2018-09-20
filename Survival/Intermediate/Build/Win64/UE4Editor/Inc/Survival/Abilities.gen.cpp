@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeAbilities() {}
 	SURVIVAL_API UClass* Z_Construct_UClass_UAbilities();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent();
 	UPackage* Z_Construct_UPackage__Script_Survival();
+	SURVIVAL_API UScriptStruct* Z_Construct_UScriptStruct_FCharAbilities();
 // End Cross Module References
 	void UAbilities::StaticRegisterNativesUAbilities()
 	{
@@ -32,33 +33,9 @@ void EmptyLinkFunctionForGeneratedCodeAbilities() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_tiredness_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_abilities_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_m_tiredness;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_stresslevel_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_m_stresslevel;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_exhaustion_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_m_exhaustion;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_adrenaline_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_m_adrenaline;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_stamina_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_m_stamina;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_health_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_m_health;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_m_mood_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_m_mood;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_m_abilities;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -74,62 +51,14 @@ void EmptyLinkFunctionForGeneratedCodeAbilities() {}
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilities_Statics::NewProp_m_tiredness_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilities_Statics::NewProp_m_abilities_MetaData[] = {
 		{ "Category", "Abilities" },
 		{ "ModuleRelativePath", "Character/Abilities.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UAbilities_Statics::NewProp_m_tiredness = { UE4CodeGen_Private::EPropertyClass::Int, "m_tiredness", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000020001, 1, nullptr, STRUCT_OFFSET(UAbilities, m_tiredness), METADATA_PARAMS(Z_Construct_UClass_UAbilities_Statics::NewProp_m_tiredness_MetaData, ARRAY_COUNT(Z_Construct_UClass_UAbilities_Statics::NewProp_m_tiredness_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilities_Statics::NewProp_m_stresslevel_MetaData[] = {
-		{ "Category", "Abilities" },
-		{ "ModuleRelativePath", "Character/Abilities.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UAbilities_Statics::NewProp_m_stresslevel = { UE4CodeGen_Private::EPropertyClass::Int, "m_stresslevel", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000020001, 1, nullptr, STRUCT_OFFSET(UAbilities, m_stresslevel), METADATA_PARAMS(Z_Construct_UClass_UAbilities_Statics::NewProp_m_stresslevel_MetaData, ARRAY_COUNT(Z_Construct_UClass_UAbilities_Statics::NewProp_m_stresslevel_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilities_Statics::NewProp_m_exhaustion_MetaData[] = {
-		{ "Category", "Abilities" },
-		{ "ModuleRelativePath", "Character/Abilities.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UAbilities_Statics::NewProp_m_exhaustion = { UE4CodeGen_Private::EPropertyClass::Int, "m_exhaustion", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000020001, 1, nullptr, STRUCT_OFFSET(UAbilities, m_exhaustion), METADATA_PARAMS(Z_Construct_UClass_UAbilities_Statics::NewProp_m_exhaustion_MetaData, ARRAY_COUNT(Z_Construct_UClass_UAbilities_Statics::NewProp_m_exhaustion_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilities_Statics::NewProp_m_adrenaline_MetaData[] = {
-		{ "Category", "Abilities" },
-		{ "ModuleRelativePath", "Character/Abilities.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UAbilities_Statics::NewProp_m_adrenaline = { UE4CodeGen_Private::EPropertyClass::Int, "m_adrenaline", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000020001, 1, nullptr, STRUCT_OFFSET(UAbilities, m_adrenaline), METADATA_PARAMS(Z_Construct_UClass_UAbilities_Statics::NewProp_m_adrenaline_MetaData, ARRAY_COUNT(Z_Construct_UClass_UAbilities_Statics::NewProp_m_adrenaline_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilities_Statics::NewProp_m_stamina_MetaData[] = {
-		{ "Category", "Abilities" },
-		{ "ModuleRelativePath", "Character/Abilities.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UAbilities_Statics::NewProp_m_stamina = { UE4CodeGen_Private::EPropertyClass::Int, "m_stamina", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000020001, 1, nullptr, STRUCT_OFFSET(UAbilities, m_stamina), METADATA_PARAMS(Z_Construct_UClass_UAbilities_Statics::NewProp_m_stamina_MetaData, ARRAY_COUNT(Z_Construct_UClass_UAbilities_Statics::NewProp_m_stamina_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilities_Statics::NewProp_m_health_MetaData[] = {
-		{ "Category", "Abilities" },
-		{ "ModuleRelativePath", "Character/Abilities.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UAbilities_Statics::NewProp_m_health = { UE4CodeGen_Private::EPropertyClass::Int, "m_health", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000020001, 1, nullptr, STRUCT_OFFSET(UAbilities, m_health), METADATA_PARAMS(Z_Construct_UClass_UAbilities_Statics::NewProp_m_health_MetaData, ARRAY_COUNT(Z_Construct_UClass_UAbilities_Statics::NewProp_m_health_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAbilities_Statics::NewProp_m_mood_MetaData[] = {
-		{ "Category", "Abilities" },
-		{ "ModuleRelativePath", "Character/Abilities.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UAbilities_Statics::NewProp_m_mood = { UE4CodeGen_Private::EPropertyClass::Int, "m_mood", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000020001, 1, nullptr, STRUCT_OFFSET(UAbilities, m_mood), METADATA_PARAMS(Z_Construct_UClass_UAbilities_Statics::NewProp_m_mood_MetaData, ARRAY_COUNT(Z_Construct_UClass_UAbilities_Statics::NewProp_m_mood_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UAbilities_Statics::NewProp_m_abilities = { UE4CodeGen_Private::EPropertyClass::Struct, "m_abilities", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(UAbilities, m_abilities), Z_Construct_UScriptStruct_FCharAbilities, METADATA_PARAMS(Z_Construct_UClass_UAbilities_Statics::NewProp_m_abilities_MetaData, ARRAY_COUNT(Z_Construct_UClass_UAbilities_Statics::NewProp_m_abilities_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UAbilities_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilities_Statics::NewProp_m_tiredness,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilities_Statics::NewProp_m_stresslevel,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilities_Statics::NewProp_m_exhaustion,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilities_Statics::NewProp_m_adrenaline,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilities_Statics::NewProp_m_stamina,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilities_Statics::NewProp_m_health,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilities_Statics::NewProp_m_mood,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAbilities_Statics::NewProp_m_abilities,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UAbilities_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UAbilities>::IsAbstract,
@@ -154,7 +83,7 @@ void EmptyLinkFunctionForGeneratedCodeAbilities() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UAbilities, 2169716657);
+	IMPLEMENT_CLASS(UAbilities, 3870270841);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UAbilities(Z_Construct_UClass_UAbilities, &UAbilities::StaticClass, TEXT("/Script/Survival"), TEXT("UAbilities"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UAbilities);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Items/Globals/Helpers.h"
+#include "Items/Globals/ItemHelpers.h"
 #include "Inventory.generated.h"
 
 class ASurvivalCharacter;

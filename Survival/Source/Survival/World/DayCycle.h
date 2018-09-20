@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "World/Globals/WorldHelpers.h"
 #include "DayCycle.generated.h"
 
 UCLASS()
@@ -23,12 +24,26 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	int m_initTime; 
-	int m_currTime; 
+	UPROPERTY(EditAnywhere, Category = Stats)
+		bool m_bIsSummer;
+	UPROPERTY(EditAnywhere, Category = Stats)
+		FTime m_initTime;
+	UPROPERTY(EditAnywhere, Category = Stats)
+	FTime m_currTime; 
+	UPROPERTY(EditAnywhere, Category = Stats)
 	int m_dayDuration; 
+	UPROPERTY(EditAnywhere, Category = Stats)
 	int m_nightDuration;
+
 	UPROPERTY(EditAnywhere, Category = Sun)
 	class UDirectionalLightComponent* m_sun;
 	UPROPERTY(EditAnywhere, Category = Sun)
 	class USceneComponent* m_root;
+
+	void ChangeSeason();
+
+private:
+	bool m_bSeasonChange;
+
+
 };

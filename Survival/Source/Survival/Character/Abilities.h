@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "Character/Globals/CharHelpers.h"
 #include "Abilities.generated.h"
 
 /**
@@ -15,19 +16,8 @@ class SURVIVAL_API UAbilities : public UActorComponent
 	GENERATED_BODY()
 	
 public: 
+	UPROPERTY(EditAnywhere, Category = Abilities)
+		FCharAbilities m_abilities;
 
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int m_mood;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int m_health; 
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int m_stamina; 
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int m_adrenaline;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int m_exhaustion;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int m_stresslevel;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int m_tiredness;
+	UAbilities();
 };

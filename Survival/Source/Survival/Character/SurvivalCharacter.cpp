@@ -1,7 +1,7 @@
 // Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
 
 #include "SurvivalCharacter.h"
-#include "SurvivalProjectile.h"
+#include "Items/Projectiles/Projectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -15,6 +15,9 @@
 #include "Character/Inventory.h"
 #include "Character/Abilities.h"
 #include "Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h"
+#include "DrawDebugHelpers.h"
+#include "Runtime/Engine/Classes/PhysicalMaterials/PhysicalMaterial.h"
+#include "World/PhysicalMaterials/ClimbPhysMat.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
@@ -118,6 +121,11 @@ void ASurvivalCharacter::BeginPlay()
 	}
 }
 
+void ASurvivalCharacter::Tick(float DeltaSeconds)
+{
+	CheckObstacleInFront();
+}
+
 //////////////////////////////////////////////////////////////////////////
 // Input
 
@@ -158,6 +166,8 @@ void ASurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &ASurvivalCharacter::UnCrouch);
 
 	PlayerInputComponent->BindAction("Inventory", IE_Pressed, this, &ASurvivalCharacter::ToggleInventory);
+
+	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &ASurvivalCharacter::Interact);
 }
 
 void ASurvivalCharacter::OnFire()
@@ -172,7 +182,7 @@ void ASurvivalCharacter::OnFire()
 			{
 				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
 				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
-				World->SpawnActor<ASurvivalProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+				World->SpawnActor<AProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
 			}
 			else
 			{
@@ -185,7 +195,7 @@ void ASurvivalCharacter::OnFire()
 				ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 
 				// spawn the projectile at the muzzle
-				World->SpawnActor<ASurvivalProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+				World->SpawnActor<AProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
 			}
 		}
 	}
@@ -270,6 +280,41 @@ void ASurvivalCharacter::StopJumping()
 	ACharacter::StopJumping();
 }
 
+void ASurvivalCharacter::Interact()
+{
+
+}
+
+void ASurvivalCharacter::CheckObstacleInFront()
+{
+	FVector end = this->GetActorLocation() + 70 * GetActorForwardVector();
+	DrawDebugLine(GetWorld(), this->GetActorLocation(), end, FColor::Green, false, .1f, 0, 1);
+	FHitResult outHit(ForceInit);
+	FCollisionQueryParams collParams;
+	collParams.AddIgnoredActor(this);
+	collParams.bTraceComplex = false;
+	collParams.bReturnPhysicalMaterial = true;
+
+	if (GetWorld()->LineTraceSingleByChannel(outHit, this->GetActorLocation(), end, ECC_WorldStatic, collParams))
+	{
+		UClimbPhysMat* cPhysMat = Cast<UClimbPhysMat>(outHit.PhysMaterial.Get());
+		if (cPhysMat)
+		{
+			if (cPhysMat->GetReqClimbLvl() >= m_abilities->m_abilities.ClimbLvl)
+			{
+				ReceiveInteractionInfo(EInteractionType::VE_Climbing);
+			}
+		}
+	}
+	else
+	{
+		if (m_availableInteractions & (int32)EInteractionType::VE_Climbing)
+		{
+			DropInteractionInfo(EInteractionType::VE_Climbing);
+		}
+	}
+}
+
 bool ASurvivalCharacter::CheckEdge()
 {
 
@@ -280,6 +325,28 @@ void ASurvivalCharacter::ToggleInventory()
 {
 	UE_LOG(LogTemp, Warning, TEXT("%s"), m_inventory->IsEnabled() ? TEXT("true") : TEXT("false"));
 	m_inventory->IsEnabled() ? m_inventory->Disable() : m_inventory->Enable();
+}
+
+void ASurvivalCharacter::ReceiveInteraction(const EInteractionType & interactionType, AActor * actor)
+{
+	switch (interactionType)
+	{
+	case EInteractionType::VE_Climbing:
+		UE_LOG(LogTemp, Warning, TEXT("Is Climbing"));
+		break;
+	}
+}
+
+void ASurvivalCharacter::ReceiveInteractionInfo(const EInteractionType & interactionType)
+{
+	m_availableInteractions |= (int32)interactionType;
+	UE_LOG(LogTemp, Warning, TEXT("%d"), m_availableInteractions);
+}
+
+void ASurvivalCharacter::DropInteractionInfo(const EInteractionType & interactionType)
+{
+	m_availableInteractions ^= (int32)interactionType;
+	UE_LOG(LogTemp, Warning, TEXT("%d"), m_availableInteractions);
 }
 
 UInventory* ASurvivalCharacter::GetInventory() const

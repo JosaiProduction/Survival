@@ -28,5 +28,11 @@ void ADayCycle::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+
+}
+
+void ADayCycle::ChangeSeason()
+{
+	m_bSeasonChange = !m_bSeasonChange;
 }
 

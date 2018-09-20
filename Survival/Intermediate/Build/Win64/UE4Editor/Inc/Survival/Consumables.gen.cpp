@@ -67,7 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeConsumables() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AConsumables, 2732902165);
+	IMPLEMENT_CLASS(AConsumables, 3544785359);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AConsumables(Z_Construct_UClass_AConsumables, &AConsumables::StaticClass, TEXT("/Script/Survival"), TEXT("AConsumables"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AConsumables);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

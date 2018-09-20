@@ -411,7 +411,7 @@
 /FI"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h"
 /Yu"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h"
 /Fp"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h.pch"
-"D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\Weapon.cpp"
+"D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\Weapons\Weapon.cpp"
 /FI"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\Definitions.Survival.h"
 /Fo"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\Weapon.cpp.obj"
 /TP

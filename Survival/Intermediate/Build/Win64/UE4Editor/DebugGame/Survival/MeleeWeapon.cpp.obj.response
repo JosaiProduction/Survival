@@ -411,7 +411,7 @@
 /FI"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h"
 /Yu"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h"
 /Fp"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h.pch"
-"D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\MeleeWeapon.cpp"
+"D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\Weapons\MeleeWeapon.cpp"
 /FI"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\Definitions.Survival.h"
 /Fo"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\MeleeWeapon.cpp.obj"
 /TP

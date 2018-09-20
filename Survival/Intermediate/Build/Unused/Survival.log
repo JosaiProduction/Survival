@@ -1,13 +1,8 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-1009-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-1009-Win64-DebugGame.pdb".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-3257-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-3257-Win64-DebugGame.pdb".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-4698-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-4698-Win64-DebugGame.pdb".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-9849-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-9849-Win64-DebugGame.pdb".
-  Distributing 2 actions to XGE
+  Parsing headers for SurvivalEditor
+    Running UnrealHeaderTool "D:\Dokumente\Github Repos\Survival\Survival\Survival.uproject" "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\SurvivalEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+  Reflection code generated for SurvivalEditor in 7,3427362 seconds
+  Distributing 5 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
       License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
@@ -15,9 +10,12 @@
   
   -------------------------------------------------------------------------------
   --------------------Project: Default-------------------------------------------
-  UE4Editor-Survival-Win64-DebugGame.dll (0:00.87 at +0:00)
+  MeleeWeapon.gen.cpp (0:00.75 at +0:00)
+  ItemRegister.cpp (0:01.11 at +0:00)
+  MeleeWeapon.cpp (0:00.61 at +0:01)
+  UE4Editor-Survival-Win64-DebugGame.dll (0:00.96 at +0:02)
      Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.suppressed.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.suppressed.exp
-  UE4Editor-Survival-Win64-DebugGame.lib (0:00.48 at +0:00)
+  UE4Editor-Survival-Win64-DebugGame.lib (0:00.14 at +0:03)
      Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.exp
   ---------------------- Done ----------------------
   
@@ -27,4 +25,4 @@
      - License is invalid
   
   Deploying SurvivalEditor Win64 DebugGame...
-  Total build time: 2,34 seconds (XGE executor: 1,49 seconds)
+  Total build time: 12,07 seconds (XGE executor: 3,79 seconds)
