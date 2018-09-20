@@ -402,7 +402,7 @@
 /I "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\Inc\Survival"
 /I "D:\Dokumente\Github Repos\Survival\Survival\Source"
 /I "D:\Dokumente\Github Repos\Survival\Survival\Source\Survival"
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\INCLUDE"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"
@@ -411,7 +411,7 @@
 /FI"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h"
 /Yu"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h"
 /Fp"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.h.pch"
-"D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\RangeWeapon.cpp"
+"D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Items\Interfaces\Weapons\RangeWeapon.cpp"
 /FI"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\Definitions.Survival.h"
 /Fo"D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\RangeWeapon.cpp.obj"
 /TP

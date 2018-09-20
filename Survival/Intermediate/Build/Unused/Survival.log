@@ -1,12 +1,22 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
   Creating makefile for SurvivalEditor (no existing makefile)
-  Using Visual Studio 2017 14.14.26428 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-3231-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-3231-Win64-DebugGame.pdb".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-3756-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-3756-Win64-DebugGame.pdb".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-454-Win64-DebugGame.dll".
-  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-454-Win64-DebugGame.pdb".
+  Using Visual Studio 2017 14.15.26726 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-2200-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-2200-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-4885-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-4885-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-6291-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-6291-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-6848-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-6848-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-8353-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-8353-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-8756-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-8756-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-9233-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-9233-Win64-DebugGame.pdb".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-971-Win64-DebugGame.dll".
+  Deleting old hot reload file: "D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-971-Win64-DebugGame.pdb".
   Distributing 3 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
@@ -15,18 +25,10 @@
   
   -------------------------------------------------------------------------------
   --------------------Project: Default-------------------------------------------
-  SurvivalGameMode.cpp (0:01.45 at +0:00)
-d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-  D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-  D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-  D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-  D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-  UE4Editor-Survival-Win64-DebugGame.dll (0:01.84 at +0:01)
+  RangeWeapon.cpp (1:43.82 at +0:00)
+  UE4Editor-Survival-Win64-DebugGame.dll (0:05.01 at +1:43)
      Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.suppressed.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.suppressed.exp
-  UE4Editor-Survival-Win64-DebugGame.lib (0:00.17 at +0:03)
+  UE4Editor-Survival-Win64-DebugGame.lib (0:00.10 at +1:48)
      Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-Win64-DebugGame.exp
   ---------------------- Done ----------------------
   
@@ -36,4 +38,4 @@ d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCh
      - License is invalid
   
   Deploying SurvivalEditor Win64 DebugGame...
-  Total build time: 8,00 seconds (XGE executor: 3,60 seconds)
+  Total build time: 157,34 seconds (XGE executor: 109,47 seconds)

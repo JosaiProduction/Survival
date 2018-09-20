@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SURVIVAL_Weapon_generated_h
 
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_RPC_WRAPPERS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execAttack) \
 	{ \
@@ -24,7 +24,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execAttack) \
 	{ \
@@ -35,7 +35,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_INCLASS_NO_PURE_DECLS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWeapon(); \
 	friend struct Z_Construct_UClass_AWeapon_Statics; \
@@ -44,7 +44,7 @@ public: \
 	DECLARE_SERIALIZER(AWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_INCLASS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesAWeapon(); \
 	friend struct Z_Construct_UClass_AWeapon_Statics; \
@@ -53,7 +53,7 @@ public: \
 	DECLARE_SERIALIZER(AWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_STANDARD_CONSTRUCTORS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AWeapon(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AWeapon) \
@@ -66,7 +66,7 @@ private: \
 public:
 
 
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_ENHANCED_CONSTRUCTORS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AWeapon() { }; \
 private: \
@@ -79,32 +79,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWeapon); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_PRIVATE_PROPERTY_OFFSET
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_12_PROLOG
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_GENERATED_BODY_LEGACY \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_PRIVATE_PROPERTY_OFFSET
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_12_PROLOG
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_Items_Interfaces_Weapon_h_15_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_Items_Interfaces_Weapon_h_15_RPC_WRAPPERS \
-	Survival_Source_Survival_Items_Interfaces_Weapon_h_15_INCLASS \
-	Survival_Source_Survival_Items_Interfaces_Weapon_h_15_STANDARD_CONSTRUCTORS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_RPC_WRAPPERS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_INCLASS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Survival_Source_Survival_Items_Interfaces_Weapon_h_15_GENERATED_BODY \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_Items_Interfaces_Weapon_h_15_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_Items_Interfaces_Weapon_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Survival_Source_Survival_Items_Interfaces_Weapon_h_15_INCLASS_NO_PURE_DECLS \
-	Survival_Source_Survival_Items_Interfaces_Weapon_h_15_ENHANCED_CONSTRUCTORS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_INCLASS_NO_PURE_DECLS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID Survival_Source_Survival_Items_Interfaces_Weapon_h
+#define CURRENT_FILE_ID Survival_Source_Survival_Items_Interfaces_Weapons_Weapon_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

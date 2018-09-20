@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SURVIVAL_MeleeWeapon_generated_h
 
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_RPC_WRAPPERS
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_INCLASS_NO_PURE_DECLS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_RPC_WRAPPERS
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMeleeWeapon(); \
 	friend struct Z_Construct_UClass_AMeleeWeapon_Statics; \
@@ -24,7 +24,7 @@ public: \
 	DECLARE_SERIALIZER(AMeleeWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_INCLASS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesAMeleeWeapon(); \
 	friend struct Z_Construct_UClass_AMeleeWeapon_Statics; \
@@ -33,9 +33,9 @@ public: \
 	DECLARE_SERIALIZER(AMeleeWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_STANDARD_CONSTRUCTORS \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AMeleeWeapon(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API AMeleeWeapon(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMeleeWeapon) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AMeleeWeapon); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMeleeWeapon); \
@@ -46,9 +46,7 @@ private: \
 public:
 
 
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AMeleeWeapon() { }; \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMeleeWeapon(AMeleeWeapon&&); \
@@ -59,32 +57,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AMeleeWeapon); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AMeleeWeapon)
 
 
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_PRIVATE_PROPERTY_OFFSET
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_12_PROLOG
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_GENERATED_BODY_LEGACY \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_PRIVATE_PROPERTY_OFFSET
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_12_PROLOG
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_RPC_WRAPPERS \
-	Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_INCLASS \
-	Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_STANDARD_CONSTRUCTORS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_RPC_WRAPPERS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_INCLASS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_GENERATED_BODY \
+#define Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_INCLASS_NO_PURE_DECLS \
-	Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h_15_ENHANCED_CONSTRUCTORS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_INCLASS_NO_PURE_DECLS \
+	Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID Survival_Source_Survival_Items_Interfaces_MeleeWeapon_h
+#define CURRENT_FILE_ID Survival_Source_Survival_Items_Interfaces_Weapons_MeleeWeapon_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

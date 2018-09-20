@@ -4,11 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Character/Globals/CharHelpers.h"
 #include "SurvivalCharacter.generated.h"
 
 class UInputComponent;
 class UInventory;
 class UCharacterMovementComponent;
+class UAbilities;
 
 UCLASS(config=Game)
 class ASurvivalCharacter : public ACharacter
@@ -51,8 +53,8 @@ public:
 	ASurvivalCharacter();
 
 protected:
-	virtual void BeginPlay();
-
+	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaSeconds) override;
 public:
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
@@ -68,7 +70,7 @@ public:
 
 	/** Projectile class to spawn */
 	UPROPERTY(EditDefaultsOnly, Category=Projectile)
-	TSubclassOf<class ASurvivalProjectile> ProjectileClass;
+	TSubclassOf<class AProjectile> ProjectileClass;
 
 	/** Sound to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
@@ -84,6 +86,8 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Tools)
 		UInventory* m_inventory;
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Tools)
+		UAbilities* m_abilities;
 	UPROPERTY()
 		UCharacterMovementComponent* m_charMovement;
 
@@ -91,6 +95,8 @@ public:
 		float m_runMultiplier;
 	UPROPERTY(EditAnywhere, Category = Movement)
 		float m_crouchMultiplier;
+	UPROPERTY(VisibleAnywhere, Category = Interaction)
+		uint32 m_availableInteractions;
 protected:
 	
 	/** Fires a projectile. */
@@ -139,12 +145,25 @@ protected:
 	void Jump() override;
 	void StopJumping() override;
 
-	bool CheckEdge(); 
+	void Interact();
 
+	void CheckObstacleInFront();
+
+	bool CheckEdge(); 
+public: 
+	UFUNCTION()
 	void ToggleInventory(); 
+	UFUNCTION()
+	void ReceiveInteraction(const EInteractionType& interactionType, class AActor* actor);
+	UFUNCTION()
+	void ReceiveInteractionInfo(const EInteractionType& interactionType);
+	UFUNCTION()
+	void DropInteractionInfo(const EInteractionType& interactionType);
 
 	UFUNCTION(BlueprintCallable)
 		UInventory* GetInventory() const;
+	UFUNCTION(BlueprintCallable)
+		UAbilities* GetAbilities() const; 
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;

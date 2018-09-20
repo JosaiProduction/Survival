@@ -53,12 +53,6 @@
     <ClInclude Include="..\..\Source\Survival\SurvivalHUD.h">
       <Filter>Source\Survival</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Survival\SurvivalProjectile.cpp">
-      <Filter>Source\Survival</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Survival\SurvivalProjectile.h">
-      <Filter>Source\Survival</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source\Survival\Character">
@@ -70,14 +64,26 @@
     <Filter Include="Source\Survival\Items\Interfaces">
       <UniqueIdentifier>{6ab7c813-aa12-40b9-b582-b2d0c01891f3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Survival\Items\Weapons">
-      <UniqueIdentifier>{9c0a57f6-de77-40db-826e-05b796fd11f8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Survival\Items\Projectiles">
       <UniqueIdentifier>{dd2de7a1-e670-41ea-98bd-addd30010764}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Survival\Items\Globals">
       <UniqueIdentifier>{fef3e0ad-fe93-4bec-8735-f797f0723f54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Survival\World">
+      <UniqueIdentifier>{653763ad-0d8c-413a-bde8-9aa0ff2b819c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Survival\World\PhysicalMaterials">
+      <UniqueIdentifier>{1e955093-6b4b-461b-919b-432467043ec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Survival\Character\Globals">
+      <UniqueIdentifier>{1b5dc62f-f8ce-4a99-91cb-57191a33757b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Survival\Items\Interfaces\Weapons">
+      <UniqueIdentifier>{df8875a7-35d4-4cda-b049-e886bee0df9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Survival\World\Globals">
+      <UniqueIdentifier>{d89d8a3c-5c58-4ed1-a25b-9b550da6e7b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,29 +96,41 @@
     <ClInclude Include="..\..\Source\Survival\Items\Interfaces\Item.h">
       <Filter>Source\Survival\Items\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Survival\Items\Interfaces\Weapon.h">
-      <Filter>Source\Survival\Items\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Survival\Items\Weapons\Knife.h">
-      <Filter>Source\Survival\Items\Weapons</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Survival\Items\Interfaces\MeleeWeapon.h">
-      <Filter>Source\Survival\Items\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Survival\Items\Interfaces\RangeWeapon.h">
-      <Filter>Source\Survival\Items\Interfaces</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Survival\Items\Interfaces\Consumables.h">
       <Filter>Source\Survival\Items\Interfaces</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Survival\Items\Projectiles\Projectile.h">
       <Filter>Source\Survival\Items\Projectiles</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Survival\Items\Globals\Helpers.h">
-      <Filter>Source\Survival\Items\Globals</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Survival\Items\Globals\ItemRegister.h">
       <Filter>Source\Survival\Items\Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\Character\Abilities.h">
+      <Filter>Source\Survival\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\World\DayCycle.h">
+      <Filter>Source\Survival\World</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\World\PhysicalMaterials\ClimbPhysMat.h">
+      <Filter>Source\Survival\World\PhysicalMaterials</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\Character\Globals\CharHelpers.h">
+      <Filter>Source\Survival\Character\Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\Items\Globals\ItemHelpers.h">
+      <Filter>Source\Survival\Items\Globals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\Items\Interfaces\Weapons\MeleeWeapon.h">
+      <Filter>Source\Survival\Items\Interfaces\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\Items\Interfaces\Weapons\RangeWeapon.h">
+      <Filter>Source\Survival\Items\Interfaces\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\Items\Interfaces\Weapons\Weapon.h">
+      <Filter>Source\Survival\Items\Interfaces\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Survival\World\Globals\WorldHelpers.h">
+      <Filter>Source\Survival\World\Globals</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -125,29 +143,41 @@
     <ClCompile Include="..\..\Source\Survival\Items\Interfaces\Item.cpp">
       <Filter>Source\Survival\Items\Interfaces</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Survival\Items\Interfaces\Weapon.cpp">
-      <Filter>Source\Survival\Items\Interfaces</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Survival\Items\Weapons\Knife.cpp">
-      <Filter>Source\Survival\Items\Weapons</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Survival\Items\Interfaces\MeleeWeapon.cpp">
-      <Filter>Source\Survival\Items\Interfaces</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Survival\Items\Interfaces\RangeWeapon.cpp">
-      <Filter>Source\Survival\Items\Interfaces</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Survival\Items\Interfaces\Consumables.cpp">
       <Filter>Source\Survival\Items\Interfaces</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Survival\Items\Projectiles\Projectile.cpp">
       <Filter>Source\Survival\Items\Projectiles</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Survival\Items\Globals\Helpers.cpp">
-      <Filter>Source\Survival\Items\Globals</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Survival\Items\Globals\ItemRegister.cpp">
       <Filter>Source\Survival\Items\Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\Character\Abilities.cpp">
+      <Filter>Source\Survival\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\World\DayCycle.cpp">
+      <Filter>Source\Survival\World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\World\PhysicalMaterials\ClimbPhysMat.cpp">
+      <Filter>Source\Survival\World\PhysicalMaterials</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\Character\Globals\CharHelpers.cpp">
+      <Filter>Source\Survival\Character\Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\Items\Globals\ItemHelpers.cpp">
+      <Filter>Source\Survival\Items\Globals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\Items\Interfaces\Weapons\MeleeWeapon.cpp">
+      <Filter>Source\Survival\Items\Interfaces\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\Items\Interfaces\Weapons\RangeWeapon.cpp">
+      <Filter>Source\Survival\Items\Interfaces\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\Items\Interfaces\Weapons\Weapon.cpp">
+      <Filter>Source\Survival\Items\Interfaces\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Survival\World\Globals\WorldHelpers.cpp">
+      <Filter>Source\Survival\World\Globals</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

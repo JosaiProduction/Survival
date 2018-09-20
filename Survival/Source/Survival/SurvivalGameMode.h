@@ -21,6 +21,7 @@ public:
 	ASurvivalGameMode();
 
 	UItemRegister* GetRegister() const; 
+
 };
 
 

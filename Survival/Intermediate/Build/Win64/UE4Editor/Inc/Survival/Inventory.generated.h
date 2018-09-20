@@ -14,7 +14,7 @@ struct FItemProperties;
 #endif
 #define SURVIVAL_Inventory_generated_h
 
-#define Survival_Source_Survival_Character_Inventory_h_17_RPC_WRAPPERS \
+#define Survival_Source_Survival_Character_Inventory_h_18_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execIsEnabled) \
 	{ \
@@ -33,7 +33,7 @@ struct FItemProperties;
 	}
 
 
-#define Survival_Source_Survival_Character_Inventory_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Survival_Source_Survival_Character_Inventory_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execIsEnabled) \
 	{ \
@@ -52,25 +52,25 @@ struct FItemProperties;
 	}
 
 
-#define Survival_Source_Survival_Character_Inventory_h_17_INCLASS_NO_PURE_DECLS \
+#define Survival_Source_Survival_Character_Inventory_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUInventory(); \
 	friend struct Z_Construct_UClass_UInventory_Statics; \
 public: \
-	DECLARE_CLASS(UInventory, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Survival"), NO_API) \
+	DECLARE_CLASS(UInventory, UActorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Survival"), NO_API) \
 	DECLARE_SERIALIZER(UInventory)
 
 
-#define Survival_Source_Survival_Character_Inventory_h_17_INCLASS \
+#define Survival_Source_Survival_Character_Inventory_h_18_INCLASS \
 private: \
 	static void StaticRegisterNativesUInventory(); \
 	friend struct Z_Construct_UClass_UInventory_Statics; \
 public: \
-	DECLARE_CLASS(UInventory, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Survival"), NO_API) \
+	DECLARE_CLASS(UInventory, UActorComponent, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/Survival"), NO_API) \
 	DECLARE_SERIALIZER(UInventory)
 
 
-#define Survival_Source_Survival_Character_Inventory_h_17_STANDARD_CONSTRUCTORS \
+#define Survival_Source_Survival_Character_Inventory_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UInventory(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UInventory) \
@@ -83,7 +83,7 @@ private: \
 public:
 
 
-#define Survival_Source_Survival_Character_Inventory_h_17_ENHANCED_CONSTRUCTORS \
+#define Survival_Source_Survival_Character_Inventory_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UInventory(UInventory&&); \
@@ -94,30 +94,30 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UInventory); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UInventory)
 
 
-#define Survival_Source_Survival_Character_Inventory_h_17_PRIVATE_PROPERTY_OFFSET \
+#define Survival_Source_Survival_Character_Inventory_h_18_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__m_itemProps() { return STRUCT_OFFSET(UInventory, m_itemProps); } \
 	FORCEINLINE static uint32 __PPO__m_isActive() { return STRUCT_OFFSET(UInventory, m_isActive); }
 
 
-#define Survival_Source_Survival_Character_Inventory_h_14_PROLOG
-#define Survival_Source_Survival_Character_Inventory_h_17_GENERATED_BODY_LEGACY \
+#define Survival_Source_Survival_Character_Inventory_h_15_PROLOG
+#define Survival_Source_Survival_Character_Inventory_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_Character_Inventory_h_17_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_Character_Inventory_h_17_RPC_WRAPPERS \
-	Survival_Source_Survival_Character_Inventory_h_17_INCLASS \
-	Survival_Source_Survival_Character_Inventory_h_17_STANDARD_CONSTRUCTORS \
+	Survival_Source_Survival_Character_Inventory_h_18_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_Character_Inventory_h_18_RPC_WRAPPERS \
+	Survival_Source_Survival_Character_Inventory_h_18_INCLASS \
+	Survival_Source_Survival_Character_Inventory_h_18_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Survival_Source_Survival_Character_Inventory_h_17_GENERATED_BODY \
+#define Survival_Source_Survival_Character_Inventory_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Survival_Source_Survival_Character_Inventory_h_17_PRIVATE_PROPERTY_OFFSET \
-	Survival_Source_Survival_Character_Inventory_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	Survival_Source_Survival_Character_Inventory_h_17_INCLASS_NO_PURE_DECLS \
-	Survival_Source_Survival_Character_Inventory_h_17_ENHANCED_CONSTRUCTORS \
+	Survival_Source_Survival_Character_Inventory_h_18_PRIVATE_PROPERTY_OFFSET \
+	Survival_Source_Survival_Character_Inventory_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	Survival_Source_Survival_Character_Inventory_h_18_INCLASS_NO_PURE_DECLS \
+	Survival_Source_Survival_Character_Inventory_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

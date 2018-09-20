@@ -15,8 +15,14 @@ public:
 	// Sets default values for this actor's properties
 	AProjectile();
 
-	UPROPERTY(EditAnywhere, Category = Mesh)
+	UPROPERTY(EditAnywhere, Category = Components)
+		USceneComponent* m_root;
+	UPROPERTY(EditAnywhere, Category = Components)
 		UStaticMeshComponent* m_mesh;
+	UPROPERTY(EditAnywhere, Category = Components)
+		class USphereComponent* m_collider; 
+	UPROPERTY(EditAnywhere, Category = Components)
+		class UProjectileMovementComponent* m_projectileComp;
 
 protected:
 	// Called when the game starts or when spawned
@@ -26,6 +32,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	
-	
+	UFUNCTION()
+	void OnComponentBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
 };

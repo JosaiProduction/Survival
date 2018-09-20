@@ -1,4 +1,4 @@
-﻿Log file open, 09/11/18 12:42:50
+﻿Log file open, 09/20/18 22:58:13
 LogWindows: Failed to load 'aqProf.dll' (GetLastError=126)
 LogWindows: File 'aqProf.dll' does not exist
 LogWindows: Failed to load 'VtuneApi.dll' (GetLastError=126)
@@ -8,7 +8,7 @@ LogWindows: File 'VtuneApi32e.dll' does not exist
 LogInit: Display: Running engine for game: Survival
 LogPlatformFile: Not using cached read wrapper
 LogTaskGraph: Started task graph with 5 named threads and 23 total threads with 3 sets of task threads.
-LogStats: Stats thread started at 0.528514
+LogStats: Stats thread started at 4.631642
 LogD3D11RHI: Loaded GFSDK_Aftermath_Lib.x64.dll
 LogICUInternationalization: Display: ICU TimeZone Detection - Raw Offset: +1:00, Platform Override: ''
 LogPluginManager: Mounting plugin Paper2D
@@ -91,7 +91,7 @@ LogPluginManager: Mounting plugin ProceduralMeshComponent
 LogPluginManager: Mounting plugin RuntimePhysXCooking
 LogPluginManager: Mounting plugin SteamVR
 LogPluginManager: Mounting plugin WindowsMoviePlayer
-LogStreaming: Display: Took  0.087s to configure plugins.
+LogStreaming: Display: Took  0.333s to configure plugins.
 LogInit: Using libcurl 7.55.1-DEV
 LogInit:  - built for x86_64-pc-win32
 LogInit:  - supports SSL with OpenSSL/1.0.2h
@@ -112,12 +112,12 @@ LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connecti
 LogInit:  - LocalHostAddr = Default
 LogInit:  - BufferSize = 65536
 LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
-LogInit: Build: ++UE4+Release-4.20-CL-4302132
-LogInit: Engine Version: 4.20.2-4302132+++UE4+Release-4.20
+LogInit: Build: ++UE4+Release-4.20-CL-4369336
+LogInit: Engine Version: 4.20.3-4369336+++UE4+Release-4.20
 LogInit: Compatible Engine Version: 4.20.0-4212847+++UE4+Release-4.20
 LogInit: Net CL: 4212847
 LogInit: OS: Windows 10 (), CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz, GPU: NVIDIA GeForce GTX 1070
-LogInit: Compiled (64-bit): Aug 21 2018 02:06:06
+LogInit: Compiled (64-bit): Sep 17 2018 12:26:19
 LogInit: Compiled with Visual C++: 19.13.26129.00
 LogInit: Build Configuration: DebugGame
 LogInit: Branch Name: ++UE4+Release-4.20
@@ -145,961 +145,510 @@ LogDevObjectVersion:   Dev-ReflectionCapture (6B266CEC-1EC7-4B8F-A30B-E4D90942FC
 LogDevObjectVersion:   Dev-Automation (0DF73D61-A23F-47EA-B727-89E90C41499A): 1
 LogDevObjectVersion:   FortniteMain (601D1886-AC64-4F84-AA16-D3DE0DEAC7D6): 12
 LogDevObjectVersion:   Dev-Enterprise (9DFFBCD6-494F-0158-E221-12823C92A888): 1
-LogStreaming: Display: Took  0.000s to delete old logs.
+LogStreaming: Display: Took  0.001s to delete old logs.
 LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
 LogInit: Object subsystem initialized
-[2018.09.11-10.42.51:018][  0]LogInit: Selected Device Profile: [Windows]
-[2018.09.11-10.42.51:018][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
-[2018.09.11-10.42.51:032][  0]LogHAL: Display: Platform has ~ 16 GB [17117310976 / 17179869184 / 16], which maps to Larger [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
-[2018.09.11-10.42.51:032][  0]LogInit: Setting Device Profile CVar: [[r.Vulkan.UseRealUBs:1]]
-[2018.09.11-10.42.51:032][  0]LogInit: Going up to parent DeviceProfile []
-[2018.09.11-10.42.51:033][  0]LogInit: Computer: DESKTOP-FTI3JJM
-[2018.09.11-10.42.51:033][  0]LogInit: User: Kscha
-[2018.09.11-10.42.51:033][  0]LogInit: CPU Page size=4096, Cores=4
-[2018.09.11-10.42.51:033][  0]LogInit: High frequency timer resolution =3.914060 MHz
-[2018.09.11-10.42.51:033][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
-[2018.09.11-10.42.51:033][  0]LogMemory: Platform Memory Stats for Windows
-[2018.09.11-10.42.51:033][  0]LogMemory: Process Physical Memory: 101.51 MB used, 101.51 MB peak
-[2018.09.11-10.42.51:033][  0]LogMemory: Process Virtual Memory: 91.06 MB used, 91.06 MB peak
-[2018.09.11-10.42.51:033][  0]LogMemory: Physical Memory: 8598.83 MB used,  7725.51 MB free, 16324.34 MB total
-[2018.09.11-10.42.51:033][  0]LogMemory: Virtual Memory: 4645.18 MB used,  7725.51 MB free, 134217728.00 MB total
-[2018.09.11-10.42.52:400][  0]LogInit: Using OS detected language (de-DE).
-[2018.09.11-10.42.52:400][  0]LogInit: Using OS detected locale (de-DE).
-[2018.09.11-10.42.52:401][  0]LogTextLocalizationManager: No specific localization for 'de-DE' exists, so the 'de' localization will be used.
-[2018.09.11-10.42.52:402][  0]LogStreaming: Display: Took  0.002s to InitEngineTextLocalization.
-[2018.09.11-10.42.52:402][  0]LogInit: Setting process to per monitor DPI aware
-[2018.09.11-10.42.52:492][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
-[2018.09.11-10.42.52:493][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
-[2018.09.11-10.42.52:702][  0]LogHMD: Failed to initialize OpenVR with code 110
-[2018.09.11-10.42.52:702][  0]LogD3D11RHI: D3D11 adapters:
-[2018.09.11-10.42.52:758][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1070' (Feature Level 11_0)
-[2018.09.11-10.42.52:759][  0]LogD3D11RHI:       8096/0/8162 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:3, VendorId:0x10de
-[2018.09.11-10.42.52:766][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
-[2018.09.11-10.42.52:767][  0]LogD3D11RHI:       0/0/8162 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
-[2018.09.11-10.42.52:767][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
-[2018.09.11-10.42.52:773][  0]LogD3D11RHI: Creating new Direct3DDevice
-[2018.09.11-10.42.52:774][  0]LogD3D11RHI:     GPU DeviceId: 0x1b81 (for the marketing name, search the web for "GPU Device Id")
-[2018.09.11-10.42.52:774][  0]LogWindows: EnumDisplayDevices:
-[2018.09.11-10.42.52:774][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1070' (P:0 D:1)
-[2018.09.11-10.42.52:774][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1070' (P:0 D:1)
-[2018.09.11-10.42.52:775][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1070' (P:1 D:1)
-[2018.09.11-10.42.52:775][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
-[2018.09.11-10.42.52:775][  0]LogWindows: DebugString: FoundDriverCount:4 
-[2018.09.11-10.42.52:775][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1070
-[2018.09.11-10.42.52:775][  0]LogD3D11RHI:   Driver Version: 388.13 (internal:23.21.13.8813, unified:388.13)
-[2018.09.11-10.42.52:776][  0]LogD3D11RHI:      Driver Date: 10-27-2017
-[2018.09.11-10.42.52:776][  0]LogRHI: Texture pool is 5667 MB (70% of 8096 MB)
-[2018.09.11-10.42.52:804][  0]LogD3D11RHI: Async texture creation enabled
-[2018.09.11-10.42.52:862][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 1)
-[2018.09.11-10.42.52:952][  0]LogShaderCompilers: Guid format shader working directory is -9 characters bigger than the processId version (../../../../../Dokumente/Github Repos/Survival/Survival/Intermediate/Shaders/WorkingDirectory/2152/).
-[2018.09.11-10.42.52:952][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/Kscha/AppData/Local/Temp/UnrealShaderWorkingDir/057C1D134CB407925DEDA0A8F24874BD/'.
-[2018.09.11-10.42.53:235][  0]LogTemp: Display: Loaded TP AllDesktopTargetPlatform
-[2018.09.11-10.42.53:262][  0]LogTemp: Display: Loaded TP MacClientTargetPlatform
-[2018.09.11-10.42.53:275][  0]LogTemp: Display: Loaded TP MacNoEditorTargetPlatform
-[2018.09.11-10.42.53:297][  0]LogTemp: Display: Loaded TP MacServerTargetPlatform
-[2018.09.11-10.42.53:318][  0]LogTemp: Display: Loaded TP MacTargetPlatform
-[2018.09.11-10.42.53:336][  0]LogTemp: Display: Loaded TP WindowsClientTargetPlatform
-[2018.09.11-10.42.53:360][  0]LogTemp: Display: Loaded TP WindowsNoEditorTargetPlatform
-[2018.09.11-10.42.53:379][  0]LogTemp: Display: Loaded TP WindowsServerTargetPlatform
-[2018.09.11-10.42.53:396][  0]LogTemp: Display: Loaded TP WindowsTargetPlatform
-[2018.09.11-10.42.53:480][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:481][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:482][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:482][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
-[2018.09.11-10.42.53:510][  0]LogTemp: Display: Loaded TP HTML5TargetPlatform
-[2018.09.11-10.42.53:593][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
-[2018.09.11-10.42.53:593][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
-[2018.09.11-10.42.53:666][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
-[2018.09.11-10.42.53:666][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
-[2018.09.11-10.42.53:746][  0]LogTemp: Display: Loaded TP LinuxClientTargetPlatform
-[2018.09.11-10.42.53:811][  0]LogTemp: Display: Loaded TP LinuxNoEditorTargetPlatform
-[2018.09.11-10.42.53:827][  0]LogTemp: Display: Loaded TP LinuxServerTargetPlatform
-[2018.09.11-10.42.53:854][  0]LogTemp: Display: Loaded TP LinuxTargetPlatform
-[2018.09.11-10.42.53:870][  0]LogTemp: Display: Loaded TP LuminTargetPlatform
-[2018.09.11-10.42.53:870][  0]LogTargetPlatformManager: Display: Building Assets For Windows
-[2018.09.11-10.42.54:160][  0]LogXGEController: Cleaning working directory: C:/Users/Kscha/AppData/Local/Temp/UnrealXGEWorkingDir/
-[2018.09.11-10.42.54:172][  0]LogShaderCompilers: Display: Using XGE Shader Compiler (Interception Interface).
-[2018.09.11-10.42.54:745][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
-[2018.09.11-10.42.54:800][  0]LogDerivedDataCache: Loaded boot cache 0.05s 73MB C:/Users/Kscha/AppData/Local/UnrealEngine/4.20/DerivedDataCache/Boot.ddc.
-[2018.09.11-10.42.54:800][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/Kscha/AppData/Local/UnrealEngine/4.20/DerivedDataCache/Boot.ddc
-[2018.09.11-10.42.54:802][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../Dokumente/Github Repos/Survival/Survival/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
-[2018.09.11-10.42.54:802][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
-[2018.09.11-10.42.54:802][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../Dokumente/Github Repos/Survival/Survival/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
-[2018.09.11-10.42.54:802][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
-[2018.09.11-10.42.54:813][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
-[2018.09.11-10.42.54:825][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Kscha/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
-[2018.09.11-10.42.54:825][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
-[2018.09.11-10.42.54:825][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
-[2018.09.11-10.42.54:842][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
-[2018.09.11-10.42.54:843][  0]LogSlate: Using FreeType 2.6.0
-[2018.09.11-10.42.54:844][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
-[2018.09.11-10.42.54:906][  0]LogAssetRegistry: FAssetRegistry took 0.0275 seconds to start up
-[2018.09.11-10.42.55:158][  0]LogInit: Selected Device Profile: [Windows]
-[2018.09.11-10.42.55:381][  0]LogSimplygon: Simplygon DLL not present - disabling.
-[2018.09.11-10.42.55:411][  0]LogMeshReduction: Using SimplygonSwarm for distributed automatic mesh merging
-[2018.09.11-10.42.55:411][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
-[2018.09.11-10.42.55:411][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
-[2018.09.11-10.42.55:411][  0]LogMeshReduction: No automatic skeletal mesh reduction module available
-[2018.09.11-10.42.55:442][  0]LogNetVersion: Survival 1.0.0, NetCL: 4212847, EngineNetVer: 5, GameNetVer: 0 (Checksum: 2571501108)
-[2018.09.11-10.42.55:892][  0]LogPackageLocalizationCache: Processed 11 localized package path(s) for 2 prioritized culture(s) in 0.095410 seconds
-[2018.09.11-10.42.55:899][  0]LogUObjectArray: 38425 objects as part of root set at end of initial load.
-[2018.09.11-10.42.55:899][  0]LogUObjectAllocator: 6690864 out of 0 bytes used by permanent object pool.
-[2018.09.11-10.42.55:899][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
-[2018.09.11-10.42.57:271][  0]LogTcpMessaging: Initializing TcpMessaging bridge
-[2018.09.11-10.42.57:298][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
-[2018.09.11-10.42.58:005][  0]SourceControl: Source control is disabled
-[2018.09.11-10.42.58:005][  0]SourceControl: Source control is disabled
-[2018.09.11-10.42.58:026][  0]SourceControl: Source control is disabled
-[2018.09.11-10.42.58:043][  0]SourceControl: Source control is disabled
-[2018.09.11-10.42.58:647][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
-[2018.09.11-10.42.58:845][  0]LogOcInput: OculusInput pre-init called
-[2018.09.11-10.42.58:994][  0]LogEngine: Initializing Engine...
-[2018.09.11-10.42.58:994][  0]LogHMD: Failed to initialize OpenVR with code 110
-[2018.09.11-10.42.58:995][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: ImportINI prefixes -  0.000 s
-[2018.09.11-10.42.58:995][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
-[2018.09.11-10.42.58:995][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: ImportINI -  0.000 s
-[2018.09.11-10.42.58:996][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
-[2018.09.11-10.42.59:269][  0]LogInit: Initializing FReadOnlyCVARCache
-[2018.09.11-10.42.59:295][  0]LogAIModule: Creating AISystem for world Untitled
-[2018.09.11-10.42.59:308][  0]LogInit: XAudio2 using 'Lautsprecher (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
-[2018.09.11-10.42.59:362][  0]LogInit: FAudioDevice initialized.
-[2018.09.11-10.42.59:362][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
-[2018.09.11-10.42.59:430][  0]LogDerivedDataCache: Saved boot cache 0.07s 73MB C:/Users/Kscha/AppData/Local/UnrealEngine/4.20/DerivedDataCache/Boot.ddc.
-[2018.09.11-10.42.59:439][  0]LogInit: Texture streaming: Enabled
-[2018.09.11-10.42.59:485][  0]LogEngineSessionManager: EngineSessionManager initialized
-[2018.09.11-10.42.59:503][  0]LogInit: Transaction tracking system initialized
-[2018.09.11-10.42.59:595][  0]BlueprintLog: New page: Editor Load
-[2018.09.11-10.42.59:949][  0]LocalizationService: Localization service is disabled
-[2018.09.11-10.43.00:455][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
-[2018.09.11-10.43.00:455][  0]LogCook: Display: Mobile HDR setting 1
-[2018.09.11-10.43.00:455][  0]LogGameplayTags: Display: UGameplayTagsManager::DoneAddingNativeTags. DelegateIsBound: 0
-[2018.09.11-10.43.00:456][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: ImportINI prefixes -  0.000 s
-[2018.09.11-10.43.00:456][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
-[2018.09.11-10.43.00:456][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: ImportINI -  0.000 s
-[2018.09.11-10.43.00:456][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
-[2018.09.11-10.43.00:840][  0]LogFileCache: Scanning file cache for directory 'D:/Dokumente/Github Repos/Survival/Survival/Content/' took 0.01s
-[2018.09.11-10.43.00:840][  0]SourceControl: Source control is disabled
-[2018.09.11-10.43.00:841][  0]Cmd: MAP LOAD FILE="../../../../../Dokumente/Github Repos/Survival/Survival/Content/FirstPersonCPP/Maps/FirstPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
-[2018.09.11-10.43.00:841][  0]LightingResults: New page: Lighting Build
-[2018.09.11-10.43.00:844][  0]MapCheck: New page: Map Check
-[2018.09.11-10.43.00:844][  0]LightingResults: New page: Lighting Build
-[2018.09.11-10.43.01:025][  0]LogAIModule: Creating AISystem for world FirstPersonExampleMap
-[2018.09.11-10.43.01:060][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
-[2018.09.11-10.43.01:079][  0]Cmd: MAP CHECKDEP NOCLEARLOG
-[2018.09.11-10.43.01:116][  0]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 36,857ms to complete.
-[2018.09.11-10.43.01:116][  0]LogFileHelpers: Loading map 'FirstPersonExampleMap' took 0.276
-[2018.09.11-10.43.01:262][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2018.09.11-10.43.01:268][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2018.09.11-10.43.01:274][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2018.09.11-10.43.01:281][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2018.09.11-10.43.01:293][  0]LogCollectionManager: Loaded 0 collections in 0.000641 seconds
-[2018.09.11-10.43.01:358][  0]LogFileCache: Scanning file cache for directory 'D:/Dokumente/Github Repos/Survival/Survival/Saved/Collections/' took 0.01s
-[2018.09.11-10.43.01:358][  0]LogFileCache: Scanning file cache for directory 'D:/Dokumente/Github Repos/Survival/Survival/Content/Developers/Kscha/Collections/' took 0.01s
-[2018.09.11-10.43.01:358][  0]LogFileCache: Scanning file cache for directory 'D:/Dokumente/Github Repos/Survival/Survival/Content/Collections/' took 0.01s
-[2018.09.11-10.43.01:358][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000000 seconds
-[2018.09.11-10.43.01:367][  0]LogContentBrowser: Native class hierarchy populated in 0.0081 seconds. Added 2586 classes and 611 folders.
-[2018.09.11-10.43.01:371][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0003 seconds. Added 0 classes and 0 folders.
-[2018.09.11-10.43.01:396][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0003 seconds. Added 0 classes and 0 folders.
-[2018.09.11-10.43.01:469][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0006 seconds. Added 1 classes and 2 folders.
-[2018.09.11-10.43.01:490][  0]LogSlate: Took 0.000227 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
-[2018.09.11-10.43.01:493][  0]LogSlate: Took 0.000211 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
-[2018.09.11-10.43.01:500][  0]LogSlate: Took 0.000248 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
-[2018.09.11-10.43.01:570][  0]LogRenderer: Reallocating scene render targets to support 1208x576 Format 10 NumSamples 1 (Frame:1).
-[2018.09.11-10.43.01:634][  0]LogSlate: Took 0.000147 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
-[2018.09.11-10.43.01:735][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0003 seconds. Added 0 classes and 0 folders.
-[2018.09.11-10.43.01:735][  0]LogLoad: (Engine Initialization) Total time: 12.85 seconds
-[2018.09.11-10.43.01:736][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
-[2018.09.11-10.43.01:769][  0]LogContentStreaming: Texture pool size now 1000 MB
-[2018.09.11-10.43.01:798][  1]LogAssetRegistry: Asset discovery search completed in 6.9154 seconds
-[2018.09.11-10.43.01:799][  1]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000000 seconds (found 0 objects)
-[2018.09.11-10.43.01:800][  1]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000184 seconds (updated 0 objects)
-[2018.09.11-10.46.52:054][397]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
-[2018.09.11-10.46.53:094][397]LogSlate: FSceneViewport::OnFocusLost() reason 2
-[2018.09.11-10.46.53:449][398]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
-[2018.09.11-10.46.53:587][398]LogSlate: FSceneViewport::OnFocusLost() reason 2
-[2018.09.11-10.47.02:371][351]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (EditorCube8)
-[2018.09.11-10.47.03:523][470]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
-[2018.09.11-10.47.11:901][437]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Floor)
-[2018.09.11-10.47.11:937][437]LogSlate: FSceneViewport::OnFocusLost() reason 2
-[2018.09.11-10.47.12:690][525]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
-[2018.09.11-10.47.13:346][591]LogEditorViewport: Clicking on Actor (LMB): FirstPersonCharacter_C (FirstPersonCharacter2)
-[2018.09.11-10.47.17:936][ 51]LogSlate: FSceneViewport::OnFocusLost() reason 0
-[2018.09.11-10.47.18:019][ 61]LogTemp: Repeating last play command: Selected Viewport
-[2018.09.11-10.47.18:088][ 61]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
-[2018.09.11-10.47.18:102][ 61]LogPlayLevel: PlayLevel: No blueprints needed recompiling
-[2018.09.11-10.47.18:252][ 61]PIE: New page: PIE session: FirstPersonExampleMap (11.09.2018 14:47:18)
-[2018.09.11-10.47.18:253][ 61]LogPlayLevel: Creating play world package: /Game/FirstPersonCPP/Maps/UEDPIE_0_FirstPersonExampleMap
-[2018.09.11-10.47.18:352][ 61]LogPlayLevel: PIE: StaticDuplicateObject took: (0.100226s)
-[2018.09.11-10.47.18:353][ 61]LogAIModule: Creating AISystem for world FirstPersonExampleMap
-[2018.09.11-10.47.18:371][ 61]LogPlayLevel: PIE: World Init took: (0.018273s)
-[2018.09.11-10.47.18:371][ 61]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap to /Game/FirstPersonCPP/Maps/UEDPIE_0_FirstPersonExampleMap.FirstPersonExampleMap (0.118909s)
-[2018.09.11-10.47.18:474][ 61]LogInit: XAudio2 using 'Lautsprecher (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
-[2018.09.11-10.47.18:508][ 61]LogInit: FAudioDevice initialized.
-[2018.09.11-10.47.18:645][ 61]LogLoad: Game class is 'SurvivalGameMode'
-[2018.09.11-10.47.18:816][ 61]LogWorld: Bringing World /Game/FirstPersonCPP/Maps/UEDPIE_0_FirstPersonExampleMap.FirstPersonExampleMap up for play (max tick rate 0) at 2018.09.11-12.47.18
-[2018.09.11-10.47.18:899][ 61]LogWorld: Bringing up level for play took: 0.103043
-[2018.09.11-10.47.19:082][ 61]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0162 seconds. Added 10 classes and 0 folders.
-[2018.09.11-10.47.19:179][ 61]PIE: Play in editor start time for /Game/FirstPersonCPP/Maps/UEDPIE_0_FirstPersonExampleMap 1,552
-[2018.09.11-10.47.19:180][ 61]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
-[2018.09.11-10.47.43:018][758]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
-[2018.09.11-10.47.43:047][758]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2018.09.11-10.47.43:130][758]LogPlayLevel: Display: Shutting down PIE online subsystems
-[2018.09.11-10.47.43:130][758]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
-[2018.09.11-10.47.43:174][758]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2018.09.11-10.47.43:203][759]LogPlayLevel: Display: Destroying online subsystem :Context_3
-[2018.09.11-10.50.12:991][394]LogSlate: FSceneViewport::OnFocusLost() reason 0
-[2018.09.11-10.50.13:192][403]Candidate modules for hot reload:
-[2018.09.11-10.50.13:192][403]  Survival
-[2018.09.11-10.50.13:192][403]Launching UnrealBuildTool... [D:/Unreal Engine/UE_4.20/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Survival,9898 Win64 DebugGame -TargetType=Editor -Project="../../../../../Dokumente/Github Repos/Survival/Survival/Survival.uproject" -canskiplink "D:/Dokumente/Github Repos/Survival/Survival/Survival.uproject" ]
-[2018.09.11-10.50.13:194][403]Warning: Starting HotReload took  0.1s.
-[2018.09.11-10.50.30:920][456]CompilerResultsLog: New page: Compilation - 11.09.2018 14:50:30
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: Creating makefile for hot reloading SurvivalEditor (modules to compile have changed)
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: Compiling game modules for hot reload
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: Using Visual Studio 2017 14.14.26428 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428) and Windows 10.0.16299.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: Parsing headers for SurvivalEditor
-[2018.09.11-10.50.30:959][456]CompilerResultsLog:   Running UnrealHeaderTool "D:\Dokumente\Github Repos\Survival\Survival\Survival.uproject" "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\SurvivalEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: Reflection code generated for SurvivalEditor in 9,4375673 seconds
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: Distributing 4 actions to XGE
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: --------------------Build System Warning---------------------------------------
-[2018.09.11-10.50.30:959][456]CompilerResultsLog: License is invalid:
-[2018.09.11-10.50.30:959][456]CompilerResultsLog:     License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
-[2018.09.11-10.50.30:959][456]CompilerResultsLog:     This build will run in standalone mode.
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: 
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: -------------------------------------------------------------------------------
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: --------------------Project: Default-------------------------------------------
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: SurvivalGameMode.gen.cpp (0:00.64 at +0:00)
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: Error: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival/SurvivalGameMode.h(19) : error C2143: syntax error: missing ';' before '*'
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: Error: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival/SurvivalGameMode.h(19) : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: Error: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival/SurvivalGameMode.h(19) : error C2238: unexpected token(s) preceding ';'
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: 
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: Error executing C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX64\x64\cl.exe (tool returned code: 2)
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: SurvivalGameMode.cpp (0:02.59 at +0:00)
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: Error: d:\dokumente\github repos\survival\survival\source\survival\SurvivalGameMode.h(19) : error C2143: syntax error: missing ';' before '*'
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: Error: d:\dokumente\github repos\survival\survival\source\survival\SurvivalGameMode.h(19) : error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: Error: d:\dokumente\github repos\survival\survival\source\survival\SurvivalGameMode.h(19) : error C2238: unexpected token(s) preceding ';'
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-10.50.30:971][456]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: Error: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\SurvivalGameMode.cpp(21) : error C2065: 'm_itemRegister': undeclared identifier
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: 
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: Error executing C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX64\x64\cl.exe (tool returned code: 2)
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: ---------------------- Done ----------------------
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: 
-[2018.09.11-10.50.30:972][456]CompilerResultsLog:     Rebuild All: 0 succeeded, 1 failed, 0 skipped
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: 
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: 1 build system warning(s):
-[2018.09.11-10.50.30:972][456]CompilerResultsLog:    - License is invalid
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: 
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: ERROR: UBT ERROR: Failed to produce item: D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-9898-Win64-DebugGame.dll
-[2018.09.11-10.50.30:972][456]CompilerResultsLog:        (see ../Programs/UnrealBuildTool/Log.txt for full exception trace)
-[2018.09.11-10.50.30:972][456]CompilerResultsLog: Total build time: 17,43 seconds (XGE executor: 0,00 seconds)
-[2018.09.11-10.50.30:978][456]LogMainFrame: MainFrame: Module compiling took 17.878 seconds
-[2018.09.11-10.50.30:988][456]Warning: HotReload failed, recompile failed
-[2018.09.11-10.50.59:231][504]Candidate modules for hot reload:
-[2018.09.11-10.50.59:232][504]  Survival
-[2018.09.11-10.50.59:232][504]Launching UnrealBuildTool... [D:/Unreal Engine/UE_4.20/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Survival,8676 Win64 DebugGame -TargetType=Editor -Project="../../../../../Dokumente/Github Repos/Survival/Survival/Survival.uproject" -canskiplink "D:/Dokumente/Github Repos/Survival/Survival/Survival.uproject" ]
-[2018.09.11-10.50.59:233][504]Warning: Starting HotReload took  0.1s.
-[2018.09.11-10.51.00:600][661]LogSlate: Window 'Message Log' being destroyed
-[2018.09.11-10.51.00:603][661]LogSlate: Window 'Message Log' being destroyed
-[2018.09.11-10.51.11:572][928]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Wall3)
-[2018.09.11-10.51.11:628][928]LogSlate: FSceneViewport::OnFocusLost() reason 2
-[2018.09.11-10.51.11:634][928]LogEditorViewport: Clicking on Actor (context menu): StaticMeshActor (Wall3)
-[2018.09.11-10.51.11:670][928]LogSlate: FSceneViewport::OnFocusLost() reason 2
-[2018.09.11-10.51.13:425][102]CompilerResultsLog: New page: Compilation - 11.09.2018 14:51:13
-[2018.09.11-10.51.13:426][102]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
-[2018.09.11-10.51.13:426][102]CompilerResultsLog: Compiling game modules for hot reload
-[2018.09.11-10.51.13:426][102]CompilerResultsLog: Parsing headers for SurvivalEditor
-[2018.09.11-10.51.13:426][102]CompilerResultsLog:   Running UnrealHeaderTool "D:\Dokumente\Github Repos\Survival\Survival\Survival.uproject" "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\SurvivalEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-[2018.09.11-10.51.13:426][102]CompilerResultsLog: Reflection code generated for SurvivalEditor in 9,4846369 seconds
-[2018.09.11-10.51.13:426][102]CompilerResultsLog: Distributing 4 actions to XGE
-[2018.09.11-10.51.13:426][102]CompilerResultsLog: --------------------Build System Warning---------------------------------------
-[2018.09.11-10.51.13:426][102]CompilerResultsLog: License is invalid:
-[2018.09.11-10.51.13:427][102]CompilerResultsLog:     License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
-[2018.09.11-10.51.13:427][102]CompilerResultsLog:     This build will run in standalone mode.
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: 
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: -------------------------------------------------------------------------------
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: --------------------Project: Default-------------------------------------------
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: SurvivalGameMode.gen.cpp (0:00.59 at +0:00)
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: SurvivalGameMode.cpp (0:01.20 at +0:00)
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-10.51.13:427][102]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-10.51.13:428][102]CompilerResultsLog: UE4Editor-Survival-8676-Win64-DebugGame.dll (0:00.92 at +0:01)
-[2018.09.11-10.51.13:428][102]CompilerResultsLog:    Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-8676-Win64-DebugGame.suppressed.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-8676-Win64-DebugGame.suppressed.exp
-[2018.09.11-10.51.13:428][102]CompilerResultsLog: UE4Editor-Survival-8676-Win64-DebugGame.lib (0:00.10 at +0:02)
-[2018.09.11-10.51.13:428][102]CompilerResultsLog:    Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-8676-Win64-DebugGame.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-8676-Win64-DebugGame.exp
-[2018.09.11-10.51.13:428][102]CompilerResultsLog: ---------------------- Done ----------------------
-[2018.09.11-10.51.13:428][102]CompilerResultsLog: 
-[2018.09.11-10.51.13:428][102]CompilerResultsLog:     Rebuild All: 1 succeeded, 0 failed, 0 skipped
-[2018.09.11-10.51.13:428][102]CompilerResultsLog: 
-[2018.09.11-10.51.13:428][102]CompilerResultsLog: 1 build system warning(s):
-[2018.09.11-10.51.13:428][102]CompilerResultsLog:    - License is invalid
-[2018.09.11-10.51.13:428][102]CompilerResultsLog: 
-[2018.09.11-10.51.13:428][102]CompilerResultsLog: Total build time: 13,92 seconds (XGE executor: 2,99 seconds)
-[2018.09.11-10.51.13:428][102]LogMainFrame: MainFrame: Module compiling took 14.264 seconds
-[2018.09.11-10.51.13:609][102]LogClass: EItemType HotReload.
-[2018.09.11-10.51.13:610][102]LogClass: ItemProperties HotReload.
-[2018.09.11-10.51.13:633][102]LogContentBrowser: Native class hierarchy updated for 'Survival' in 0.0004 seconds. Added 14 classes and 8 folders.
-[2018.09.11-10.51.13:635][102]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
-[2018.09.11-10.51.14:210][102]LogContentBrowser: Native class hierarchy populated in 0.0090 seconds. Added 2587 classes and 613 folders.
-[2018.09.11-10.51.14:261][102]Display: HotReload took 15.1s.
-[2018.09.11-10.53.18:566][556]LogSlate: Took 0.000150 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
-[2018.09.11-10.53.28:110][583]LogSavePackage: Moving '../../../../../Dokumente/Github Repos/Survival/Survival/Saved/FirstPersonExampleMap_Auto1920F58634BB87547C6E6AC80986A66C6.tmp' to '../../../../../Dokumente/Github Repos/Survival/Survival/Saved/Autosaves/Game/FirstPersonCPP/Maps/FirstPersonExampleMap_Auto1.umap'
-[2018.09.11-10.53.28:164][583]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/FirstPersonCPP/Maps/FirstPersonExampleMap' took 0.582
-[2018.09.11-10.53.28:164][583]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.582
-[2018.09.11-11.21.28:531][663]Candidate modules for hot reload:
-[2018.09.11-11.21.28:531][663]  Survival
-[2018.09.11-11.21.28:531][663]Launching UnrealBuildTool... [D:/Unreal Engine/UE_4.20/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Survival,453 Win64 DebugGame -TargetType=Editor -Project="../../../../../Dokumente/Github Repos/Survival/Survival/Survival.uproject" -canskiplink "D:/Dokumente/Github Repos/Survival/Survival/Survival.uproject" ]
-[2018.09.11-11.21.28:534][663]Warning: Starting HotReload took  0.0s.
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog: New page: Compilation - 11.09.2018 15:21:58
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog: Compiling game modules for hot reload
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog: Parsing headers for SurvivalEditor
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog:   Running UnrealHeaderTool "D:\Dokumente\Github Repos\Survival\Survival\Survival.uproject" "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\SurvivalEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog: Reflection code generated for SurvivalEditor in 10,1094837 seconds
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog: Distributing 21 actions to XGE
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog: --------------------Build System Warning---------------------------------------
-[2018.09.11-11.21.58:055][ 71]CompilerResultsLog: License is invalid:
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog:     License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog:     This build will run in standalone mode.
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: 
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: -------------------------------------------------------------------------------
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: --------------------Project: Default-------------------------------------------
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: Weapon.gen.cpp (0:00.57 at +0:00)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: SurvivalGameMode.gen.cpp (0:00.82 at +0:00)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: RangeWeapon.gen.cpp (0:00.54 at +0:01)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: MeleeWeapon.gen.cpp (0:00.56 at +0:01)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: Knife.gen.cpp (0:00.56 at +0:02)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: Item.gen.cpp (0:00.53 at +0:03)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: Inventory.gen.cpp (0:00.57 at +0:03)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: Helpers.gen.cpp (0:00.56 at +0:04)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: Consumables.gen.cpp (0:00.56 at +0:04)
-[2018.09.11-11.21.58:056][ 71]CompilerResultsLog: Helpers.cpp (0:00.39 at +0:05)
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: Weapon.cpp (0:00.45 at +0:05)
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: RangeWeapon.cpp (0:00.48 at +0:06)
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: MeleeWeapon.cpp (0:00.45 at +0:06)
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: Item.cpp (0:02.10 at +0:07)
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: Consumables.cpp (0:00.54 at +0:09)
-[2018.09.11-11.21.58:057][ 71]CompilerResultsLog: Knife.cpp (0:00.48 at +0:09)
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: SurvivalCharacter.cpp (0:02.06 at +0:10)
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: Inventory.cpp (0:00.65 at +0:12)
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-11.21.58:058][ 71]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: SurvivalGameMode.cpp (0:03.07 at +0:12)
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-11.21.58:059][ 71]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog: UE4Editor-Survival-453-Win64-DebugGame.dll (0:01.00 at +0:16)
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog:    Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-453-Win64-DebugGame.suppressed.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-453-Win64-DebugGame.suppressed.exp
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog: UE4Editor-Survival-453-Win64-DebugGame.lib (0:00.20 at +0:17)
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog:    Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-453-Win64-DebugGame.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-453-Win64-DebugGame.exp
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog: ---------------------- Done ----------------------
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog: 
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog:     Rebuild All: 1 succeeded, 0 failed, 0 skipped
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog: 
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog: 1 build system warning(s):
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog:    - License is invalid
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog: 
-[2018.09.11-11.21.58:060][ 71]CompilerResultsLog: Total build time: 29,26 seconds (XGE executor: 17,51 seconds)
-[2018.09.11-11.21.58:060][ 71]LogMainFrame: MainFrame: Module compiling took 29.554 seconds
-[2018.09.11-11.21.58:127][ 71]LogClass: EItemType HotReload.
-[2018.09.11-11.21.58:127][ 71]LogClass: ItemProperties HotReload.
-[2018.09.11-11.21.58:134][ 71]LogContentBrowser: Native class hierarchy updated for 'Survival' in 0.0004 seconds. Added 14 classes and 8 folders.
-[2018.09.11-11.21.58:136][ 71]Display: HotReload successful (5 functions remapped  1 scriptstructs remapped)
-[2018.09.11-11.21.58:187][ 71]LogContentBrowser: Native class hierarchy populated in 0.0087 seconds. Added 2587 classes and 613 folders.
-[2018.09.11-11.21.58:187][ 71]Display: HotReload took 29.7s.
-[2018.09.11-12.02.21:938][510]Candidate modules for hot reload:
-[2018.09.11-12.02.21:938][510]  Survival
-[2018.09.11-12.02.21:938][510]Launching UnrealBuildTool... [D:/Unreal Engine/UE_4.20/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Survival,9194 Win64 DebugGame -TargetType=Editor -Project="../../../../../Dokumente/Github Repos/Survival/Survival/Survival.uproject" -canskiplink "D:/Dokumente/Github Repos/Survival/Survival/Survival.uproject" ]
-[2018.09.11-12.02.21:940][510]Warning: Starting HotReload took  0.0s.
-[2018.09.11-12.02.58:280][231]CompilerResultsLog: New page: Compilation - 11.09.2018 16:02:58
-[2018.09.11-12.02.58:281][231]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
-[2018.09.11-12.02.58:281][231]CompilerResultsLog: Compiling game modules for hot reload
-[2018.09.11-12.02.58:281][231]CompilerResultsLog: Parsing headers for SurvivalEditor
-[2018.09.11-12.02.58:282][231]CompilerResultsLog:   Running UnrealHeaderTool "D:\Dokumente\Github Repos\Survival\Survival\Survival.uproject" "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\SurvivalEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-[2018.09.11-12.02.58:282][231]CompilerResultsLog: Reflection code generated for SurvivalEditor in 9,9627583 seconds
-[2018.09.11-12.02.58:282][231]CompilerResultsLog: Distributing 23 actions to XGE
-[2018.09.11-12.02.58:282][231]CompilerResultsLog: --------------------Build System Warning---------------------------------------
-[2018.09.11-12.02.58:282][231]CompilerResultsLog: License is invalid:
-[2018.09.11-12.02.58:282][231]CompilerResultsLog:     License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
-[2018.09.11-12.02.58:282][231]CompilerResultsLog:     This build will run in standalone mode.
-[2018.09.11-12.02.58:282][231]CompilerResultsLog: 
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: -------------------------------------------------------------------------------
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: --------------------Project: Default-------------------------------------------
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Weapon.gen.cpp (0:00.76 at +0:00)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Survival.init.gen.cpp (0:00.48 at +0:00)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: RangeWeapon.gen.cpp (0:00.68 at +0:01)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: MeleeWeapon.gen.cpp (0:00.57 at +0:01)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Knife.gen.cpp (0:00.68 at +0:02)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: ItemRegister.gen.cpp (0:01.06 at +0:03)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Item.gen.cpp (0:00.68 at +0:04)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Inventory.gen.cpp (0:00.85 at +0:04)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Helpers.gen.cpp (0:00.81 at +0:05)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Consumables.gen.cpp (0:00.75 at +0:06)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Helpers.cpp (0:00.45 at +0:07)
-[2018.09.11-12.02.58:283][231]CompilerResultsLog: Weapon.cpp (0:00.59 at +0:07)
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: RangeWeapon.cpp (0:00.54 at +0:08)
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: MeleeWeapon.cpp (0:00.45 at +0:09)
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: Item.cpp (0:02.87 at +0:09)
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: Consumables.cpp (0:00.51 at +0:12)
-[2018.09.11-12.02.58:284][231]CompilerResultsLog: ItemRegister.cpp (0:04.20 at +0:12)
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: Error: d:\dokumente\github repos\survival\survival\source\survival\items\globals\itemregister.cpp(50)  : error C4715: 'UItemRegister::GetItem': not all control paths return a value
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: Error: d:\dokumente\github repos\survival\survival\source\survival\items\globals\itemregister.cpp(37)  : error C4715: 'UItemRegister::RegisterItem': not all control paths return a value
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: 
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: Error executing C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX64\x64\cl.exe (tool returned code: 2)
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: Knife.cpp (0:00.59 at +0:17)
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: SurvivalCharacter.cpp (0:03.78 at +0:17)
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.02.58:285][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: Inventory.cpp (0:01.54 at +0:21)
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: SurvivalGameMode.cpp (0:01.07 at +0:22)
-[2018.09.11-12.02.58:286][231]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: ---------------------- Done ----------------------
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: 
-[2018.09.11-12.02.58:287][231]CompilerResultsLog:     Rebuild All: 0 succeeded, 1 failed, 0 skipped
-[2018.09.11-12.02.58:287][231]CompilerResultsLog: 
-[2018.09.11-12.02.58:288][231]CompilerResultsLog: 1 build system warning(s):
-[2018.09.11-12.02.58:288][231]CompilerResultsLog:    - License is invalid
-[2018.09.11-12.02.58:288][231]CompilerResultsLog: 
-[2018.09.11-12.02.58:288][231]CompilerResultsLog: ERROR: UBT ERROR: Failed to produce item: D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-9194-Win64-DebugGame.dll
-[2018.09.11-12.02.58:288][231]CompilerResultsLog:        (see ../Programs/UnrealBuildTool/Log.txt for full exception trace)
-[2018.09.11-12.02.58:288][231]CompilerResultsLog: Total build time: 35,62 seconds (XGE executor: 0,00 seconds)
-[2018.09.11-12.02.58:288][231]LogMainFrame: MainFrame: Module compiling took 36.376 seconds
-[2018.09.11-12.02.58:289][231]Warning: HotReload failed, recompile failed
-[2018.09.11-12.04.06:237][698]LogSlate: Window 'Message Log' being destroyed
-[2018.09.11-12.04.06:242][698]LogSlate: Window 'Message Log' being destroyed
-[2018.09.11-12.04.07:083][797]LogSlate: FSceneViewport::OnFocusLost() reason 0
-[2018.09.11-12.04.07:193][807]Candidate modules for hot reload:
-[2018.09.11-12.04.07:193][807]  Survival
-[2018.09.11-12.04.07:193][807]Launching UnrealBuildTool... [D:/Unreal Engine/UE_4.20/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Survival,6225 Win64 DebugGame -TargetType=Editor -Project="../../../../../Dokumente/Github Repos/Survival/Survival/Survival.uproject" -canskiplink "D:/Dokumente/Github Repos/Survival/Survival/Survival.uproject" ]
-[2018.09.11-12.04.07:194][807]Warning: Starting HotReload took  0.0s.
-[2018.09.11-12.04.10:616][864]CompilerResultsLog: New page: Compilation - 11.09.2018 16:04:10
-[2018.09.11-12.04.10:617][864]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
-[2018.09.11-12.04.10:617][864]CompilerResultsLog: Compiling game modules for hot reload
-[2018.09.11-12.04.10:617][864]CompilerResultsLog: Distributing 3 actions to XGE
-[2018.09.11-12.04.10:617][864]CompilerResultsLog: --------------------Build System Warning---------------------------------------
-[2018.09.11-12.04.10:618][864]CompilerResultsLog: License is invalid:
-[2018.09.11-12.04.10:618][864]CompilerResultsLog:     License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
-[2018.09.11-12.04.10:618][864]CompilerResultsLog:     This build will run in standalone mode.
-[2018.09.11-12.04.10:618][864]CompilerResultsLog: 
-[2018.09.11-12.04.10:619][864]CompilerResultsLog: -------------------------------------------------------------------------------
-[2018.09.11-12.04.10:619][864]CompilerResultsLog: --------------------Project: Default-------------------------------------------
-[2018.09.11-12.04.10:619][864]CompilerResultsLog: ItemRegister.cpp (0:00.79 at +0:00)
-[2018.09.11-12.04.10:619][864]CompilerResultsLog: UE4Editor-Survival-6225-Win64-DebugGame.dll (0:00.57 at +0:00)
-[2018.09.11-12.04.10:619][864]CompilerResultsLog:    Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-6225-Win64-DebugGame.suppressed.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-6225-Win64-DebugGame.suppressed.exp
-[2018.09.11-12.04.10:619][864]CompilerResultsLog: Error: Item.cpp.obj : error LNK2001: unresolved external symbol "private: static unsigned int AItem::s_itemID" (?s_itemID@AItem@@0IA)
-[2018.09.11-12.04.10:620][864]CompilerResultsLog: Error: D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-6225-Win64-DebugGame.dll : fatal error LNK1120: 1 unresolved externals
-[2018.09.11-12.04.10:620][864]CompilerResultsLog: 
-[2018.09.11-12.04.10:620][864]CompilerResultsLog: Error executing C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX64\x64\link.exe (tool returned code: 1120)
-[2018.09.11-12.04.10:620][864]CompilerResultsLog: UE4Editor-Survival-6225-Win64-DebugGame.lib (0:00.10 at +0:01)
-[2018.09.11-12.04.10:620][864]CompilerResultsLog:    Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-6225-Win64-DebugGame.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-6225-Win64-DebugGame.exp
-[2018.09.11-12.04.10:620][864]CompilerResultsLog: ---------------------- Done ----------------------
-[2018.09.11-12.04.10:620][864]CompilerResultsLog: 
-[2018.09.11-12.04.10:621][864]CompilerResultsLog:     Rebuild All: 0 succeeded, 1 failed, 0 skipped
-[2018.09.11-12.04.10:621][864]CompilerResultsLog: 
-[2018.09.11-12.04.10:621][864]CompilerResultsLog: 1 build system warning(s):
-[2018.09.11-12.04.10:621][864]CompilerResultsLog:    - License is invalid
-[2018.09.11-12.04.10:621][864]CompilerResultsLog: 
-[2018.09.11-12.04.10:621][864]CompilerResultsLog: ERROR: UBT ERROR: Failed to produce item: D:\Dokumente\Github Repos\Survival\Survival\Binaries\Win64\UE4Editor-Survival-6225-Win64-DebugGame.dll
-[2018.09.11-12.04.10:622][864]CompilerResultsLog:        (see ../Programs/UnrealBuildTool/Log.txt for full exception trace)
-[2018.09.11-12.04.10:622][864]CompilerResultsLog: Total build time: 2,95 seconds (XGE executor: 0,00 seconds)
-[2018.09.11-12.04.10:622][864]LogMainFrame: MainFrame: Module compiling took 3.449 seconds
-[2018.09.11-12.04.10:622][864]Warning: HotReload failed, recompile failed
-[2018.09.11-12.04.42:165][429]Candidate modules for hot reload:
-[2018.09.11-12.04.42:165][429]  Survival
-[2018.09.11-12.04.42:165][429]Launching UnrealBuildTool... [D:/Unreal Engine/UE_4.20/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Survival,4713 Win64 DebugGame -TargetType=Editor -Project="../../../../../Dokumente/Github Repos/Survival/Survival/Survival.uproject" -canskiplink "D:/Dokumente/Github Repos/Survival/Survival/Survival.uproject" ]
-[2018.09.11-12.04.42:167][429]Warning: Starting HotReload took  0.0s.
-[2018.09.11-12.05.08:473][966]CompilerResultsLog: New page: Compilation - 11.09.2018 16:05:08
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: Compiling game modules for hot reload
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: Parsing headers for SurvivalEditor
-[2018.09.11-12.05.08:482][966]CompilerResultsLog:   Running UnrealHeaderTool "D:\Dokumente\Github Repos\Survival\Survival\Survival.uproject" "D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\SurvivalEditor\DebugGame\SurvivalEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: Reflection code generated for SurvivalEditor in 7,8591541 seconds
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: Distributing 18 actions to XGE
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: --------------------Build System Warning---------------------------------------
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: License is invalid:
-[2018.09.11-12.05.08:482][966]CompilerResultsLog:     License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
-[2018.09.11-12.05.08:482][966]CompilerResultsLog:     This build will run in standalone mode.
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: 
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: -------------------------------------------------------------------------------
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: --------------------Project: Default-------------------------------------------
-[2018.09.11-12.05.08:482][966]CompilerResultsLog: Weapon.gen.cpp (0:00.59 at +0:00)
-[2018.09.11-12.05.08:483][966]CompilerResultsLog: RangeWeapon.gen.cpp (0:00.50 at +0:00)
-[2018.09.11-12.05.08:483][966]CompilerResultsLog: MeleeWeapon.gen.cpp (0:00.54 at +0:01)
-[2018.09.11-12.05.08:483][966]CompilerResultsLog: Knife.gen.cpp (0:00.57 at +0:01)
-[2018.09.11-12.05.08:483][966]CompilerResultsLog: Item.gen.cpp (0:00.59 at +0:02)
-[2018.09.11-12.05.08:483][966]CompilerResultsLog: Inventory.gen.cpp (0:00.78 at +0:02)
-[2018.09.11-12.05.08:483][966]CompilerResultsLog: Consumables.gen.cpp (0:00.46 at +0:03)
-[2018.09.11-12.05.08:483][966]CompilerResultsLog: Weapon.cpp (0:00.56 at +0:04)
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: RangeWeapon.cpp (0:00.46 at +0:04)
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: MeleeWeapon.cpp (0:00.48 at +0:05)
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: Item.cpp (0:02.15 at +0:05)
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: Consumables.cpp (0:00.57 at +0:07)
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: ItemRegister.cpp (0:01.04 at +0:08)
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: Knife.cpp (0:00.46 at +0:09)
-[2018.09.11-12.05.08:484][966]CompilerResultsLog: SurvivalCharacter.cpp (0:03.54 at +0:09)
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: d:\dokumente\github repos\survival\survival\source\survival\character\SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: Inventory.cpp (0:01.34 at +0:13)
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(136): warning C4263: 'void ASurvivalCharacter::Crouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::Crouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(719): note: see declaration of 'ACharacter::Crouch'
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(137): warning C4263: 'void ASurvivalCharacter::UnCrouch(void)': member function does not override any base class virtual member function
-[2018.09.11-12.05.08:485][966]CompilerResultsLog: D:\Dokumente\Github Repos\Survival\Survival\Source\Survival\Character/SurvivalCharacter.h(167): warning C4264: 'void ACharacter::UnCrouch(bool)': no override available for virtual member function from base 'ACharacter'; function is hidden
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(728): note: see declaration of 'ACharacter::UnCrouch'
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: D:\Unreal Engine\UE_4.20\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h(210): note: see declaration of 'ACharacter'
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: UE4Editor-Survival-4713-Win64-DebugGame.dll (0:01.67 at +0:14)
-[2018.09.11-12.05.08:486][966]CompilerResultsLog:    Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-4713-Win64-DebugGame.suppressed.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-4713-Win64-DebugGame.suppressed.exp
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: UE4Editor-Survival-4713-Win64-DebugGame.lib (0:00.14 at +0:16)
-[2018.09.11-12.05.08:486][966]CompilerResultsLog:    Creating library D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-4713-Win64-DebugGame.lib and object D:\Dokumente\Github Repos\Survival\Survival\Intermediate\Build\Win64\UE4Editor\DebugGame\Survival\UE4Editor-Survival-4713-Win64-DebugGame.exp
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: ---------------------- Done ----------------------
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: 
-[2018.09.11-12.05.08:486][966]CompilerResultsLog:     Rebuild All: 1 succeeded, 0 failed, 0 skipped
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: 
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: 1 build system warning(s):
-[2018.09.11-12.05.08:486][966]CompilerResultsLog:    - License is invalid
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: 
-[2018.09.11-12.05.08:486][966]CompilerResultsLog: Total build time: 26,04 seconds (XGE executor: 16,80 seconds)
-[2018.09.11-12.05.08:486][966]LogMainFrame: MainFrame: Module compiling took 26.341 seconds
-[2018.09.11-12.05.08:571][966]LogClass: Could not find existing class Consumables in package /Script/Survival for HotReload, assuming new class
-[2018.09.11-12.05.08:572][966]LogClass: Could not find existing class Item in package /Script/Survival for HotReload, assuming new class
-[2018.09.11-12.05.08:574][966]LogClass: Could not find existing class ItemRegister in package /Script/Survival for HotReload, assuming new class
-[2018.09.11-12.05.08:574][966]LogClass: Could not find existing class Knife in package /Script/Survival for HotReload, assuming new class
-[2018.09.11-12.05.08:574][966]LogClass: Could not find existing class MeleeWeapon in package /Script/Survival for HotReload, assuming new class
-[2018.09.11-12.05.08:575][966]LogClass: Could not find existing class Weapon in package /Script/Survival for HotReload, assuming new class
-[2018.09.11-12.05.08:575][966]LogClass: Function Attack is new.
-[2018.09.11-12.05.08:576][966]LogClass: Could not find existing class RangeWeapon in package /Script/Survival for HotReload, assuming new class
-[2018.09.11-12.05.08:614][966]LogHotReload: Re-instancing Consumables after hot-reload.
-[2018.09.11-12.05.08:709][966]LogHotReload: Re-instancing Item after hot-reload.
-[2018.09.11-12.05.08:762][966]LogHotReload: Re-instancing ItemRegister after hot-reload.
-[2018.09.11-12.05.08:811][966]LogHotReload: Re-instancing Knife after hot-reload.
-[2018.09.11-12.05.08:861][966]LogHotReload: Re-instancing MeleeWeapon after hot-reload.
-[2018.09.11-12.05.08:910][966]LogHotReload: Re-instancing RangeWeapon after hot-reload.
-[2018.09.11-12.05.08:959][966]LogHotReload: Re-instancing Weapon after hot-reload.
-[2018.09.11-12.05.09:007][966]LogContentBrowser: Native class hierarchy updated for 'Survival' in 0.0010 seconds. Added 14 classes and 8 folders.
-[2018.09.11-12.05.09:010][966]Display: HotReload successful (4 functions remapped  1 scriptstructs remapped)
-[2018.09.11-12.05.09:067][966]LogContentBrowser: Native class hierarchy populated in 0.0109 seconds. Added 2587 classes and 613 folders.
-[2018.09.11-12.05.09:067][966]Display: HotReload took 26.9s.
-[2018.09.11-12.05.12:988][417]LogSlate: Window 'Message Log' being destroyed
-[2018.09.11-12.05.12:991][417]LogSlate: Window 'Message Log' being destroyed
-[2018.09.11-12.05.24:463][889]LogSlate: FSceneViewport::OnFocusLost() reason 2
-[2018.09.11-12.05.24:636][889]LogSavePackage: Moving '../../../../../Dokumente/Github Repos/Survival/Survival/Saved/FirstPersonExampleMap71DBB5D040D4D2E068584EB020BBF167.tmp' to '../../../../../Dokumente/Github Repos/Survival/Survival/Content/FirstPersonCPP/Maps/FirstPersonExampleMap.umap'
-[2018.09.11-12.05.25:973][889]LogSavePackage: Moving '../../../../../Dokumente/Github Repos/Survival/Survival/Saved/FirstPersonExampleMap_BuiltData41E2E27544394B79B9069D8CBC7F2F97.tmp' to '../../../../../Dokumente/Github Repos/Survival/Survival/Content/FirstPersonCPP/Maps/FirstPersonExampleMap_BuiltData.uasset'
-[2018.09.11-12.05.28:015][107]LogSlate: FSceneViewport::OnFocusLost() reason 0
-[2018.09.11-12.05.28:154][113]LogSlate: Window 'Survival [DebugGame] - Unreal Editor' being destroyed
-[2018.09.11-12.05.28:156][113]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
-[2018.09.11-12.05.28:388][114]Cmd: QUIT_EDITOR
-[2018.09.11-12.05.29:072][114]LogExit: Preparing to exit.
-[2018.09.11-12.05.30:334][114]LogExit: Editor shut down
-[2018.09.11-12.05.30:336][114]LogExit: Transaction tracking system shut down
-[2018.09.11-12.05.30:958][114]LogExit: Object subsystem successfully closed.
-[2018.09.11-12.05.31:010][114]LogShaderCompilers: Display: Shaders left to compile 0
-[2018.09.11-12.05.31:018][114]LogD3D11RHI: Shutdown
-[2018.09.11-12.05.31:019][114]LogD3D11RHI: CleanupD3DDevice
-[2018.09.11-12.05.31:024][114]LogD3D11RHI: ~FD3D11DynamicRHI
-[2018.09.11-12.05.31:035][114]LogModuleManager: Shutting down and abandoning module Survival (619)
-[2018.09.11-12.05.31:035][114]LogModuleManager: Shutting down and abandoning module MovieSceneCapture (616)
-[2018.09.11-12.05.31:035][114]LogModuleManager: Shutting down and abandoning module Voice (614)
-[2018.09.11-12.05.31:051][114]LogModuleManager: Shutting down and abandoning module HierarchicalLODOutliner (612)
-[2018.09.11-12.05.31:051][114]LogModuleManager: Shutting down and abandoning module SceneOutliner (610)
-[2018.09.11-12.05.31:051][114]LogModuleManager: Shutting down and abandoning module AddContentDialog (608)
-[2018.09.11-12.05.31:077][114]LogModuleManager: Shutting down and abandoning module WidgetCarousel (607)
-[2018.09.11-12.05.31:077][114]LogModuleManager: Shutting down and abandoning module EditorWidgets (604)
-[2018.09.11-12.05.31:077][114]LogModuleManager: Shutting down and abandoning module CollectionManager (602)
-[2018.09.11-12.05.31:078][114]LogModuleManager: Shutting down and abandoning module StatsViewer (600)
-[2018.09.11-12.05.31:078][114]LogModuleManager: Shutting down and abandoning module FoliageEdit (598)
-[2018.09.11-12.05.31:078][114]LogModuleManager: Shutting down and abandoning module LandscapeEditor (596)
-[2018.09.11-12.05.31:079][114]LogModuleManager: Shutting down and abandoning module MeshPaintMode (594)
-[2018.09.11-12.05.31:079][114]LogModuleManager: Shutting down and abandoning module SceneDepthPickerMode (592)
-[2018.09.11-12.05.31:079][114]LogModuleManager: Shutting down and abandoning module ActorPickerMode (590)
-[2018.09.11-12.05.31:079][114]LogModuleManager: Shutting down and abandoning module GeometryMode (588)
-[2018.09.11-12.05.31:079][114]LogModuleManager: Shutting down and abandoning module TextureAlignMode (586)
-[2018.09.11-12.05.31:079][114]LogModuleManager: Shutting down and abandoning module BspMode (584)
-[2018.09.11-12.05.31:079][114]LogModuleManager: Shutting down and abandoning module PIEPreviewDeviceProfileSelector (582)
-[2018.09.11-12.05.31:079][114]LogModuleManager: Shutting down and abandoning module SequenceRecorderSections (580)
-[2018.09.11-12.05.31:080][114]LogModuleManager: Shutting down and abandoning module AutomationWorker (578)
-[2018.09.11-12.05.31:080][114]LogModuleManager: Shutting down and abandoning module AudioCaptureEditor (576)
-[2018.09.11-12.05.31:080][114]LogModuleManager: Shutting down and abandoning module SequenceRecorder (575)
-[2018.09.11-12.05.31:080][114]LogModuleManager: Shutting down and abandoning module MatineeToLevelSequence (572)
-[2018.09.11-12.05.31:080][114]LogModuleManager: Shutting down and abandoning module LevelSequenceEditor (570)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module PlacementMode (569)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module MaterialEditor (568)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (564)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module WmfMediaEditor (562)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (560)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module OpenExrWrapper (558)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module ImgMediaFactory (556)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module ImgMediaEditor (554)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (552)
-[2018.09.11-12.05.31:081][114]LogModuleManager: Shutting down and abandoning module AvfMediaEditor (550)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module AndroidMediaFactory (548)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module AndroidMediaEditor (546)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module MagicLeapCameraPreviewFactory (544)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module MagicLeapMediaFactory (542)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module MagicLeapMediaEditor (540)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module CharacterAI (538)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module SmartSnapping (536)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module SessionServices (534)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module ViewportSnapping (532)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module ViewportInteraction (530)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module ClothPainter (528)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module SkeletalMeshEditor (527)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module LogVisualizer (524)
-[2018.09.11-12.05.31:082][114]LogModuleManager: Shutting down and abandoning module IntroTutorials (522)
-[2018.09.11-12.05.31:083][114]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (521)
-[2018.09.11-12.05.31:083][114]LogModuleManager: Shutting down and abandoning module LuminPlatformEditor (518)
-[2018.09.11-12.05.31:083][114]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (516)
-[2018.09.11-12.05.31:083][114]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (514)
-[2018.09.11-12.05.31:083][114]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (512)
-[2018.09.11-12.05.31:083][114]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (511)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module WindowsPlatformEditor (508)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module LuminRuntimeSettings (506)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (504)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (502)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module InputBindingEditor (500)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module MergeActors (498)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (496)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module LocalizationService (495)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module HardwareTargeting (492)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (490)
-[2018.09.11-12.05.31:785][114]LogModuleManager: Shutting down and abandoning module UndoHistory (488)
-[2018.09.11-12.05.31:786][114]LogModuleManager: Shutting down and abandoning module XmlParser (486)
-[2018.09.11-12.05.31:786][114]LogModuleManager: Shutting down and abandoning module Blutility (484)
-[2018.09.11-12.05.31:786][114]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (482)
-[2018.09.11-12.05.31:786][114]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (481)
-[2018.09.11-12.05.31:786][114]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (478)
-[2018.09.11-12.05.31:786][114]LogModuleManager: Shutting down and abandoning module SettingsEditor (476)
-[2018.09.11-12.05.31:786][114]LogModuleManager: Shutting down and abandoning module ProjectLauncher (474)
-[2018.09.11-12.05.31:787][114]LogModuleManager: Shutting down and abandoning module SessionFrontend (472)
-[2018.09.11-12.05.31:787][114]LogModuleManager: Shutting down and abandoning module ProfilerClient (470)
-[2018.09.11-12.05.31:787][114]LogModuleManager: Shutting down and abandoning module DeviceManager (468)
-[2018.09.11-12.05.31:787][114]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (467)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module AutomationController (464)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module AutomationWindow (462)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module Layers (460)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (458)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module DetailCustomizations (456)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module PackagesDialog (454)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module Persona (452)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module AdvancedPreviewScene (451)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module AnimGraph (449)
-[2018.09.11-12.05.31:842][114]LogModuleManager: Shutting down and abandoning module Kismet (446)
-[2018.09.11-12.05.31:843][114]LogModuleManager: Shutting down and abandoning module GraphEditor (444)
-[2018.09.11-12.05.31:843][114]LogModuleManager: Shutting down and abandoning module ClassViewer (442)
-[2018.09.11-12.05.31:843][114]LogModuleManager: Shutting down and abandoning module Toolbox (440)
-[2018.09.11-12.05.31:843][114]LogModuleManager: Shutting down and abandoning module DesktopPlatform (439)
-[2018.09.11-12.05.31:843][114]LogModuleManager: Shutting down and abandoning module ModuleUI (436)
-[2018.09.11-12.05.31:843][114]LogModuleManager: Shutting down and abandoning module MovieSceneTools (434)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module OutputLog (432)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module GammaUI (430)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module Documentation (428)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module MovieSceneTracks (426)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module MovieScene (424)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (422)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module LauncherPlatform (420)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module AnalyticsET (418)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module PortalServices (416)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module PortalRpc (414)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module MessagingRpc (412)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module AIModule (410)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module GameplayDebugger (409)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module AITestSuite (407)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module NavigationSystem (405)
-[2018.09.11-12.05.31:844][114]LogModuleManager: Shutting down and abandoning module ProfilerService (402)
-[2018.09.11-12.05.31:968][114]LogModuleManager: Shutting down and abandoning module TaskGraph (400)
-[2018.09.11-12.05.31:968][114]LogModuleManager: Shutting down and abandoning module SteamVRController (398)
-[2018.09.11-12.05.31:968][114]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponentEditor (396)
-[2018.09.11-12.05.31:968][114]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (394)
-[2018.09.11-12.05.31:968][114]LogModuleManager: Shutting down and abandoning module OculusInput (392)
-[2018.09.11-12.05.31:968][114]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (390)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module EditableMesh (388)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (386)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module CableComponent (384)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module AudioCapture (382)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (380)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module AndroidPermission (378)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module NUTUnrealEngine4 (376)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module NetcodeUnitTest (374)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module MediaCompositingEditor (372)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module MediaCompositing (370)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module LinearTimecode (368)
-[2018.09.11-12.05.31:969][114]LogModuleManager: Shutting down and abandoning module ImgMedia (366)
-[2018.09.11-12.05.31:979][114]LogModuleManager: Shutting down and abandoning module HTML5Networking (364)
-[2018.09.11-12.05.31:979][114]LogModuleManager: Shutting down and abandoning module GeometryCacheTracks (362)
-[2018.09.11-12.05.31:979][114]LogModuleManager: Shutting down and abandoning module GeometryCacheSequencer (360)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module BackChannel (358)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module AppleVision (356)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module AppleImageUtils (354)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module AlembicImporter (352)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module AlembicLibrary (351)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module GeometryCache (350)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module GeometryCacheEd (349)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module DatasmithContentEditor (344)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module DatasmithContent (342)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (340)
-[2018.09.11-12.05.31:980][114]LogModuleManager: Shutting down and abandoning module PluginBrowser (338)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module MobileLauncherProfileWizard (336)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module PolygonModeling (334)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module MeshEditor (332)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module CryptoKeysOpenSSL (330)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module CryptoKeys (328)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (326)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module VisualStudioCodeSourceCodeAccess (324)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module UObjectPlugin (322)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (320)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (318)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module GitSourceControl (316)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module SourceControl (315)
-[2018.09.11-12.05.31:981][114]LogModuleManager: Shutting down and abandoning module CLionSourceCodeAccess (312)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (310)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (308)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (306)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module Paper2DEditor (304)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module MeshPaint (303)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module RuntimePhysXCooking (298)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module PhysXVehiclesEditor (296)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module PhysXVehicles (294)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module OculusEditor (292)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (290)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module ImmediatePhysicsEditor (288)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module ImmediatePhysics (286)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module ActorSequence (284)
-[2018.09.11-12.05.31:982][114]LogModuleManager: Shutting down and abandoning module UdpMessaging (282)
-[2018.09.11-12.05.32:083][114]LogModuleManager: Shutting down and abandoning module TcpMessaging (280)
-[2018.09.11-12.05.32:184][114]LogModuleManager: Shutting down and abandoning module MagicLeapAudio (278)
-[2018.09.11-12.05.32:184][114]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (276)
-[2018.09.11-12.05.32:184][114]LogModuleManager: Shutting down and abandoning module FacialAnimationEditor (274)
-[2018.09.11-12.05.32:184][114]LogModuleManager: Shutting down and abandoning module FacialAnimation (272)
-[2018.09.11-12.05.32:184][114]LogModuleManager: Shutting down and abandoning module DataValidation (270)
-[2018.09.11-12.05.32:184][114]LogModuleManager: Shutting down and abandoning module AssetManagerEditor (268)
-[2018.09.11-12.05.32:184][114]LogModuleManager: Shutting down and abandoning module LevelEditor (267)
-[2018.09.11-12.05.32:186][114]LogModuleManager: Shutting down and abandoning module PixelInspectorModule (266)
-[2018.09.11-12.05.32:186][114]LogModuleManager: Shutting down and abandoning module CommonMenuExtensions (264)
-[2018.09.11-12.05.32:186][114]LogModuleManager: Shutting down and abandoning module MainFrame (262)
-[2018.09.11-12.05.32:186][114]LogModuleManager: Shutting down and abandoning module HotReload (261)
-[2018.09.11-12.05.32:187][114]LogModuleManager: Shutting down and abandoning module ContentBrowser (257)
-[2018.09.11-12.05.32:188][114]LogModuleManager: Shutting down and abandoning module TreeMap (255)
-[2018.09.11-12.05.32:188][114]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (252)
-[2018.09.11-12.05.32:188][114]LogModuleManager: Shutting down and abandoning module AISupportModule (250)
-[2018.09.11-12.05.32:188][114]LogModuleManager: Shutting down and abandoning module Paper2D (248)
-[2018.09.11-12.05.32:188][114]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (246)
-[2018.09.11-12.05.32:188][114]LogModuleManager: Shutting down and abandoning module WmfMedia (244)
-[2018.09.11-12.05.32:191][114]LogModuleManager: Shutting down and abandoning module Media (243)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module PacketHandler (240)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module ClothingSystemEditor (238)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module ClothingSystemRuntime (236)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module MediaAssets (234)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module Overlay (232)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module OverlayEditor (231)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module VREditor (228)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module StringTableEditor (226)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (224)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (222)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module FunctionalTesting (220)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (218)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (217)
-[2018.09.11-12.05.32:198][114]LogModuleManager: Shutting down and abandoning module UMG (214)
-[2018.09.11-12.05.32:199][114]LogModuleManager: Shutting down and abandoning module UMGEditor (213)
-[2018.09.11-12.05.32:199][114]LogModuleManager: Shutting down and abandoning module Sequencer (212)
-[2018.09.11-12.05.32:199][114]LogModuleManager: Shutting down and abandoning module MessageLog (209)
-[2018.09.11-12.05.32:199][114]LogModuleManager: Shutting down and abandoning module SlateReflector (204)
-[2018.09.11-12.05.32:199][114]LogModuleManager: Shutting down and abandoning module Slate (202)
-[2018.09.11-12.05.32:200][114]LogModuleManager: Shutting down and abandoning module EditorStyle (200)
-[2018.09.11-12.05.32:203][114]LogModuleManager: Shutting down and abandoning module MRMesh (198)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (196)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (194)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module XAudio2 (192)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module Networking (190)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module Core (188)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module LevelSequence (186)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module KismetCompiler (184)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module MeshUtilities (182)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module MeshMergeUtilities (181)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module MeshReductionInterface (180)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module SimplygonSwarm (179)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module ProxyLODMeshReduction (177)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module SimplygonMeshReduction (175)
-[2018.09.11-12.05.32:204][114]LogModuleManager: Shutting down and abandoning module QuadricMeshReduction (173)
-[2018.09.11-12.05.32:205][114]LogModuleManager: Shutting down and abandoning module MaterialBaking (169)
-[2018.09.11-12.05.32:205][114]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (165)
-[2018.09.11-12.05.32:205][114]LogModuleManager: Shutting down and abandoning module DerivedDataCache (162)
-[2018.09.11-12.05.32:221][114]LogDerivedDataCache: Shutdown
-[2018.09.11-12.05.32:221][114]LogModuleManager: Shutting down and abandoning module XGEController (160)
-[2018.09.11-12.05.32:222][114]LogXGEController: Cleaning working directory: C:/Users/Kscha/AppData/Local/Temp/UnrealXGEWorkingDir/
-[2018.09.11-12.05.32:222][114]LogModuleManager: Shutting down and abandoning module TargetPlatform (158)
-[2018.09.11-12.05.32:222][114]LogModuleManager: Shutting down and abandoning module VulkanShaderFormat (157)
-[2018.09.11-12.05.32:222][114]LogModuleManager: Shutting down and abandoning module ShaderFormatVectorVM (155)
-[2018.09.11-12.05.32:222][114]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (153)
-[2018.09.11-12.05.32:222][114]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (151)
-[2018.09.11-12.05.32:222][114]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (149)
-[2018.09.11-12.05.32:223][114]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (147)
-[2018.09.11-12.05.32:223][114]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (145)
-[2018.09.11-12.05.32:223][114]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (143)
-[2018.09.11-12.05.32:223][114]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (141)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (139)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module ImageWrapper (138)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (135)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (133)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (131)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (129)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module LuminTargetPlatform (127)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (125)
-[2018.09.11-12.05.32:225][114]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (123)
-[2018.09.11-12.05.32:226][114]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (121)
-[2018.09.11-12.05.32:226][114]LogModuleManager: Shutting down and abandoning module LinuxClientTargetPlatform (119)
-[2018.09.11-12.05.32:226][114]LogModuleManager: Shutting down and abandoning module TVOSTargetPlatform (117)
-[2018.09.11-12.05.32:232][114]LogModuleManager: Shutting down and abandoning module Messaging (115)
-[2018.09.11-12.05.32:232][114]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (113)
-[2018.09.11-12.05.32:237][114]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (111)
-[2018.09.11-12.05.32:237][114]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (109)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (107)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (105)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (103)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (101)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module MacTargetPlatform (99)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module MacServerTargetPlatform (97)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module MacNoEditorTargetPlatform (95)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module MacClientTargetPlatform (93)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (91)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module InputCore (88)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module Settings (86)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module PhysXCooking (84)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module SteamVR (82)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module OculusHMD (80)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (78)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module LauncherChunkInstaller (76)
-[2018.09.11-12.05.32:266][114]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (74)
-[2018.09.11-12.05.32:267][114]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (70)
-[2018.09.11-12.05.32:268][114]LogModuleManager: Shutting down and abandoning module XMPP (65)
-[2018.09.11-12.05.32:268][114]LogModuleManager: Shutting down and abandoning module WebSockets (64)
-[2018.09.11-12.05.32:287][114]LogModuleManager: Shutting down and abandoning module HTTP (61)
-[2018.09.11-12.05.32:287][114]LogHttp: Display: Http module shutting down, but needs to wait on 1 outstanding Http requests:
-[2018.09.11-12.05.32:287][114]LogHttp: Display: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7B85DF4137-472D-F2BA-9C46-7CAD4C0574DD%7D&AppID=UEEditor.Rocket.Release&AppVersion=4.20.2-4302132%2B%2B%2BUE4%2BRelease-4.20&UserID=147588c041777a9701e4caa33555a153%7C54115821793a4d9dac74f845a7218274%7Cd02f2261-9139-4d5f-89a2-e7811712aa2c&AppEnvironment=datacollector-binary&UploadType=eteventstream] status=Processing
-[2018.09.11-12.05.32:304][114]LogModuleManager: Shutting down and abandoning module SSL (60)
-[2018.09.11-12.05.32:306][114]LogModuleManager: Shutting down and abandoning module MagicLeapEmulator (56)
-[2018.09.11-12.05.32:306][114]LogModuleManager: Shutting down and abandoning module MagicLeapPrivileges (54)
-[2018.09.11-12.05.32:306][114]LogModuleManager: Shutting down and abandoning module MagicLeapIdentity (52)
-[2018.09.11-12.05.32:306][114]LogModuleManager: Shutting down and abandoning module MagicLeapHelperVulkan (50)
-[2018.09.11-12.05.32:306][114]LogModuleManager: Shutting down and abandoning module MagicLeapHelperOpenGL (48)
-[2018.09.11-12.05.32:307][114]LogModuleManager: Shutting down and abandoning module MagicLeapSecureStorage (46)
-[2018.09.11-12.05.32:307][114]LogModuleManager: Shutting down and abandoning module MagicLeapGestures (44)
-[2018.09.11-12.05.32:307][114]LogModuleManager: Shutting down and abandoning module MagicLeapEyeTracker (42)
-[2018.09.11-12.05.32:307][114]LogModuleManager: Shutting down and abandoning module MagicLeapController (40)
-[2018.09.11-12.05.32:307][114]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
-[2018.09.11-12.05.32:308][114]LogModuleManager: Shutting down and abandoning module MagicLeap (38)
-[2018.09.11-12.05.32:308][114]LogModuleManager: Shutting down and abandoning module AnimationModifiers (36)
-[2018.09.11-12.05.32:308][114]LogModuleManager: Shutting down and abandoning module PropertyEditor (35)
-[2018.09.11-12.05.32:308][114]LogModuleManager: Shutting down and abandoning module AudioEditor (32)
-[2018.09.11-12.05.32:308][114]LogModuleManager: Shutting down and abandoning module TextureCompressor (30)
-[2018.09.11-12.05.32:310][114]LogModuleManager: Shutting down and abandoning module ShaderCore (28)
-[2018.09.11-12.05.32:310][114]LogModuleManager: Shutting down and abandoning module Landscape (26)
-[2018.09.11-12.05.32:310][114]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (24)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module OpenGLDrv (22)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module D3D11RHI (20)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (18)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module Renderer (16)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module Engine (14)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module CoreUObject (12)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module NetworkFile (10)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module CookedIterativeFile (8)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module StreamingFile (6)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module SandboxFile (4)
-[2018.09.11-12.05.32:312][114]LogModuleManager: Shutting down and abandoning module PakFile (2)
-[2018.09.11-12.05.32:332][114]LogExit: Exiting.
-[2018.09.11-12.05.32:343][114]Log file closed, 09/11/18 14:05:32
+[2018.09.20-20.58.17:400][  0]LogInit: Selected Device Profile: [Windows]
+[2018.09.20-20.58.17:400][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2018.09.20-20.58.17:475][  0]LogHAL: Display: Platform has ~ 16 GB [17117310976 / 17179869184 / 16], which maps to Larger [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2018.09.20-20.58.17:495][  0]LogInit: Setting Device Profile CVar: [[r.Vulkan.UseRealUBs:1]]
+[2018.09.20-20.58.17:495][  0]LogInit: Going up to parent DeviceProfile []
+[2018.09.20-20.58.17:573][  0]LogInit: Computer: DESKTOP-FTI3JJM
+[2018.09.20-20.58.17:573][  0]LogInit: User: Kscha
+[2018.09.20-20.58.17:573][  0]LogInit: CPU Page size=4096, Cores=4
+[2018.09.20-20.58.17:573][  0]LogInit: High frequency timer resolution =3.914065 MHz
+[2018.09.20-20.58.17:574][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2018.09.20-20.58.17:574][  0]LogMemory: Platform Memory Stats for Windows
+[2018.09.20-20.58.17:574][  0]LogMemory: Process Physical Memory: 101.86 MB used, 101.86 MB peak
+[2018.09.20-20.58.17:574][  0]LogMemory: Process Virtual Memory: 89.45 MB used, 89.45 MB peak
+[2018.09.20-20.58.17:574][  0]LogMemory: Physical Memory: 8607.48 MB used,  7716.86 MB free, 16324.34 MB total
+[2018.09.20-20.58.17:574][  0]LogMemory: Virtual Memory: 4643.57 MB used,  7716.86 MB free, 134217728.00 MB total
+[2018.09.20-20.58.18:781][  0]LogInit: Using OS detected language (de-DE).
+[2018.09.20-20.58.18:782][  0]LogInit: Using OS detected locale (de-DE).
+[2018.09.20-20.58.18:861][  0]LogTextLocalizationManager: No specific localization for 'de-DE' exists, so the 'de' localization will be used.
+[2018.09.20-20.58.18:986][  0]LogStreaming: Display: Took  0.181s to InitEngineTextLocalization.
+[2018.09.20-20.58.19:001][  0]LogInit: Setting process to per monitor DPI aware
+[2018.09.20-20.58.20:418][  0]LogSlate: New Slate User Created.  User Index 0, Is Virtual User: 0
+[2018.09.20-20.58.20:418][  0]LogSlate: Slate User Registered.  User Index 0, Is Virtual User: 0
+[2018.09.20-20.58.23:991][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2018.09.20-20.58.23:991][  0]LogD3D11RHI: D3D11 adapters:
+[2018.09.20-20.58.24:148][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GTX 1070' (Feature Level 11_0)
+[2018.09.20-20.58.24:148][  0]LogD3D11RHI:       8088/0/8162 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:3, VendorId:0x10de
+[2018.09.20-20.58.24:154][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2018.09.20-20.58.24:154][  0]LogD3D11RHI:       0/0/8162 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2018.09.20-20.58.24:154][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2018.09.20-20.58.24:161][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2018.09.20-20.58.24:161][  0]LogD3D11RHI:     GPU DeviceId: 0x1b81 (for the marketing name, search the web for "GPU Device Id")
+[2018.09.20-20.58.24:177][  0]LogWindows: EnumDisplayDevices:
+[2018.09.20-20.58.24:177][  0]LogWindows:    0. 'NVIDIA GeForce GTX 1070' (P:0 D:1)
+[2018.09.20-20.58.24:177][  0]LogWindows:    1. 'NVIDIA GeForce GTX 1070' (P:0 D:1)
+[2018.09.20-20.58.24:177][  0]LogWindows:    2. 'NVIDIA GeForce GTX 1070' (P:1 D:1)
+[2018.09.20-20.58.24:177][  0]LogWindows:    3. 'NVIDIA GeForce GTX 1070' (P:0 D:0)
+[2018.09.20-20.58.24:178][  0]LogWindows: DebugString: FoundDriverCount:4 
+[2018.09.20-20.58.24:178][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GTX 1070
+[2018.09.20-20.58.24:193][  0]LogD3D11RHI:   Driver Version: 399.24 (internal:24.21.13.9924, unified:399.24)
+[2018.09.20-20.58.24:193][  0]LogD3D11RHI:      Driver Date: 9-5-2018
+[2018.09.20-20.58.24:193][  0]LogRHI: Texture pool is 5661 MB (70% of 8088 MB)
+[2018.09.20-20.58.24:255][  0]LogD3D11RHI: Async texture creation enabled
+[2018.09.20-20.58.24:624][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 2)
+[2018.09.20-20.58.24:771][  0]LogShaderCompilers: Guid format shader working directory is -10 characters bigger than the processId version (../../../../../Dokumente/Github Repos/Survival/Survival/Intermediate/Shaders/WorkingDirectory/16784/).
+[2018.09.20-20.58.24:771][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/Kscha/AppData/Local/Temp/UnrealShaderWorkingDir/C53B44234C6FA5C209EE9C9503901C17/'.
+[2018.09.20-20.58.25:103][  0]LogTemp: Display: Loaded TP AllDesktopTargetPlatform
+[2018.09.20-20.58.25:137][  0]LogTemp: Display: Loaded TP MacClientTargetPlatform
+[2018.09.20-20.58.25:182][  0]LogTemp: Display: Loaded TP MacNoEditorTargetPlatform
+[2018.09.20-20.58.25:267][  0]LogTemp: Display: Loaded TP MacServerTargetPlatform
+[2018.09.20-20.58.25:362][  0]LogTemp: Display: Loaded TP MacTargetPlatform
+[2018.09.20-20.58.25:466][  0]LogTemp: Display: Loaded TP WindowsClientTargetPlatform
+[2018.09.20-20.58.25:499][  0]LogTemp: Display: Loaded TP WindowsNoEditorTargetPlatform
+[2018.09.20-20.58.25:574][  0]LogTemp: Display: Loaded TP WindowsServerTargetPlatform
+[2018.09.20-20.58.25:623][  0]LogTemp: Display: Loaded TP WindowsTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:825][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:826][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:826][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:826][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:826][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:826][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:826][  0]LogTemp: Display: Loaded TP AndroidTargetPlatform
+[2018.09.20-20.58.25:861][  0]LogTemp: Display: Loaded TP HTML5TargetPlatform
+[2018.09.20-20.58.26:061][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
+[2018.09.20-20.58.26:061][  0]LogTemp: Display: Loaded TP IOSTargetPlatform
+[2018.09.20-20.58.26:092][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
+[2018.09.20-20.58.26:092][  0]LogTemp: Display: Loaded TP TVOSTargetPlatform
+[2018.09.20-20.58.26:155][  0]LogTemp: Display: Loaded TP LinuxClientTargetPlatform
+[2018.09.20-20.58.26:181][  0]LogTemp: Display: Loaded TP LinuxNoEditorTargetPlatform
+[2018.09.20-20.58.26:237][  0]LogTemp: Display: Loaded TP LinuxServerTargetPlatform
+[2018.09.20-20.58.26:268][  0]LogTemp: Display: Loaded TP LinuxTargetPlatform
+[2018.09.20-20.58.26:300][  0]LogTemp: Display: Loaded TP LuminTargetPlatform
+[2018.09.20-20.58.26:300][  0]LogTargetPlatformManager: Display: Building Assets For Windows
+[2018.09.20-20.58.27:142][  0]LogXGEController: Cleaning working directory: C:/Users/Kscha/AppData/Local/Temp/UnrealXGEWorkingDir/
+[2018.09.20-20.58.27:143][  0]LogXGEController: Cannot use XGE Controller as Incredibuild is not installed on this machine.
+[2018.09.20-20.58.27:143][  0]LogShaderCompilers: Cannot use XGE Shader Compiler as Incredibuild is not installed on this machine.
+[2018.09.20-20.58.27:143][  0]LogShaderCompilers: Display: Using Local Shader Compiler.
+[2018.09.20-20.58.31:475][  0]LogDerivedDataCache: Display: Max Cache Size: 512 MB
+[2018.09.20-20.58.31:743][  0]LogDerivedDataCache: Loaded boot cache 0.27s 73MB C:/Users/Kscha/AppData/Local/UnrealEngine/4.20/DerivedDataCache/Boot.ddc.
+[2018.09.20-20.58.31:743][  0]LogDerivedDataCache: Display: Loaded Boot cache: C:/Users/Kscha/AppData/Local/UnrealEngine/4.20/DerivedDataCache/Boot.ddc
+[2018.09.20-20.58.31:744][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../Dokumente/Github Repos/Survival/Survival/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2018.09.20-20.58.31:744][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2018.09.20-20.58.31:744][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../Dokumente/Github Repos/Survival/Survival/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2018.09.20-20.58.31:744][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2018.09.20-20.58.31:822][  0]LogDerivedDataCache: Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2018.09.20-20.58.31:838][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Kscha/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2018.09.20-20.58.31:839][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2018.09.20-20.58.31:839][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2018.09.20-20.58.31:905][  0]LogMaterial: Verifying Global Shaders for PCD3D_SM5
+[2018.09.20-20.58.32:002][  0]LogSlate: Using FreeType 2.6.0
+[2018.09.20-20.58.32:058][  0]LogSlate: SlateFontServices - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2018.09.20-20.58.33:059][  0]LogAssetRegistry: FAssetRegistry took 0.0410 seconds to start up
+[2018.09.20-20.58.36:615][  0]LogInit: Selected Device Profile: [Windows]
+[2018.09.20-20.58.38:356][  0]LogSimplygon: Simplygon DLL not present - disabling.
+[2018.09.20-20.58.38:799][  0]LogMeshReduction: Using SimplygonSwarm for distributed automatic mesh merging
+[2018.09.20-20.58.38:800][  0]LogMeshReduction: Using ProxyLODMeshReduction for automatic mesh merging
+[2018.09.20-20.58.38:800][  0]LogMeshReduction: Using QuadricMeshReduction for automatic static mesh reduction
+[2018.09.20-20.58.38:800][  0]LogMeshReduction: No automatic skeletal mesh reduction module available
+[2018.09.20-20.58.39:230][  0]LogNetVersion: Survival 1.0.0, NetCL: 4212847, EngineNetVer: 5, GameNetVer: 0 (Checksum: 2571501108)
+[2018.09.20-20.58.44:938][  0]LogPackageLocalizationCache: Processed 11 localized package path(s) for 2 prioritized culture(s) in 0.161305 seconds
+[2018.09.20-20.58.44:984][  0]LogUObjectArray: 38425 objects as part of root set at end of initial load.
+[2018.09.20-20.58.44:984][  0]LogUObjectAllocator: 6690864 out of 0 bytes used by permanent object pool.
+[2018.09.20-20.58.44:984][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2018.09.20-20.59.04:928][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2018.09.20-20.59.04:999][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2018.09.20-20.59.08:525][  0]SourceControl: Source control is disabled
+[2018.09.20-20.59.08:525][  0]SourceControl: Source control is disabled
+[2018.09.20-20.59.08:614][  0]SourceControl: Source control is disabled
+[2018.09.20-20.59.08:642][  0]SourceControl: Source control is disabled
+[2018.09.20-20.59.10:569][  0]LogAndroidPermission: UAndroidPermissionCallbackProxy::GetInstance
+[2018.09.20-20.59.10:812][  0]LogOcInput: OculusInput pre-init called
+[2018.09.20-20.59.11:535][  0]LogEngine: Initializing Engine...
+[2018.09.20-20.59.11:578][  0]LogHMD: Failed to initialize OpenVR with code 110
+[2018.09.20-20.59.11:604][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: ImportINI prefixes -  0.000 s
+[2018.09.20-20.59.11:604][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.09.20-20.59.11:604][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: ImportINI -  0.000 s
+[2018.09.20-20.59.11:604][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.09.20-20.59.12:390][  0]LogInit: Initializing FReadOnlyCVARCache
+[2018.09.20-20.59.12:866][  0]LogAIModule: Creating AISystem for world Untitled
+[2018.09.20-20.59.13:076][  0]LogInit: XAudio2 using 'Lautsprecher (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2018.09.20-20.59.13:175][  0]LogInit: FAudioDevice initialized.
+[2018.09.20-20.59.13:176][  0]LogNetVersion: Set ProjectVersion to 1.0.0.0. Version Checksum will be recalculated on next use.
+[2018.09.20-20.59.13:244][  0]LogDerivedDataCache: Saved boot cache 0.07s 73MB C:/Users/Kscha/AppData/Local/UnrealEngine/4.20/DerivedDataCache/Boot.ddc.
+[2018.09.20-20.59.13:256][  0]LogInit: Texture streaming: Enabled
+[2018.09.20-20.59.13:409][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2018.09.20-20.59.13:499][  0]LogInit: Transaction tracking system initialized
+[2018.09.20-20.59.13:942][  0]BlueprintLog: New page: Editor Load
+[2018.09.20-20.59.15:591][  0]LocalizationService: Localization service is disabled
+[2018.09.20-20.59.18:569][  0]LogFileCache: Scanning file cache for directory 'D:/Dokumente/Github Repos/Survival/Survival/Content/' took 0.02s
+[2018.09.20-20.59.18:570][  0]LogCook: Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2018.09.20-20.59.18:591][  0]LogCook: Display: Mobile HDR setting 1
+[2018.09.20-20.59.18:603][  0]LogGameplayTags: Display: UGameplayTagsManager::DoneAddingNativeTags. DelegateIsBound: 0
+[2018.09.20-20.59.18:603][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: ImportINI prefixes -  0.000 s
+[2018.09.20-20.59.18:603][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2018.09.20-20.59.18:604][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: ImportINI -  0.000 s
+[2018.09.20-20.59.18:604][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2018.09.20-20.59.20:973][  0]SourceControl: Source control is disabled
+[2018.09.20-20.59.21:006][  0]Cmd: MAP LOAD FILE="../../../../../Dokumente/Github Repos/Survival/Survival/Content/FirstPersonCPP/Maps/FirstPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2018.09.20-20.59.21:007][  0]LightingResults: New page: Lighting Build
+[2018.09.20-20.59.21:173][  0]MapCheck: New page: Map Check
+[2018.09.20-20.59.21:173][  0]LightingResults: New page: Lighting Build
+[2018.09.20-20.59.22:462][  0]LogAIModule: Creating AISystem for world FirstPersonExampleMap
+[2018.09.20-20.59.23:487][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2018.09.20-20.59.23:638][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2018.09.20-20.59.23:694][  0]MapCheck: Map check complete: 0 Error(s), 0 Warning(s), took 55,892ms to complete.
+[2018.09.20-20.59.23:695][  0]LogFileHelpers: Loading map 'FirstPersonExampleMap' took 2.698
+[2018.09.20-20.59.25:385][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2018.09.20-20.59.25:397][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2018.09.20-20.59.25:406][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2018.09.20-20.59.25:415][  0]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2018.09.20-20.59.25:460][  0]LogCollectionManager: Loaded 0 collections in 0.000981 seconds
+[2018.09.20-20.59.25:602][  0]LogFileCache: Scanning file cache for directory 'D:/Dokumente/Github Repos/Survival/Survival/Saved/Collections/' took 0.01s
+[2018.09.20-20.59.25:602][  0]LogFileCache: Scanning file cache for directory 'D:/Dokumente/Github Repos/Survival/Survival/Content/Developers/Kscha/Collections/' took 0.01s
+[2018.09.20-20.59.25:602][  0]LogFileCache: Scanning file cache for directory 'D:/Dokumente/Github Repos/Survival/Survival/Content/Collections/' took 0.01s
+[2018.09.20-20.59.25:602][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000001 seconds
+[2018.09.20-20.59.25:644][  0]LogContentBrowser: Native class hierarchy populated in 0.0418 seconds. Added 2589 classes and 615 folders.
+[2018.09.20-20.59.25:710][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2018.09.20-20.59.26:794][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2018.09.20-20.59.26:880][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0003 seconds. Added 1 classes and 2 folders.
+[2018.09.20-20.59.27:410][  0]LogSlate: Took 0.021420 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2018.09.20-20.59.27:460][  0]LogSlate: Took 0.024255 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2018.09.20-20.59.27:563][  0]LogSlate: Took 0.027113 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2018.09.20-20.59.28:010][  0]LogRenderer: Reallocating scene render targets to support 1208x576 Format 10 NumSamples 1 (Frame:1).
+[2018.09.20-20.59.28:734][  0]LogSlate: Took 0.036848 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2018.09.20-20.59.28:954][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0004 seconds. Added 0 classes and 0 folders.
+[2018.09.20-20.59.28:955][  0]LogLoad: (Engine Initialization) Total time: 87.73 seconds
+[2018.09.20-20.59.28:955][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 0.00 seconds
+[2018.09.20-20.59.28:983][  0]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
+[2018.09.20-20.59.29:178][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2018.09.20-20.59.29:464][  2]LogAssetRegistry: Asset discovery search completed in 56.4327 seconds
+[2018.09.20-20.59.29:466][  2]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000000 seconds (found 0 objects)
+[2018.09.20-20.59.29:466][  2]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000209 seconds (updated 0 objects)
+[2018.09.20-21.00.44:772][975]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2018.09.20-21.15.13:672][713]LogSlate: Window 'Survival [DebugGame] - Unreal Editor' being destroyed
+[2018.09.20-21.15.13:975][714]Cmd: QUIT_EDITOR
+[2018.09.20-21.15.14:113][714]LogWindowsTextInputMethodSystem: Display: IME system now deactivated.
+[2018.09.20-21.15.14:148][714]LogExit: Preparing to exit.
+[2018.09.20-21.15.15:153][714]LogExit: Editor shut down
+[2018.09.20-21.15.15:153][714]LogExit: Transaction tracking system shut down
+[2018.09.20-21.15.17:002][714]LogFileManager: Warning: DeleteFile was unable to delete '../../../../../Dokumente/Github Repos/Survival/Survival/Intermediate/CachedAssetRegistry.bin', retrying in .5s...
+[2018.09.20-21.15.17:002][714]LogFileManager: Warning: DeleteFile recovered during retry!
+[2018.09.20-21.15.17:002][714]LogExit: Object subsystem successfully closed.
+[2018.09.20-21.15.17:091][714]LogShaderCompilers: Display: Shaders left to compile 0
+[2018.09.20-21.15.17:130][714]LogD3D11RHI: Shutdown
+[2018.09.20-21.15.17:131][714]LogD3D11RHI: CleanupD3DDevice
+[2018.09.20-21.15.17:137][714]LogD3D11RHI: ~FD3D11DynamicRHI
+[2018.09.20-21.15.17:621][714]LogModuleManager: Shutting down and abandoning module HierarchicalLODOutliner (612)
+[2018.09.20-21.15.17:621][714]LogModuleManager: Shutting down and abandoning module SceneOutliner (610)
+[2018.09.20-21.15.17:621][714]LogModuleManager: Shutting down and abandoning module AddContentDialog (608)
+[2018.09.20-21.15.17:621][714]LogModuleManager: Shutting down and abandoning module WidgetCarousel (607)
+[2018.09.20-21.15.17:621][714]LogModuleManager: Shutting down and abandoning module EditorWidgets (604)
+[2018.09.20-21.15.17:621][714]LogModuleManager: Shutting down and abandoning module CollectionManager (602)
+[2018.09.20-21.15.17:622][714]LogModuleManager: Shutting down and abandoning module StatsViewer (600)
+[2018.09.20-21.15.17:622][714]LogModuleManager: Shutting down and abandoning module FoliageEdit (598)
+[2018.09.20-21.15.17:622][714]LogModuleManager: Shutting down and abandoning module LandscapeEditor (596)
+[2018.09.20-21.15.17:672][714]LogModuleManager: Shutting down and abandoning module MeshPaintMode (594)
+[2018.09.20-21.15.17:672][714]LogModuleManager: Shutting down and abandoning module SceneDepthPickerMode (592)
+[2018.09.20-21.15.17:672][714]LogModuleManager: Shutting down and abandoning module ActorPickerMode (590)
+[2018.09.20-21.15.17:672][714]LogModuleManager: Shutting down and abandoning module GeometryMode (588)
+[2018.09.20-21.15.17:672][714]LogModuleManager: Shutting down and abandoning module TextureAlignMode (586)
+[2018.09.20-21.15.17:672][714]LogModuleManager: Shutting down and abandoning module BspMode (584)
+[2018.09.20-21.15.17:673][714]LogModuleManager: Shutting down and abandoning module PIEPreviewDeviceProfileSelector (582)
+[2018.09.20-21.15.17:673][714]LogModuleManager: Shutting down and abandoning module SequenceRecorderSections (580)
+[2018.09.20-21.15.17:673][714]LogModuleManager: Shutting down and abandoning module AutomationWorker (578)
+[2018.09.20-21.15.17:673][714]LogModuleManager: Shutting down and abandoning module AudioCaptureEditor (576)
+[2018.09.20-21.15.17:673][714]LogModuleManager: Shutting down and abandoning module SequenceRecorder (575)
+[2018.09.20-21.15.17:673][714]LogModuleManager: Shutting down and abandoning module MatineeToLevelSequence (572)
+[2018.09.20-21.15.17:673][714]LogModuleManager: Shutting down and abandoning module LevelSequenceEditor (570)
+[2018.09.20-21.15.17:686][714]LogModuleManager: Shutting down and abandoning module PlacementMode (569)
+[2018.09.20-21.15.17:686][714]LogModuleManager: Shutting down and abandoning module MaterialEditor (568)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (564)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module WmfMediaEditor (562)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (560)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module OpenExrWrapper (558)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module ImgMediaFactory (556)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module ImgMediaEditor (554)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (552)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module AvfMediaEditor (550)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module AndroidMediaFactory (548)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module AndroidMediaEditor (546)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module MagicLeapCameraPreviewFactory (544)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module MagicLeapMediaFactory (542)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module MagicLeapMediaEditor (540)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module CharacterAI (538)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module SmartSnapping (536)
+[2018.09.20-21.15.17:712][714]LogModuleManager: Shutting down and abandoning module SessionServices (534)
+[2018.09.20-21.15.17:713][714]LogModuleManager: Shutting down and abandoning module ViewportSnapping (532)
+[2018.09.20-21.15.17:713][714]LogModuleManager: Shutting down and abandoning module ViewportInteraction (530)
+[2018.09.20-21.15.17:713][714]LogModuleManager: Shutting down and abandoning module ClothPainter (528)
+[2018.09.20-21.15.17:713][714]LogModuleManager: Shutting down and abandoning module SkeletalMeshEditor (527)
+[2018.09.20-21.15.17:771][714]LogModuleManager: Shutting down and abandoning module LogVisualizer (524)
+[2018.09.20-21.15.17:772][714]LogModuleManager: Shutting down and abandoning module IntroTutorials (522)
+[2018.09.20-21.15.17:772][714]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (521)
+[2018.09.20-21.15.17:772][714]LogModuleManager: Shutting down and abandoning module LuminPlatformEditor (518)
+[2018.09.20-21.15.17:772][714]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (516)
+[2018.09.20-21.15.17:772][714]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (514)
+[2018.09.20-21.15.17:772][714]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (512)
+[2018.09.20-21.15.17:772][714]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (511)
+[2018.09.20-21.15.18:680][714]LogModuleManager: Shutting down and abandoning module WindowsPlatformEditor (508)
+[2018.09.20-21.15.18:680][714]LogModuleManager: Shutting down and abandoning module LuminRuntimeSettings (506)
+[2018.09.20-21.15.18:680][714]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (504)
+[2018.09.20-21.15.18:680][714]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (502)
+[2018.09.20-21.15.18:680][714]LogModuleManager: Shutting down and abandoning module InputBindingEditor (500)
+[2018.09.20-21.15.18:692][714]LogModuleManager: Shutting down and abandoning module MergeActors (498)
+[2018.09.20-21.15.18:692][714]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (496)
+[2018.09.20-21.15.18:702][714]LogModuleManager: Shutting down and abandoning module LocalizationService (495)
+[2018.09.20-21.15.18:702][714]LogModuleManager: Shutting down and abandoning module HardwareTargeting (492)
+[2018.09.20-21.15.18:702][714]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (490)
+[2018.09.20-21.15.18:702][714]LogModuleManager: Shutting down and abandoning module UndoHistory (488)
+[2018.09.20-21.15.18:702][714]LogModuleManager: Shutting down and abandoning module XmlParser (486)
+[2018.09.20-21.15.18:702][714]LogModuleManager: Shutting down and abandoning module Blutility (484)
+[2018.09.20-21.15.18:702][714]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (482)
+[2018.09.20-21.15.18:702][714]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (481)
+[2018.09.20-21.15.18:703][714]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (478)
+[2018.09.20-21.15.18:703][714]LogModuleManager: Shutting down and abandoning module SettingsEditor (476)
+[2018.09.20-21.15.18:703][714]LogModuleManager: Shutting down and abandoning module ProjectLauncher (474)
+[2018.09.20-21.15.18:715][714]LogModuleManager: Shutting down and abandoning module SessionFrontend (472)
+[2018.09.20-21.15.18:715][714]LogModuleManager: Shutting down and abandoning module ProfilerClient (470)
+[2018.09.20-21.15.18:726][714]LogModuleManager: Shutting down and abandoning module DeviceManager (468)
+[2018.09.20-21.15.18:727][714]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (467)
+[2018.09.20-21.15.18:781][714]LogModuleManager: Shutting down and abandoning module AutomationController (464)
+[2018.09.20-21.15.18:781][714]LogModuleManager: Shutting down and abandoning module AutomationWindow (462)
+[2018.09.20-21.15.18:804][714]LogModuleManager: Shutting down and abandoning module Layers (460)
+[2018.09.20-21.15.18:841][714]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (458)
+[2018.09.20-21.15.18:841][714]LogModuleManager: Shutting down and abandoning module DetailCustomizations (456)
+[2018.09.20-21.15.18:841][714]LogModuleManager: Shutting down and abandoning module PackagesDialog (454)
+[2018.09.20-21.15.18:863][714]LogModuleManager: Shutting down and abandoning module Persona (452)
+[2018.09.20-21.15.18:875][714]LogModuleManager: Shutting down and abandoning module AdvancedPreviewScene (451)
+[2018.09.20-21.15.18:875][714]LogModuleManager: Shutting down and abandoning module AnimGraph (449)
+[2018.09.20-21.15.18:875][714]LogModuleManager: Shutting down and abandoning module Kismet (446)
+[2018.09.20-21.15.18:888][714]LogModuleManager: Shutting down and abandoning module GraphEditor (444)
+[2018.09.20-21.15.18:891][714]LogModuleManager: Shutting down and abandoning module ClassViewer (442)
+[2018.09.20-21.15.18:891][714]LogModuleManager: Shutting down and abandoning module Toolbox (440)
+[2018.09.20-21.15.18:891][714]LogModuleManager: Shutting down and abandoning module DesktopPlatform (439)
+[2018.09.20-21.15.18:903][714]LogModuleManager: Shutting down and abandoning module ModuleUI (436)
+[2018.09.20-21.15.18:910][714]LogModuleManager: Shutting down and abandoning module MovieSceneTools (434)
+[2018.09.20-21.15.18:910][714]LogModuleManager: Shutting down and abandoning module OutputLog (432)
+[2018.09.20-21.15.18:910][714]LogModuleManager: Shutting down and abandoning module GammaUI (430)
+[2018.09.20-21.15.18:917][714]LogModuleManager: Shutting down and abandoning module Documentation (428)
+[2018.09.20-21.15.18:917][714]LogModuleManager: Shutting down and abandoning module MovieSceneTracks (426)
+[2018.09.20-21.15.18:936][714]LogModuleManager: Shutting down and abandoning module MovieScene (424)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (422)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module LauncherPlatform (420)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module AnalyticsET (418)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module PortalServices (416)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module PortalRpc (414)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module MessagingRpc (412)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module AIModule (410)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module GameplayDebugger (409)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module AITestSuite (407)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module NavigationSystem (405)
+[2018.09.20-21.15.18:937][714]LogModuleManager: Shutting down and abandoning module ProfilerService (402)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module TaskGraph (400)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module SteamVRController (398)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponentEditor (396)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (394)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module OculusInput (392)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (390)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module EditableMesh (388)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (386)
+[2018.09.20-21.15.19:067][714]LogModuleManager: Shutting down and abandoning module CableComponent (384)
+[2018.09.20-21.15.19:068][714]LogModuleManager: Shutting down and abandoning module AudioCapture (382)
+[2018.09.20-21.15.19:068][714]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (380)
+[2018.09.20-21.15.19:068][714]LogModuleManager: Shutting down and abandoning module AndroidPermission (378)
+[2018.09.20-21.15.19:068][714]LogModuleManager: Shutting down and abandoning module NUTUnrealEngine4 (376)
+[2018.09.20-21.15.19:068][714]LogModuleManager: Shutting down and abandoning module NetcodeUnitTest (374)
+[2018.09.20-21.15.19:088][714]LogModuleManager: Shutting down and abandoning module MediaCompositingEditor (372)
+[2018.09.20-21.15.19:088][714]LogModuleManager: Shutting down and abandoning module MediaCompositing (370)
+[2018.09.20-21.15.19:088][714]LogModuleManager: Shutting down and abandoning module LinearTimecode (368)
+[2018.09.20-21.15.19:088][714]LogModuleManager: Shutting down and abandoning module ImgMedia (366)
+[2018.09.20-21.15.19:110][714]LogModuleManager: Shutting down and abandoning module HTML5Networking (364)
+[2018.09.20-21.15.19:110][714]LogModuleManager: Shutting down and abandoning module GeometryCacheTracks (362)
+[2018.09.20-21.15.19:111][714]LogModuleManager: Shutting down and abandoning module GeometryCacheSequencer (360)
+[2018.09.20-21.15.19:111][714]LogModuleManager: Shutting down and abandoning module BackChannel (358)
+[2018.09.20-21.15.19:125][714]LogModuleManager: Shutting down and abandoning module AppleVision (356)
+[2018.09.20-21.15.19:126][714]LogModuleManager: Shutting down and abandoning module AppleImageUtils (354)
+[2018.09.20-21.15.19:126][714]LogModuleManager: Shutting down and abandoning module AlembicImporter (352)
+[2018.09.20-21.15.19:126][714]LogModuleManager: Shutting down and abandoning module AlembicLibrary (351)
+[2018.09.20-21.15.19:126][714]LogModuleManager: Shutting down and abandoning module GeometryCache (350)
+[2018.09.20-21.15.19:126][714]LogModuleManager: Shutting down and abandoning module GeometryCacheEd (349)
+[2018.09.20-21.15.19:126][714]LogModuleManager: Shutting down and abandoning module DatasmithContentEditor (344)
+[2018.09.20-21.15.19:126][714]LogModuleManager: Shutting down and abandoning module DatasmithContent (342)
+[2018.09.20-21.15.19:127][714]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (340)
+[2018.09.20-21.15.19:127][714]LogModuleManager: Shutting down and abandoning module PluginBrowser (338)
+[2018.09.20-21.15.19:140][714]LogModuleManager: Shutting down and abandoning module MobileLauncherProfileWizard (336)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module PolygonModeling (334)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module MeshEditor (332)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module CryptoKeysOpenSSL (330)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module CryptoKeys (328)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (326)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module VisualStudioCodeSourceCodeAccess (324)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module UObjectPlugin (322)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (320)
+[2018.09.20-21.15.19:147][714]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (318)
+[2018.09.20-21.15.19:159][714]LogModuleManager: Shutting down and abandoning module GitSourceControl (316)
+[2018.09.20-21.15.19:159][714]LogModuleManager: Shutting down and abandoning module SourceControl (315)
+[2018.09.20-21.15.19:159][714]LogModuleManager: Shutting down and abandoning module CLionSourceCodeAccess (312)
+[2018.09.20-21.15.19:159][714]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (310)
+[2018.09.20-21.15.19:159][714]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (308)
+[2018.09.20-21.15.19:160][714]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (306)
+[2018.09.20-21.15.19:160][714]LogModuleManager: Shutting down and abandoning module Paper2DEditor (304)
+[2018.09.20-21.15.19:170][714]LogModuleManager: Shutting down and abandoning module MeshPaint (303)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module Survival (300)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module RuntimePhysXCooking (298)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module PhysXVehiclesEditor (296)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module PhysXVehicles (294)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module OculusEditor (292)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (290)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module ImmediatePhysicsEditor (288)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module ImmediatePhysics (286)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module ActorSequence (284)
+[2018.09.20-21.15.19:171][714]LogModuleManager: Shutting down and abandoning module UdpMessaging (282)
+[2018.09.20-21.15.19:272][714]LogModuleManager: Shutting down and abandoning module TcpMessaging (280)
+[2018.09.20-21.15.19:374][714]LogModuleManager: Shutting down and abandoning module MagicLeapAudio (278)
+[2018.09.20-21.15.19:374][714]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (276)
+[2018.09.20-21.15.19:374][714]LogModuleManager: Shutting down and abandoning module FacialAnimationEditor (274)
+[2018.09.20-21.15.19:374][714]LogModuleManager: Shutting down and abandoning module FacialAnimation (272)
+[2018.09.20-21.15.19:374][714]LogModuleManager: Shutting down and abandoning module DataValidation (270)
+[2018.09.20-21.15.19:374][714]LogModuleManager: Shutting down and abandoning module AssetManagerEditor (268)
+[2018.09.20-21.15.19:386][714]LogModuleManager: Shutting down and abandoning module LevelEditor (267)
+[2018.09.20-21.15.19:387][714]LogModuleManager: Shutting down and abandoning module PixelInspectorModule (266)
+[2018.09.20-21.15.19:387][714]LogModuleManager: Shutting down and abandoning module CommonMenuExtensions (264)
+[2018.09.20-21.15.19:387][714]LogModuleManager: Shutting down and abandoning module MainFrame (262)
+[2018.09.20-21.15.19:387][714]LogModuleManager: Shutting down and abandoning module HotReload (261)
+[2018.09.20-21.15.19:387][714]LogModuleManager: Shutting down and abandoning module ContentBrowser (257)
+[2018.09.20-21.15.19:388][714]LogModuleManager: Shutting down and abandoning module TreeMap (255)
+[2018.09.20-21.15.19:388][714]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (252)
+[2018.09.20-21.15.19:388][714]LogModuleManager: Shutting down and abandoning module AISupportModule (250)
+[2018.09.20-21.15.19:388][714]LogModuleManager: Shutting down and abandoning module Paper2D (248)
+[2018.09.20-21.15.19:388][714]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (246)
+[2018.09.20-21.15.19:388][714]LogModuleManager: Shutting down and abandoning module WmfMedia (244)
+[2018.09.20-21.15.19:403][714]LogModuleManager: Shutting down and abandoning module Media (243)
+[2018.09.20-21.15.19:410][714]LogModuleManager: Shutting down and abandoning module PacketHandler (240)
+[2018.09.20-21.15.19:410][714]LogModuleManager: Shutting down and abandoning module ClothingSystemEditor (238)
+[2018.09.20-21.15.19:410][714]LogModuleManager: Shutting down and abandoning module ClothingSystemRuntime (236)
+[2018.09.20-21.15.19:430][714]LogModuleManager: Shutting down and abandoning module MediaAssets (234)
+[2018.09.20-21.15.19:430][714]LogModuleManager: Shutting down and abandoning module Overlay (232)
+[2018.09.20-21.15.19:430][714]LogModuleManager: Shutting down and abandoning module OverlayEditor (231)
+[2018.09.20-21.15.19:430][714]LogModuleManager: Shutting down and abandoning module VREditor (228)
+[2018.09.20-21.15.19:431][714]LogModuleManager: Shutting down and abandoning module StringTableEditor (226)
+[2018.09.20-21.15.19:446][714]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (224)
+[2018.09.20-21.15.19:446][714]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (222)
+[2018.09.20-21.15.19:457][714]LogModuleManager: Shutting down and abandoning module FunctionalTesting (220)
+[2018.09.20-21.15.19:457][714]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (218)
+[2018.09.20-21.15.19:457][714]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (217)
+[2018.09.20-21.15.19:457][714]LogModuleManager: Shutting down and abandoning module UMG (214)
+[2018.09.20-21.15.19:471][714]LogModuleManager: Shutting down and abandoning module UMGEditor (213)
+[2018.09.20-21.15.19:482][714]LogModuleManager: Shutting down and abandoning module Sequencer (212)
+[2018.09.20-21.15.19:494][714]LogModuleManager: Shutting down and abandoning module MessageLog (209)
+[2018.09.20-21.15.19:495][714]LogModuleManager: Shutting down and abandoning module SlateReflector (204)
+[2018.09.20-21.15.19:510][714]LogModuleManager: Shutting down and abandoning module Slate (202)
+[2018.09.20-21.15.19:510][714]LogModuleManager: Shutting down and abandoning module EditorStyle (200)
+[2018.09.20-21.15.19:513][714]LogModuleManager: Shutting down and abandoning module MRMesh (198)
+[2018.09.20-21.15.19:513][714]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (196)
+[2018.09.20-21.15.19:513][714]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (194)
+[2018.09.20-21.15.19:513][714]LogModuleManager: Shutting down and abandoning module XAudio2 (192)
+[2018.09.20-21.15.19:513][714]LogModuleManager: Shutting down and abandoning module Networking (190)
+[2018.09.20-21.15.19:513][714]LogModuleManager: Shutting down and abandoning module Core (188)
+[2018.09.20-21.15.19:513][714]LogModuleManager: Shutting down and abandoning module LevelSequence (186)
+[2018.09.20-21.15.19:513][714]LogModuleManager: Shutting down and abandoning module KismetCompiler (184)
+[2018.09.20-21.15.19:514][714]LogModuleManager: Shutting down and abandoning module MeshUtilities (182)
+[2018.09.20-21.15.19:514][714]LogModuleManager: Shutting down and abandoning module MeshMergeUtilities (181)
+[2018.09.20-21.15.19:514][714]LogModuleManager: Shutting down and abandoning module MeshReductionInterface (180)
+[2018.09.20-21.15.19:514][714]LogModuleManager: Shutting down and abandoning module SimplygonSwarm (179)
+[2018.09.20-21.15.19:526][714]LogModuleManager: Shutting down and abandoning module ProxyLODMeshReduction (177)
+[2018.09.20-21.15.19:550][714]LogModuleManager: Shutting down and abandoning module SimplygonMeshReduction (175)
+[2018.09.20-21.15.19:550][714]LogModuleManager: Shutting down and abandoning module QuadricMeshReduction (173)
+[2018.09.20-21.15.19:572][714]LogModuleManager: Shutting down and abandoning module MaterialBaking (169)
+[2018.09.20-21.15.19:589][714]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (165)
+[2018.09.20-21.15.19:589][714]LogModuleManager: Shutting down and abandoning module DerivedDataCache (162)
+[2018.09.20-21.15.19:669][714]LogDerivedDataCache: Shutdown
+[2018.09.20-21.15.19:669][714]LogModuleManager: Shutting down and abandoning module XGEController (160)
+[2018.09.20-21.15.19:669][714]LogXGEController: Cleaning working directory: C:/Users/Kscha/AppData/Local/Temp/UnrealXGEWorkingDir/
+[2018.09.20-21.15.19:669][714]LogModuleManager: Shutting down and abandoning module TargetPlatform (158)
+[2018.09.20-21.15.19:669][714]LogModuleManager: Shutting down and abandoning module VulkanShaderFormat (157)
+[2018.09.20-21.15.19:669][714]LogModuleManager: Shutting down and abandoning module ShaderFormatVectorVM (155)
+[2018.09.20-21.15.19:669][714]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (153)
+[2018.09.20-21.15.19:684][714]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (151)
+[2018.09.20-21.15.19:684][714]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (149)
+[2018.09.20-21.15.19:702][714]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (147)
+[2018.09.20-21.15.19:702][714]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (145)
+[2018.09.20-21.15.19:702][714]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (143)
+[2018.09.20-21.15.19:702][714]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (141)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (139)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module ImageWrapper (138)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module TextureFormatAndroid (135)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (133)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (131)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (129)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module LuminTargetPlatform (127)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (125)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (123)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (121)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module LinuxClientTargetPlatform (119)
+[2018.09.20-21.15.19:704][714]LogModuleManager: Shutting down and abandoning module TVOSTargetPlatform (117)
+[2018.09.20-21.15.19:705][714]LogModuleManager: Shutting down and abandoning module Messaging (115)
+[2018.09.20-21.15.19:705][714]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (113)
+[2018.09.20-21.15.19:706][714]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (111)
+[2018.09.20-21.15.19:706][714]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (109)
+[2018.09.20-21.15.19:711][714]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (107)
+[2018.09.20-21.15.19:711][714]LogModuleManager: Shutting down and abandoning module WindowsServerTargetPlatform (105)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module WindowsNoEditorTargetPlatform (103)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module WindowsClientTargetPlatform (101)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module MacTargetPlatform (99)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module MacServerTargetPlatform (97)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module MacNoEditorTargetPlatform (95)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module MacClientTargetPlatform (93)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (91)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module InputCore (88)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module Settings (86)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module PhysXCooking (84)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module SteamVR (82)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module OculusHMD (80)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (78)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module LauncherChunkInstaller (76)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (74)
+[2018.09.20-21.15.19:712][714]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (70)
+[2018.09.20-21.15.19:738][714]LogModuleManager: Shutting down and abandoning module XMPP (65)
+[2018.09.20-21.15.19:775][714]LogModuleManager: Shutting down and abandoning module WebSockets (64)
+[2018.09.20-21.15.19:866][714]LogModuleManager: Shutting down and abandoning module HTTP (61)
+[2018.09.20-21.15.19:866][714]LogHttp: Display: Http module shutting down, but needs to wait on 1 outstanding Http requests:
+[2018.09.20-21.15.19:866][714]LogHttp: Display: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7BE497E3F7-4CC2-DF88-7164-83B0242D1035%7D&AppID=UEEditor.Rocket.Release&AppVersion=4.20.3-4369336%2B%2B%2BUE4%2BRelease-4.20&UserID=147588c041777a9701e4caa33555a153%7C54115821793a4d9dac74f845a7218274%7Cd02f2261-9139-4d5f-89a2-e7811712aa2c&AppEnvironment=datacollector-binary&UploadType=eteventstream] status=Processing
+[2018.09.20-21.15.19:889][714]LogModuleManager: Shutting down and abandoning module SSL (60)
+[2018.09.20-21.15.19:890][714]LogModuleManager: Shutting down and abandoning module MagicLeapEmulator (56)
+[2018.09.20-21.15.19:890][714]LogModuleManager: Shutting down and abandoning module MagicLeapPrivileges (54)
+[2018.09.20-21.15.19:890][714]LogModuleManager: Shutting down and abandoning module MagicLeapIdentity (52)
+[2018.09.20-21.15.19:890][714]LogModuleManager: Shutting down and abandoning module MagicLeapHelperVulkan (50)
+[2018.09.20-21.15.19:890][714]LogModuleManager: Shutting down and abandoning module MagicLeapHelperOpenGL (48)
+[2018.09.20-21.15.19:890][714]LogModuleManager: Shutting down and abandoning module MagicLeapSecureStorage (46)
+[2018.09.20-21.15.19:891][714]LogModuleManager: Shutting down and abandoning module MagicLeapGestures (44)
+[2018.09.20-21.15.19:891][714]LogModuleManager: Shutting down and abandoning module MagicLeapEyeTracker (42)
+[2018.09.20-21.15.19:891][714]LogModuleManager: Shutting down and abandoning module MagicLeapController (40)
+[2018.09.20-21.15.19:891][714]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2018.09.20-21.15.19:891][714]LogModuleManager: Shutting down and abandoning module MagicLeap (38)
+[2018.09.20-21.15.19:891][714]LogModuleManager: Shutting down and abandoning module AnimationModifiers (36)
+[2018.09.20-21.15.19:917][714]LogModuleManager: Shutting down and abandoning module PropertyEditor (35)
+[2018.09.20-21.15.19:937][714]LogModuleManager: Shutting down and abandoning module AudioEditor (32)
+[2018.09.20-21.15.19:938][714]LogModuleManager: Shutting down and abandoning module TextureCompressor (30)
+[2018.09.20-21.15.19:941][714]LogModuleManager: Shutting down and abandoning module ShaderCore (28)
+[2018.09.20-21.15.19:941][714]LogModuleManager: Shutting down and abandoning module Landscape (26)
+[2018.09.20-21.15.19:941][714]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (24)
+[2018.09.20-21.15.19:954][714]LogModuleManager: Shutting down and abandoning module OpenGLDrv (22)
+[2018.09.20-21.15.19:972][714]LogModuleManager: Shutting down and abandoning module D3D11RHI (20)
+[2018.09.20-21.15.19:972][714]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (18)
+[2018.09.20-21.15.19:972][714]LogModuleManager: Shutting down and abandoning module Renderer (16)
+[2018.09.20-21.15.19:972][714]LogModuleManager: Shutting down and abandoning module Engine (14)
+[2018.09.20-21.15.19:973][714]LogModuleManager: Shutting down and abandoning module CoreUObject (12)
+[2018.09.20-21.15.19:973][714]LogModuleManager: Shutting down and abandoning module NetworkFile (10)
+[2018.09.20-21.15.19:973][714]LogModuleManager: Shutting down and abandoning module CookedIterativeFile (8)
+[2018.09.20-21.15.19:973][714]LogModuleManager: Shutting down and abandoning module StreamingFile (6)
+[2018.09.20-21.15.19:973][714]LogModuleManager: Shutting down and abandoning module SandboxFile (4)
+[2018.09.20-21.15.19:973][714]LogModuleManager: Shutting down and abandoning module PakFile (2)
+[2018.09.20-21.15.19:985][714]LogExit: Exiting.
+[2018.09.20-21.15.19:999][714]Log file closed, 09/20/18 23:15:19

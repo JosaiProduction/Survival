@@ -9,10 +9,12 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(abstract)
 class SURVIVAL_API AConsumables : public AItem
 {
 	GENERATED_BODY()
 	
+public: 
+	virtual void PostInit() override; 
 	
 };

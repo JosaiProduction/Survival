@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Survival/Items/Interfaces/Weapon.h"
+#include "Survival/Items/Interfaces/Weapons/Weapon.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -36,7 +36,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapon() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AWeapon_Attack_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Items/Interfaces/Weapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/Weapon.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AWeapon_Attack_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AWeapon, "Attack", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x00020401, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AWeapon_Attack_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_AWeapon_Attack_Statics::Function_MetaDataParams)) };
@@ -77,25 +77,25 @@ void EmptyLinkFunctionForGeneratedCodeWeapon() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Survival,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AWeapon_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AWeapon_Attack, "Attack" }, // 332686993
+		{ &Z_Construct_UFunction_AWeapon_Attack, "Attack" }, // 1281788076
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "Items/Interfaces/Weapon.h" },
-		{ "ModuleRelativePath", "Items/Interfaces/Weapon.h" },
+		{ "IncludePath", "Items/Interfaces/Weapons/Weapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/Weapon.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_m_damage_MetaData[] = {
 		{ "Category", "Stats" },
-		{ "ModuleRelativePath", "Items/Interfaces/Weapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/Weapon.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_m_damage = { UE4CodeGen_Private::EPropertyClass::Float, "m_damage", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(AWeapon, m_damage), METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_m_damage_MetaData, ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_m_damage_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeapon_Statics::NewProp_m_attackSpeed_MetaData[] = {
 		{ "Category", "Stats" },
-		{ "ModuleRelativePath", "Items/Interfaces/Weapon.h" },
+		{ "ModuleRelativePath", "Items/Interfaces/Weapons/Weapon.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeapon_Statics::NewProp_m_attackSpeed = { UE4CodeGen_Private::EPropertyClass::Float, "m_attackSpeed", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0010000000000001, 1, nullptr, STRUCT_OFFSET(AWeapon, m_attackSpeed), METADATA_PARAMS(Z_Construct_UClass_AWeapon_Statics::NewProp_m_attackSpeed_MetaData, ARRAY_COUNT(Z_Construct_UClass_AWeapon_Statics::NewProp_m_attackSpeed_MetaData)) };
@@ -126,7 +126,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWeapon, 2270692845);
+	IMPLEMENT_CLASS(AWeapon, 2695334785);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AWeapon(Z_Construct_UClass_AWeapon, &AWeapon::StaticClass, TEXT("/Script/Survival"), TEXT("AWeapon"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AWeapon);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
