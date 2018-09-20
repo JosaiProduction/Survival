@@ -6,7 +6,7 @@
 
 ARangeWeapon::ARangeWeapon()
 {
-	m_projectile = CreateDefaultSubobject<AProjectile>(TEXT("Projectil"));
+	m_projectile = CreateDefaultSubobject<AProjectile>(TEXT("Projectile"));
 }
 
 ARangeWeapon::~ARangeWeapon()
