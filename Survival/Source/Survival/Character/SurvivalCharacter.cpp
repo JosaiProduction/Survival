@@ -308,10 +308,9 @@ void ASurvivalCharacter::CheckObstacleInFront()
 	}
 	else
 	{
-		if (m_availableInteractions & (int32)EInteractionType::VE_Climbing)
-		{
-			DropInteractionInfo(EInteractionType::VE_Climbing);
-		}
+
+		DropInteractionInfo(EInteractionType::VE_Climbing);
+
 	}
 }
 
@@ -345,8 +344,11 @@ void ASurvivalCharacter::ReceiveInteractionInfo(const EInteractionType & interac
 
 void ASurvivalCharacter::DropInteractionInfo(const EInteractionType & interactionType)
 {
-	m_availableInteractions ^= (int32)interactionType;
-	UE_LOG(LogTemp, Warning, TEXT("%d"), m_availableInteractions);
+	if (m_availableInteractions & (int32)interactionType)
+	{
+		m_availableInteractions ^= (int32)interactionType;
+		UE_LOG(LogTemp, Warning, TEXT("%d"), m_availableInteractions);
+	}
 }
 
 UInventory* ASurvivalCharacter::GetInventory() const

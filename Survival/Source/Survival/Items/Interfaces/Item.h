@@ -9,6 +9,7 @@
 
 class ASurvivalCharacter;
 
+
 static unsigned int s_itemID;
 /**
  * 
