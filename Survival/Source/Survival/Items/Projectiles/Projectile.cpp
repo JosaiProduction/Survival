@@ -14,13 +14,17 @@ AProjectile::AProjectile()
 	RootComponent = m_collider;
 	m_collider->InitSphereRadius(1.0f);
 	m_collider->BodyInstance.SetCollisionProfileName("Projectile");
-
+	m_collider->SetSimulatePhysics(true);
+	m_collider->SetNotifyRigidBodyCollision(true);
+	m_collider->BodyInstance.SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	m_collider->SetWalkableSlopeOverride(FWalkableSlopeOverride(WalkableSlope_Unwalkable, 0.f));
 	m_collider->CanCharacterStepUpOn = ECB_No;
 
-	m_collider->OnComponentBeginOverlap.AddDynamic(this, &AProjectile::OnComponentBeginOverlap);
+	m_collider->OnComponentHit.AddDynamic(this, &AProjectile::OnBeginOverlap);
+
 	m_mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	m_mesh->SetupAttachment(RootComponent);
+
 
 	m_projectileComp = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileComp"));
 	m_projectileComp->UpdatedComponent = m_collider;
@@ -36,7 +40,6 @@ AProjectile::AProjectile()
 void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -46,14 +49,14 @@ void AProjectile::Tick(float DeltaTime)
 
 }
 
-void AProjectile::OnComponentBeginOverlap(UPrimitiveComponent * OverlappedComp, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+void AProjectile::OnBeginOverlap(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
 	{
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
 
-		Destroy();
 	}
+	Destroy();
 }
 
 
