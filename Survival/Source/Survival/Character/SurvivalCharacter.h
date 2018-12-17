@@ -12,6 +12,19 @@ class UInventory;
 class UCharacterMovementComponent;
 class UAbilities;
 
+UENUM(BlueprintType)
+enum class EMoveSpeed :uint8 {
+	VE_Walk UMETA(DisplayName = "Walk"),
+	VE_Jog UMETA(DisplayName = "Jog"),
+	VE_Run UMETA(DisplayName = "Run"),
+	VE_Sprint UMETA(DisplayName = "Sprint")
+};
+UENUM(BlueprintType)
+enum class EControlMode : uint8 {
+	VE_Default UMETA(DisplayName = "Default"), 
+	VE_Climbing UMETA(DisplayName = "Climbing")
+};
+
 UCLASS(config=Game)
 class ASurvivalCharacter : public ACharacter
 {
@@ -50,7 +63,7 @@ class ASurvivalCharacter : public ACharacter
 	class UMotionControllerComponent* L_MotionController;
 
 public:
-	ASurvivalCharacter();
+	ASurvivalCharacter(const class FObjectInitializer& objectInitializer);
 
 protected:
 	virtual void BeginPlay() override;
@@ -88,15 +101,36 @@ public:
 		UInventory* m_inventory;
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Tools)
 		UAbilities* m_abilities;
-	UPROPERTY()
-		UCharacterMovementComponent* m_charMovement;
+	UPROPERTY(VisibleAnywhere, Category = Movement)
+		class UAdvancedCharMovementComp* m_moveComp;
 
 	UPROPERTY(EditAnywhere, Category = Movement)
-		float m_runMultiplier;
+		float m_walkSpeed;
 	UPROPERTY(EditAnywhere, Category = Movement)
-		float m_crouchMultiplier;
+		float m_jogSpeed; 
+	UPROPERTY(EditAnywhere, Category = Movement)
+		float m_runSpeed; 
+	UPROPERTY(EditAnywhere, Category = Movement)
+		float m_sprintSpeed; 
+	UPROPERTY(VisibleAnywhere, Category = Movement)
+		EControlMode m_controlMode; 
 	UPROPERTY(VisibleAnywhere, Category = Interaction)
 		uint32 m_availableInteractions;
+
+	UPROPERTY(EditAnywhere, Category = FreeLook)
+		bool m_freeLook; 
+
+	bool m_bClimbIsPossible;
+	bool m_bIsClimbing; 
+	bool m_bWantsToClimb;
+	bool m_bIsJumping; 
+	bool m_bIsFalling;
+	bool m_bIsClimbingOnEdge; 
+	bool m_bFoundEdge;
+
+	float m_climbDist;
+
+	EMoveSpeed m_moveSpeed; 
 protected:
 	
 	/** Fires a projectile. */
@@ -117,6 +151,7 @@ protected:
 	 */
 	void TurnAtRate(float Rate);
 
+	void CheckJumping(float deltaSeconds);
 	/**
 	 * Called via input to turn look up/down at a given rate.
 	 * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
@@ -136,34 +171,58 @@ protected:
 	void TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location);
 	TouchData	TouchItem;
 	
-	void Run();
-	void UnRun();
-
 	void Crouch();
-	void UnCrouch();
 
 	void Jump() override;
 	void StopJumping() override;
 
 	void Interact();
+	FHitResult CheckClimbingObstacle();
 
-	void CheckObstacleInFront();
+	FHitResult CheckObstacleInFront();
 
-	bool CheckEdge(); 
+	void CheckEdge(float deltaSeconds); 
+
+	void UpdateMoveSpeed();
+
+	void ClimbOnEdge(FVector destinationPos, float deltaSeconds);
+
+	class UAdvancedCharMovementComp* GetAdvCharacterMovement() const;
+
+	virtual void PostInitializeComponents()override; 
 public: 
+	UFUNCTION()
+		void OrientSightToBody();
+	UFUNCTION()
+		void OrientBodyToSight();
+	UFUNCTION()
+		void ToggleFreeLook();
 	UFUNCTION()
 	void ToggleInventory(); 
 	UFUNCTION()
-	void ReceiveInteraction(const EInteractionType& interactionType, class AActor* actor);
+	void ReceiveInteraction(const EInteractionType& interactionType);
 	UFUNCTION()
 	void ReceiveInteractionInfo(const EInteractionType& interactionType);
 	UFUNCTION()
 	void DropInteractionInfo(const EInteractionType& interactionType);
-
+	UFUNCTION()
+		void ActivateClimbMode();
+	UFUNCTION()
+		void DeactivateClimbMode();
+	UFUNCTION()
+		void IncreaseMoveSpeed();
+	UFUNCTION()
+		void DecreaseMoveSpeed();
+	UFUNCTION()
+		void OnStartClimbing();
 	UFUNCTION(BlueprintCallable)
 		UInventory* GetInventory() const;
 	UFUNCTION(BlueprintCallable)
 		UAbilities* GetAbilities() const; 
+
+		virtual void AddControllerYawInput(float Val) override;
+		virtual void AddControllerPitchInput(float Val) override;
+
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;

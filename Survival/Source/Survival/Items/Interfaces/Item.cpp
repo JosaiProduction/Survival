@@ -5,6 +5,8 @@
 #include "SurvivalGameMode.h"
 #include "Items/Globals/ItemRegister.h"
 #include "Components/BoxComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Runtime/Engine/Classes/Engine/World.h"
 
 void AItem::BeginPlay()
 {
