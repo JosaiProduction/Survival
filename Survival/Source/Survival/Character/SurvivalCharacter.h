@@ -127,6 +127,7 @@ public:
 	bool m_bIsFalling;
 	bool m_bIsClimbingOnEdge; 
 	bool m_bFoundEdge;
+	bool m_bSafeMode;
 
 	float m_climbDist;
 
@@ -177,6 +178,10 @@ protected:
 	void StopJumping() override;
 
 	void Interact();
+	void ToggleSafeMode();
+	bool SafeMoveForward(float value);
+	bool SafeMoveRight(float value);
+
 	FHitResult CheckClimbingObstacle();
 
 	FHitResult CheckObstacleInFront();

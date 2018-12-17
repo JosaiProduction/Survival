@@ -214,6 +214,8 @@ void ASurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 	PlayerInputComponent->BindAction("Inventory", IE_Pressed, this, &ASurvivalCharacter::ToggleInventory);
 
 	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &ASurvivalCharacter::Interact);
+	PlayerInputComponent->BindAction("SafeMove", IE_Pressed, this, &ASurvivalCharacter::ToggleSafeMode);
+	PlayerInputComponent->BindAction("SafeMove", IE_Released, this, &ASurvivalCharacter::ToggleSafeMode);
 }
 
 void ASurvivalCharacter::OnFire()
@@ -309,10 +311,6 @@ void ASurvivalCharacter::Crouch()
 			return;
 		}
 	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Movement Comp isn't initialized"));
-	}
 }
 
 
@@ -333,10 +331,6 @@ void ASurvivalCharacter::Jump()
 		m_bIsJumping = true;
 		ACharacter::Jump();
 	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Movement Comp isn't initialized"));
-	}
 }
 
 void ASurvivalCharacter::StopJumping()
@@ -354,6 +348,51 @@ void ASurvivalCharacter::Interact()
 	{
 		DeactivateClimbMode();
 	}
+}
+
+void ASurvivalCharacter::ToggleSafeMode()
+{
+	m_bSafeMode = !m_bSafeMode;
+	if (m_bSafeMode)
+	{
+		m_moveSpeed = EMoveSpeed::VE_Walk;
+		UpdateMoveSpeed();
+	}
+}
+
+
+bool ASurvivalCharacter::SafeMoveForward(float value)
+{
+	FCollisionQueryParams collParams;
+	collParams.AddIgnoredActor(this);
+	collParams.bTraceComplex = false;
+	collParams.bReturnPhysicalMaterial = true;
+	FHitResult outHit(ForceInit);
+	FVector start = GetActorLocation() + GetCapsuleComponent()->GetUnscaledCapsuleRadius()*(GetActorForwardVector()*value) + GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight()*(-GetActorUpVector());
+	FVector end = start + (m_moveComp->MaxStepHeight + 5) *(-GetActorUpVector());
+	DrawDebugLine(GetWorld(), start, end, FColor::Blue);
+	if (GetWorld()->LineTraceSingleByChannel(outHit, start, end, ECC_WorldStatic, collParams))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool ASurvivalCharacter::SafeMoveRight(float value)
+{
+	FCollisionQueryParams collParams;
+	collParams.AddIgnoredActor(this);
+	collParams.bTraceComplex = false;
+	collParams.bReturnPhysicalMaterial = true;
+	FHitResult outHit(ForceInit);
+	FVector start = GetActorLocation() + GetCapsuleComponent()->GetUnscaledCapsuleRadius()*(GetActorRightVector()*value) + GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight()*(-GetActorUpVector());
+	FVector end = start + (m_moveComp->MaxStepHeight + 5) *(-GetActorUpVector());
+	DrawDebugLine(GetWorld(), start, end, FColor::Blue);
+	if (GetWorld()->LineTraceSingleByChannel(outHit, start, end, ECC_WorldStatic, collParams))
+	{
+		return true;
+	}
+	return false;
 }
 
 FHitResult ASurvivalCharacter::CheckClimbingObstacle()
@@ -376,7 +415,6 @@ FHitResult ASurvivalCharacter::CheckClimbingObstacle()
 FHitResult  ASurvivalCharacter::CheckObstacleInFront()
 {
 	FVector end = this->GetActorLocation() + 70 * GetActorForwardVector();
-	//DrawDebugLine(GetWorld(), this->GetActorLocation(), end, FColor::Green, false, .1f, 0, 1);
 	FHitResult outHit(ForceInit);
 	FCollisionQueryParams collParams;
 	collParams.AddIgnoredActor(this);
@@ -426,12 +464,8 @@ void  ASurvivalCharacter::CheckEdge(float deltaSeconds)
 				destPos = box.GetClosestPointTo(GetActorLocation() + FVector(0, 0, box.GetExtent().Z) + 20) + GetCapsuleComponent()->GetUnscaledCapsuleRadius()*GetActorForwardVector() + FVector(0, 0, GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight());
 				if (!GetWorld()->LineTraceSingleByChannel(outHit, GetActorLocation(), GetActorLocation() - GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight()*GetActorUpVector(), ECC_WorldStatic, collParams))
 				{
-					UE_LOG(LogTemp, Warning, TEXT("%s"), *destPos.ToString());
-
 					m_bFoundEdge = true;
-
 				}
-				//m_moveComp->SetMovementMode(MOVE_Flying);
 				return;
 			}
 		}
@@ -467,7 +501,7 @@ void ASurvivalCharacter::UpdateMoveSpeed()
 
 void ASurvivalCharacter::ClimbOnEdge(FVector destinationPos, float deltaSeconds)
 {
-	this->SetActorLocation(destinationPos);
+	this->SetActorLocation(destinationPos, false, (FHitResult*)nullptr, ETeleportType::ResetPhysics);
 	m_bFoundEdge = false;
 	m_bIsClimbingOnEdge = false;
 }
@@ -664,6 +698,14 @@ void ASurvivalCharacter::MoveForward(float Value)
 	switch (m_controlMode)
 	{
 	case EControlMode::VE_Default:
+		UE_LOG(LogTemp, Warning, TEXT("%s"), m_bSafeMode ? TEXT("safe mode activated") : TEXT("safe mode deactivated"));
+		if (m_bSafeMode)
+		{
+			if (!SafeMoveForward(Value) && Value != 0.0f)
+			{
+				return;
+			}
+		}
 		if (Value != 0.0f)
 		{
 			// add movement in that direction
@@ -674,7 +716,11 @@ void ASurvivalCharacter::MoveForward(float Value)
 	{
 		if (Value != 0.0f)
 		{
-			AddMovementInput(GetActorUpVector(), Value);
+			AddMovementInput(GetActorUpVector(), Value / 4);
+		}
+		else
+		{
+			m_moveComp->Velocity = FVector(m_moveComp->Velocity.X, m_moveComp->Velocity.Y, 0);
 		}
 		break;
 	}
@@ -683,22 +729,32 @@ void ASurvivalCharacter::MoveForward(float Value)
 
 void ASurvivalCharacter::MoveRight(float Value)
 {
-	if (Value != 0.0f)
+	switch (m_controlMode)
 	{
-		switch (m_controlMode)
+	case EControlMode::VE_Default:
+	{
+		if (m_bSafeMode)
 		{
-		case EControlMode::VE_Default:
+			if (!SafeMoveRight(Value) && Value != 0.0f)
+			{
+				return;
+			}
+		}
+		// add movement in that direction
+		AddMovementInput(GetActorRightVector(), Value);
+
+		break;
+	}
+	case EControlMode::VE_Climbing:
+		if (Value != 0.0f)
 		{
-
-			// add movement in that direction
-			AddMovementInput(GetActorRightVector(), Value);
-
-			break;
+			AddMovementInput(GetActorRightVector(), Value / 4);
 		}
-		case EControlMode::VE_Climbing:
-			AddMovementInput(GetActorRightVector(), Value);
-			break;
+		else
+		{
+			m_moveComp->Velocity = FVector(0, 0, m_moveComp->Velocity.Z);
 		}
+		break;
 	}
 }
 
