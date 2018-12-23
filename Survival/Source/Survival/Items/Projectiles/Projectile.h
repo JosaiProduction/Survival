@@ -16,14 +16,11 @@ public:
 	AProjectile();
 
 	UPROPERTY(EditAnywhere, Category = Components)
-		USceneComponent* m_root;
-	UPROPERTY(EditAnywhere, Category = Components)
-		UStaticMeshComponent* m_mesh;
-	UPROPERTY(EditAnywhere, Category = Components)
 		class USphereComponent* m_collider; 
 	UPROPERTY(EditAnywhere, Category = Components)
 		class UProjectileMovementComponent* m_projectileComp;
-
+	UPROPERTY(EditAnywhere, Category = Components)
+		class UStaticMeshComponent* m_mesh;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -33,6 +30,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION()
-	void OnComponentBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void OnBeginOverlap(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 };

@@ -11,20 +11,31 @@
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
-
+#include "Runtime/Engine/Classes/Kismet/KismetMathLibrary.h"
 #include "Character/Inventory.h"
 #include "Character/Abilities.h"
-#include "Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h"
+#include "Survival/Character/AdvancedCharMovementComp.h"
 #include "DrawDebugHelpers.h"
 #include "Runtime/Engine/Classes/PhysicalMaterials/PhysicalMaterial.h"
 #include "World/PhysicalMaterials/ClimbPhysMat.h"
+
+#include "Runtime/Engine/Public/Net/VoiceConfig.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
 //////////////////////////////////////////////////////////////////////////
 // ASurvivalCharacter
 
-ASurvivalCharacter::ASurvivalCharacter()
+ASurvivalCharacter::ASurvivalCharacter(const FObjectInitializer& objectInitializer)
+	:Super(objectInitializer.SetDefaultSubobjectClass<UAdvancedCharMovementComp>(ACharacter::CharacterMovementComponentName))
+	, m_freeLook(false)
+	, m_walkSpeed(100)
+	, m_jogSpeed(250)
+	, m_runSpeed(400)
+	, m_sprintSpeed(800)
+	, m_bClimbIsPossible(false)
+	, m_bFoundEdge(false)
+	, m_bIsClimbingOnEdge(false)
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
@@ -33,10 +44,6 @@ ASurvivalCharacter::ASurvivalCharacter()
 	BaseTurnRate = 45.f;
 	BaseLookUpRate = 45.f;
 
-
-	m_charMovement = GetCharacterMovement();
-	m_runMultiplier = 2;
-	m_crouchMultiplier = .5f;
 
 	// Create a CameraComponent	
 	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
@@ -94,7 +101,7 @@ ASurvivalCharacter::ASurvivalCharacter()
 
 	// Uncomment the following line to turn motion controllers on by default:
 	//bUsingMotionControllers = true;
-
+	RootComponent->bAbsoluteRotation = true;
 
 	m_inventory = CreateDefaultSubobject<UInventory>(TEXT("Inventory"));
 	m_abilities = CreateDefaultSubobject<UAbilities>(TEXT("Abilities"));
@@ -123,7 +130,43 @@ void ASurvivalCharacter::BeginPlay()
 
 void ASurvivalCharacter::Tick(float DeltaSeconds)
 {
-	CheckObstacleInFront();
+	FHitResult outHit;
+	switch (m_controlMode)
+	{
+	case EControlMode::VE_Default:
+	{
+		outHit = CheckObstacleInFront();
+
+	}
+	break;
+	case EControlMode::VE_Climbing:
+	{
+		outHit = CheckClimbingObstacle();
+		if (outHit.GetActor())
+		{
+			GetController()->SetControlRotation(UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), outHit.ImpactPoint));
+			this->SetActorLocation(outHit.ImpactPoint - (m_climbDist + 5) * GetActorForwardVector());
+			DrawDebugLine(GetWorld(), outHit.ImpactPoint, outHit.ImpactPoint + outHit.ImpactNormal * 70, FColor::Green, false, .1f, 0, 1);
+		}
+		else
+		{
+			DeactivateClimbMode();
+		}
+	}
+	break;
+	}
+	if (m_bIsJumping)
+	{
+		CheckJumping(DeltaSeconds);
+	}
+	//const UEnum* enumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EControlMode"), true);
+	//UE_LOG(LogTemp, Warning, TEXT("%s"), *enumPtr->GetNameByValue((int64)m_controlMode).ToString());
+	//UE_LOG(LogTemp, Warning, TEXT("%s"), m_moveComp->IsCrouching() ? TEXT("is crouching") : TEXT("isn't crouching"));
+	//UE_LOG(LogTemp, Warning, TEXT("%s"), m_moveComp->IsLaid() ? TEXT("is lying") : TEXT("isn't lying"));
+	//const UEnum* enumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EMoveSpeed"), true);
+	//UE_LOG(LogTemp, Warning, TEXT("%s"), *enumPtr->GetNameByValue((int64)m_moveSpeed).ToString());
+	//const UEnum* enumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EMovementMode"), true);
+	//UE_LOG(LogTemp, Warning, TEXT("%s"), *enumPtr->GetNameByValue((int64)m_moveComp->MovementMode).ToString());
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -134,12 +177,13 @@ void ASurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 	// set up gameplay key bindings
 	check(PlayerInputComponent);
 
-	// Bind jump events
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASurvivalCharacter::Jump);
-	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ASurvivalCharacter::StopJumping);
+	//Bind mouse inputs
+	PlayerInputComponent->BindAction("BodyToSight", IE_Pressed, this, &ASurvivalCharacter::OrientBodyToSight);
+	PlayerInputComponent->BindAction("FreeLook", IE_DoubleClick, this, &ASurvivalCharacter::ToggleFreeLook);
+	PlayerInputComponent->BindAction("SightToBody", IE_Pressed, this, &ASurvivalCharacter::OrientSightToBody);
+	PlayerInputComponent->BindAction("IncreaseMoveSpeedMouseWheel", IE_Pressed, this, &ASurvivalCharacter::IncreaseMoveSpeed);
+	PlayerInputComponent->BindAction("DecreaseMoveSpeedMouseWheel", IE_Pressed, this, &ASurvivalCharacter::DecreaseMoveSpeed);
 
-	// Bind fire event
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ASurvivalCharacter::OnFire);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
@@ -150,6 +194,9 @@ void ASurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 	PlayerInputComponent->BindAxis("MoveForward", this, &ASurvivalCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ASurvivalCharacter::MoveRight);
 
+	PlayerInputComponent->BindAction("IncreaseMoveSpeed", IE_DoubleClick, this, &ASurvivalCharacter::IncreaseMoveSpeed);
+	PlayerInputComponent->BindAction("DecreaseMoveSpeed", IE_DoubleClick, this, &ASurvivalCharacter::DecreaseMoveSpeed);
+
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
@@ -158,16 +205,17 @@ void ASurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("LookUpRate", this, &ASurvivalCharacter::LookUpAtRate);
 
-
-	PlayerInputComponent->BindAction("Run", IE_Pressed, this, &ASurvivalCharacter::Run);
-	PlayerInputComponent->BindAction("Run", IE_Released, this, &ASurvivalCharacter::UnRun);
-
+	// Bind pose events
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ASurvivalCharacter::Crouch);
-	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &ASurvivalCharacter::UnCrouch);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASurvivalCharacter::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ASurvivalCharacter::StopJumping);
+
 
 	PlayerInputComponent->BindAction("Inventory", IE_Pressed, this, &ASurvivalCharacter::ToggleInventory);
 
 	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &ASurvivalCharacter::Interact);
+	PlayerInputComponent->BindAction("SafeMove", IE_Pressed, this, &ASurvivalCharacter::ToggleSafeMode);
+	PlayerInputComponent->BindAction("SafeMove", IE_Released, this, &ASurvivalCharacter::ToggleSafeMode);
 }
 
 void ASurvivalCharacter::OnFire()
@@ -248,31 +296,41 @@ void ASurvivalCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const FVe
 	TouchItem.bIsPressed = false;
 }
 
-void ASurvivalCharacter::Run()
-{
-	m_charMovement->MaxWalkSpeed *= m_runMultiplier;
-}
-
-void ASurvivalCharacter::UnRun()
-{
-	m_charMovement->MaxWalkSpeed /= m_runMultiplier;
-}
-
 void ASurvivalCharacter::Crouch()
 {
-	m_charMovement->Crouch(true);
-	m_charMovement->MaxWalkSpeed *= m_crouchMultiplier;
+	if (m_moveComp)
+	{
+		if (!m_moveComp->IsCrouching() && !m_moveComp->IsLaid())
+		{
+			m_moveComp->bWantsToCrouch = true;
+			return;
+		}
+		if (!m_moveComp->IsLaid() && m_moveComp->IsCrouching())
+		{
+			m_moveComp->LayDown();
+			return;
+		}
+	}
 }
 
-void ASurvivalCharacter::UnCrouch()
-{
-	m_charMovement->Crouch(false);
-	m_charMovement->MaxWalkSpeed /= m_crouchMultiplier;
-}
 
 void ASurvivalCharacter::Jump()
 {
-	ACharacter::Jump();
+	if (m_moveComp)
+	{
+		if (m_moveComp->IsCrouching())
+		{
+			m_moveComp->bWantsToCrouch = false;
+			return;
+		}
+		if (m_moveComp->IsLaid())
+		{
+			m_moveComp->UnLayDown();
+			return;
+		}
+		m_bIsJumping = true;
+		ACharacter::Jump();
+	}
 }
 
 void ASurvivalCharacter::StopJumping()
@@ -282,13 +340,81 @@ void ASurvivalCharacter::StopJumping()
 
 void ASurvivalCharacter::Interact()
 {
-
+	if (m_bClimbIsPossible && !m_bIsClimbing)
+	{
+		ActivateClimbMode();
+	}
+	else if (m_bIsClimbing)
+	{
+		DeactivateClimbMode();
+	}
 }
 
-void ASurvivalCharacter::CheckObstacleInFront()
+void ASurvivalCharacter::ToggleSafeMode()
+{
+	m_bSafeMode = !m_bSafeMode;
+	if (m_bSafeMode)
+	{
+		m_moveSpeed = EMoveSpeed::VE_Walk;
+		UpdateMoveSpeed();
+	}
+}
+
+
+bool ASurvivalCharacter::SafeMoveForward(float value)
+{
+	FCollisionQueryParams collParams;
+	collParams.AddIgnoredActor(this);
+	collParams.bTraceComplex = false;
+	collParams.bReturnPhysicalMaterial = true;
+	FHitResult outHit(ForceInit);
+	FVector start = GetActorLocation() + GetCapsuleComponent()->GetUnscaledCapsuleRadius()*(GetActorForwardVector()*value) + GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight()*(-GetActorUpVector());
+	FVector end = start + (m_moveComp->MaxStepHeight + 5) *(-GetActorUpVector());
+	DrawDebugLine(GetWorld(), start, end, FColor::Blue);
+	if (GetWorld()->LineTraceSingleByChannel(outHit, start, end, ECC_WorldStatic, collParams))
+	{
+		return true;
+	}
+	return false;
+}
+
+bool ASurvivalCharacter::SafeMoveRight(float value)
+{
+	FCollisionQueryParams collParams;
+	collParams.AddIgnoredActor(this);
+	collParams.bTraceComplex = false;
+	collParams.bReturnPhysicalMaterial = true;
+	FHitResult outHit(ForceInit);
+	FVector start = GetActorLocation() + GetCapsuleComponent()->GetUnscaledCapsuleRadius()*(GetActorRightVector()*value) + GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight()*(-GetActorUpVector());
+	FVector end = start + (m_moveComp->MaxStepHeight + 5) *(-GetActorUpVector());
+	DrawDebugLine(GetWorld(), start, end, FColor::Blue);
+	if (GetWorld()->LineTraceSingleByChannel(outHit, start, end, ECC_WorldStatic, collParams))
+	{
+		return true;
+	}
+	return false;
+}
+
+FHitResult ASurvivalCharacter::CheckClimbingObstacle()
+{
+	FHitResult outHit = CheckObstacleInFront();
+	if (outHit.GetActor())
+	{
+		FCollisionQueryParams collParams;
+		collParams.AddIgnoredActor(this);
+		collParams.bTraceComplex = false;
+		collParams.bReturnPhysicalMaterial = true;
+		FVector targetLoc = outHit.Actor->GetActorLocation();
+		GetWorld()->LineTraceSingleByChannel(outHit, this->GetActorLocation(), FVector(targetLoc.X, targetLoc.Y, GetActorLocation().Z), ECC_WorldStatic, collParams);
+	}
+
+	return outHit;
+}
+
+
+FHitResult  ASurvivalCharacter::CheckObstacleInFront()
 {
 	FVector end = this->GetActorLocation() + 70 * GetActorForwardVector();
-	DrawDebugLine(GetWorld(), this->GetActorLocation(), end, FColor::Green, false, .1f, 0, 1);
 	FHitResult outHit(ForceInit);
 	FCollisionQueryParams collParams;
 	collParams.AddIgnoredActor(this);
@@ -303,22 +429,94 @@ void ASurvivalCharacter::CheckObstacleInFront()
 			if (cPhysMat->GetReqClimbLvl() >= m_abilities->m_abilities.ClimbLvl)
 			{
 				ReceiveInteractionInfo(EInteractionType::VE_Climbing);
+				m_bClimbIsPossible = true;
 			}
 		}
 	}
 	else
 	{
-		if (m_availableInteractions & (int32)EInteractionType::VE_Climbing)
+		DropInteractionInfo(EInteractionType::VE_Climbing);
+		m_bClimbIsPossible = false;
+		DeactivateClimbMode();
+	}
+	return outHit;
+
+}
+
+void  ASurvivalCharacter::CheckEdge(float deltaSeconds)
+{
+	static FVector destPos;
+	if (!m_bFoundEdge)
+	{
+		FVector frontLocation(GetActorLocation() + GetCapsuleComponent()->GetUnscaledCapsuleRadius()*GetActorForwardVector());
+		FVector handLocation(frontLocation + FVector(0, 0, GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight()));
+		FHitResult outHit(ForceInit);
+		FCollisionQueryParams collParams;
+		collParams.AddIgnoredActor(this);
+		collParams.bTraceComplex = false;
+		collParams.bReturnPhysicalMaterial = true;
+		if (GetWorld()->LineTraceSingleByChannel(outHit, frontLocation, frontLocation + 20 * GetActorForwardVector(), ECC_WorldStatic, collParams))
 		{
-			DropInteractionInfo(EInteractionType::VE_Climbing);
+			TWeakObjectPtr<AActor> currentActor = outHit.Actor;
+			if (!GetWorld()->LineTraceSingleByChannel(outHit, handLocation, handLocation + 20 * GetActorForwardVector(), ECC_WorldStatic, collParams))
+			{
+				FBox box = currentActor->GetComponentsBoundingBox();
+				destPos = box.GetClosestPointTo(GetActorLocation() + FVector(0, 0, box.GetExtent().Z) + 20) + GetCapsuleComponent()->GetUnscaledCapsuleRadius()*GetActorForwardVector() + FVector(0, 0, GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight());
+				if (!GetWorld()->LineTraceSingleByChannel(outHit, GetActorLocation(), GetActorLocation() - GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight()*GetActorUpVector(), ECC_WorldStatic, collParams))
+				{
+					m_bFoundEdge = true;
+				}
+				return;
+			}
 		}
+	}
+	else
+	{
+		ClimbOnEdge(destPos, deltaSeconds);
 	}
 }
 
-bool ASurvivalCharacter::CheckEdge()
+void ASurvivalCharacter::UpdateMoveSpeed()
 {
+	switch (m_moveSpeed)
+	{
+	case EMoveSpeed::VE_Walk:
+		m_moveComp->MaxWalkSpeed = m_walkSpeed;
+		m_moveComp->MaxWalkSpeedCrouched = m_walkSpeed;
+		break;
+	case EMoveSpeed::VE_Jog:
+		m_moveComp->MaxWalkSpeed = m_jogSpeed;
+		m_moveComp->MaxWalkSpeedCrouched = m_jogSpeed;
+		break;
+	case EMoveSpeed::VE_Run:
+		m_moveComp->MaxWalkSpeed = m_runSpeed;
+		m_moveComp->MaxWalkSpeedCrouched = m_runSpeed;
+		break;
+	case EMoveSpeed::VE_Sprint:
+		m_moveComp->MaxWalkSpeed = m_sprintSpeed;
+		m_moveComp->MaxWalkSpeedCrouched = m_sprintSpeed;
+		break;
+	}
+}
 
-	return false;
+void ASurvivalCharacter::ClimbOnEdge(FVector destinationPos, float deltaSeconds)
+{
+	this->SetActorLocation(destinationPos, false, (FHitResult*)nullptr, ETeleportType::ResetPhysics);
+	m_bFoundEdge = false;
+	m_bIsClimbingOnEdge = false;
+}
+
+UAdvancedCharMovementComp * ASurvivalCharacter::GetAdvCharacterMovement() const
+{
+	return Cast<UAdvancedCharMovementComp>(GetCharacterMovement());
+}
+
+void ASurvivalCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	m_moveComp = GetAdvCharacterMovement();
+	UpdateMoveSpeed();
 }
 
 void ASurvivalCharacter::ToggleInventory()
@@ -327,12 +525,25 @@ void ASurvivalCharacter::ToggleInventory()
 	m_inventory->IsEnabled() ? m_inventory->Disable() : m_inventory->Enable();
 }
 
-void ASurvivalCharacter::ReceiveInteraction(const EInteractionType & interactionType, AActor * actor)
+void ASurvivalCharacter::ReceiveInteraction(const EInteractionType & interactionType)
 {
 	switch (interactionType)
 	{
 	case EInteractionType::VE_Climbing:
-		UE_LOG(LogTemp, Warning, TEXT("Is Climbing"));
+		if (!m_bIsClimbing && m_bWantsToClimb)
+		{
+			m_bIsClimbing = true;
+			m_controlMode = EControlMode::VE_Climbing;
+			m_moveComp->SetMovementMode(MOVE_Flying);
+			return;
+		}
+		else if (m_bIsClimbing)
+		{
+			m_bIsClimbing = false;
+			m_controlMode = EControlMode::VE_Default;
+			m_moveComp->SetMovementMode(MOVE_Walking);
+			return;
+		}
 		break;
 	}
 }
@@ -345,8 +556,78 @@ void ASurvivalCharacter::ReceiveInteractionInfo(const EInteractionType & interac
 
 void ASurvivalCharacter::DropInteractionInfo(const EInteractionType & interactionType)
 {
-	m_availableInteractions ^= (int32)interactionType;
-	UE_LOG(LogTemp, Warning, TEXT("%d"), m_availableInteractions);
+	if (m_availableInteractions & (int32)interactionType)
+	{
+		m_availableInteractions ^= (int32)interactionType;
+		UE_LOG(LogTemp, Warning, TEXT("%d"), m_availableInteractions);
+	}
+}
+
+void ASurvivalCharacter::ActivateClimbMode()
+{
+	m_bWantsToClimb = true;
+	ReceiveInteraction(EInteractionType::VE_Climbing);
+	OnStartClimbing();
+}
+
+void ASurvivalCharacter::DeactivateClimbMode()
+{
+	m_bWantsToClimb = false;
+	ReceiveInteraction(EInteractionType::VE_Climbing);
+}
+
+void ASurvivalCharacter::IncreaseMoveSpeed()
+{
+	switch (m_moveSpeed)
+	{
+	case EMoveSpeed::VE_Walk:
+	{
+		m_moveSpeed = EMoveSpeed::VE_Jog;
+		break;
+	}
+	case EMoveSpeed::VE_Jog:
+	{
+		m_moveSpeed = EMoveSpeed::VE_Run;
+		break;
+	}
+	case EMoveSpeed::VE_Run:
+	{
+		m_moveSpeed = EMoveSpeed::VE_Sprint;
+		break;
+	}
+
+	}
+	UpdateMoveSpeed();
+}
+
+void ASurvivalCharacter::DecreaseMoveSpeed()
+{
+	switch (m_moveSpeed)
+	{
+
+	case EMoveSpeed::VE_Jog:
+	{
+		m_moveSpeed = EMoveSpeed::VE_Walk;
+		break;
+	}
+	case EMoveSpeed::VE_Run:
+	{
+		m_moveSpeed = EMoveSpeed::VE_Jog;
+		break;
+	}
+	case EMoveSpeed::VE_Sprint:
+	{
+		m_moveSpeed = EMoveSpeed::VE_Run;
+		break;
+	}
+	}
+	UpdateMoveSpeed();
+}
+
+void ASurvivalCharacter::OnStartClimbing()
+{
+	FHitResult result = CheckObstacleInFront();
+	m_climbDist = FVector::Dist(this->GetActorLocation(), result.ImpactPoint);
 }
 
 UInventory* ASurvivalCharacter::GetInventory() const
@@ -357,6 +638,21 @@ UInventory* ASurvivalCharacter::GetInventory() const
 UAbilities * ASurvivalCharacter::GetAbilities() const
 {
 	return m_abilities;
+}
+
+void ASurvivalCharacter::AddControllerYawInput(float Val)
+{
+	switch (m_controlMode)
+	{
+	case EControlMode::VE_Default:
+		Super::AddControllerYawInput(Val);
+		break;
+	}
+}
+
+void ASurvivalCharacter::AddControllerPitchInput(float Val)
+{
+	Super::AddControllerPitchInput(Val);
 }
 
 //Commenting this section out to be consistent with FPS BP template.
@@ -399,26 +695,121 @@ UAbilities * ASurvivalCharacter::GetAbilities() const
 
 void ASurvivalCharacter::MoveForward(float Value)
 {
-	if (Value != 0.0f)
+	switch (m_controlMode)
 	{
-		// add movement in that direction
-		AddMovementInput(GetActorForwardVector(), Value);
+	case EControlMode::VE_Default:
+		UE_LOG(LogTemp, Warning, TEXT("%s"), m_bSafeMode ? TEXT("safe mode activated") : TEXT("safe mode deactivated"));
+		if (m_bSafeMode)
+		{
+			if (!SafeMoveForward(Value) && Value != 0.0f)
+			{
+				return;
+			}
+		}
+		if (Value != 0.0f)
+		{
+			// add movement in that direction
+			AddMovementInput(GetActorForwardVector(), Value);
+		}
+		break;
+	case EControlMode::VE_Climbing:
+	{
+		if (Value != 0.0f)
+		{
+			AddMovementInput(GetActorUpVector(), Value / 4);
+		}
+		else
+		{
+			m_moveComp->Velocity = FVector(m_moveComp->Velocity.X, m_moveComp->Velocity.Y, 0);
+		}
+		break;
+	}
 	}
 }
 
 void ASurvivalCharacter::MoveRight(float Value)
 {
-	if (Value != 0.0f)
+	switch (m_controlMode)
 	{
+	case EControlMode::VE_Default:
+	{
+		if (m_bSafeMode)
+		{
+			if (!SafeMoveRight(Value) && Value != 0.0f)
+			{
+				return;
+			}
+		}
 		// add movement in that direction
 		AddMovementInput(GetActorRightVector(), Value);
+
+		break;
+	}
+	case EControlMode::VE_Climbing:
+		if (Value != 0.0f)
+		{
+			AddMovementInput(GetActorRightVector(), Value / 4);
+		}
+		else
+		{
+			m_moveComp->Velocity = FVector(0, 0, m_moveComp->Velocity.Z);
+		}
+		break;
 	}
 }
 
 void ASurvivalCharacter::TurnAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
-	AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
+	if (Rate != 0.0f)
+	{
+		switch (m_controlMode)
+		{
+
+		case EControlMode::VE_Default:
+			AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
+			break;
+
+		}
+	}
+}
+
+void ASurvivalCharacter::CheckJumping(float deltaSeconds)
+{
+	switch (m_moveComp->MovementMode)
+	{
+	case EMovementMode::MOVE_Walking:
+		if (!m_bIsFalling)
+		{
+			CheckEdge(deltaSeconds);
+			return;
+		}
+		m_bIsFalling = false;
+		m_bIsJumping = false;
+		break;
+	case EMovementMode::MOVE_Falling:
+		CheckEdge(deltaSeconds);
+		if (!m_bIsClimbingOnEdge)
+		{
+			m_bIsFalling = true;
+		}
+	case EMovementMode::MOVE_Flying:
+		CheckEdge(deltaSeconds);
+		break;
+	}
+}
+
+void ASurvivalCharacter::OrientSightToBody()
+{
+}
+
+void ASurvivalCharacter::OrientBodyToSight()
+{
+}
+
+void ASurvivalCharacter::ToggleFreeLook()
+{
+	m_freeLook = !m_freeLook;
 }
 
 void ASurvivalCharacter::LookUpAtRate(float Rate)
@@ -438,6 +829,6 @@ bool ASurvivalCharacter::EnableTouchscreenMovement(class UInputComponent* Player
 		//PlayerInputComponent->BindTouch(EInputEvent::IE_Repeat, this, &ASurvivalCharacter::TouchUpdate);
 		return true;
 	}
-	
+
 	return false;
 }
