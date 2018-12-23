@@ -36,6 +36,7 @@ ASurvivalCharacter::ASurvivalCharacter(const FObjectInitializer& objectInitializ
 	, m_bClimbIsPossible(false)
 	, m_bFoundEdge(false)
 	, m_bIsClimbingOnEdge(false)
+	, m_energy(100)
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
@@ -136,7 +137,7 @@ void ASurvivalCharacter::Tick(float DeltaSeconds)
 	case EControlMode::VE_Default:
 	{
 		outHit = CheckObstacleInFront();
-
+		CheckGroundAngle();
 	}
 	break;
 	case EControlMode::VE_Climbing:
@@ -302,6 +303,11 @@ void ASurvivalCharacter::Crouch()
 	{
 		if (!m_moveComp->IsCrouching() && !m_moveComp->IsLaid())
 		{
+			if (m_moveComp->CrouchedHalfHeight < GetCapsuleComponent()->GetUnscaledCapsuleRadius())
+			{
+				m_startCapsuleRadius = GetCapsuleComponent()->GetUnscaledCapsuleRadius();
+				GetCapsuleComponent()->SetCapsuleRadius(m_moveComp->CrouchedHalfHeight);
+			}
 			m_moveComp->bWantsToCrouch = true;
 			return;
 		}
@@ -318,8 +324,12 @@ void ASurvivalCharacter::Jump()
 {
 	if (m_moveComp)
 	{
-		if (m_moveComp->IsCrouching())
+		if (m_moveComp->IsCrouching() && !m_moveComp->IsLaid())
 		{
+			if (m_moveComp->CrouchedHalfHeight < m_startCapsuleRadius)
+			{
+				GetCapsuleComponent()->SetCapsuleRadius(m_startCapsuleRadius);
+			}
 			m_moveComp->bWantsToCrouch = false;
 			return;
 		}
@@ -496,6 +506,23 @@ void ASurvivalCharacter::UpdateMoveSpeed()
 		m_moveComp->MaxWalkSpeed = m_sprintSpeed;
 		m_moveComp->MaxWalkSpeedCrouched = m_sprintSpeed;
 		break;
+	}
+}
+
+void ASurvivalCharacter::CheckGroundAngle()
+{
+	FHitResult outHit(ForceInit); 
+	FCollisionQueryParams collParams;
+	collParams.AddIgnoredActor(this);
+	collParams.bTraceComplex = false;
+	collParams.bReturnPhysicalMaterial = true;
+	FVector start = GetActorLocation() - FVector(0, 0, GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight());
+	FVector end = start - 20 * GetActorUpVector(); 
+	if (GetWorld()->LineTraceSingleByChannel(outHit, start, end, ECC_WorldStatic, collParams))
+	{
+		DrawDebugLine(GetWorld(), outHit.ImpactPoint, outHit.ImpactPoint + outHit.ImpactNormal * 30, FColor::Black);
+		double angle = FMath::RadiansToDegrees(acos(FVector::DotProduct(GetActorUpVector().GetSafeNormal(), outHit.ImpactNormal.GetSafeNormal())));
+		UE_LOG(LogTemp, Warning, TEXT("%f"), angle);
 	}
 }
 
@@ -698,7 +725,6 @@ void ASurvivalCharacter::MoveForward(float Value)
 	switch (m_controlMode)
 	{
 	case EControlMode::VE_Default:
-		UE_LOG(LogTemp, Warning, TEXT("%s"), m_bSafeMode ? TEXT("safe mode activated") : TEXT("safe mode deactivated"));
 		if (m_bSafeMode)
 		{
 			if (!SafeMoveForward(Value) && Value != 0.0f)

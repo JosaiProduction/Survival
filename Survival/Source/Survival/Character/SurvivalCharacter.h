@@ -182,6 +182,9 @@ protected:
 	bool SafeMoveForward(float value);
 	bool SafeMoveRight(float value);
 
+	float m_startCapsuleRadius;
+	float m_energy;
+
 	FHitResult CheckClimbingObstacle();
 
 	FHitResult CheckObstacleInFront();
@@ -189,6 +192,8 @@ protected:
 	void CheckEdge(float deltaSeconds); 
 
 	void UpdateMoveSpeed();
+
+	void CheckGroundAngle();
 
 	void ClimbOnEdge(FVector destinationPos, float deltaSeconds);
 

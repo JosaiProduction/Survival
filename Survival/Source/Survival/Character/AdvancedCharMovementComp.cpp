@@ -25,7 +25,6 @@ void UAdvancedCharMovementComp::LayDown()
 	if (IsCrouching())
 	{
 		m_bIsLying = true;
-		this->bWantsToCrouch = false;
 		m_bWantsToLie = true;
 	}
 }
@@ -36,6 +35,8 @@ void UAdvancedCharMovementComp::UnLayDown()
 	{
 		m_bIsLying = false;
 		m_bWantsToLie = false;
+		CharacterOwner->GetCapsuleComponent()->SetCapsuleSize(CrouchedHalfHeight, CrouchedHalfHeight);
+		CharacterOwner->GetCapsuleComponent()->MoveComponent(FVector(0, 0, m_lieEyeHeight),CharacterOwner->GetCapsuleComponent()->GetComponentQuat(),false);
 		CharacterOwner->GetCapsuleComponent()->SetRelativeRotation(FRotator(0, 0, 0));
 		this->bWantsToCrouch = true;
 	}
@@ -64,10 +65,8 @@ void UAdvancedCharMovementComp::TickComponent(float DeltaTime, ELevelTick TickTy
 
 	if (CanLie() && m_bWantsToLie)
 	{
-		AdjustProxyCapsuleSize();
 		CharacterOwner->GetCapsuleComponent()->SetCapsuleSize(m_lieEyeHeight, m_lieEyeHeight);
-		UE_LOG(LogTemp, Warning, TEXT("Lay down"));
-		//CharacterOwner->GetCapsuleComponent()->SetRelativeRotation(FRotator(90, 0, 0));
+		CharacterOwner->GetCapsuleComponent()->MoveComponent(FVector(0, 0, -m_lieEyeHeight), CharacterOwner->GetCapsuleComponent()->GetComponentQuat(), false);
 		m_bWantsToLie = false;
 	}
 }
