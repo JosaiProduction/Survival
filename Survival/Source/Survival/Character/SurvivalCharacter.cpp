@@ -18,7 +18,8 @@
 #include "DrawDebugHelpers.h"
 #include "Runtime/Engine/Classes/PhysicalMaterials/PhysicalMaterial.h"
 #include "World/PhysicalMaterials/ClimbPhysMat.h"
-
+#include "Character/CharStats.h"
+#include "Runtime/Engine/Public/TimerManager.h"
 #include "Runtime/Engine/Public/Net/VoiceConfig.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
@@ -37,6 +38,7 @@ ASurvivalCharacter::ASurvivalCharacter(const FObjectInitializer& objectInitializ
 	, m_bFoundEdge(false)
 	, m_bIsClimbingOnEdge(false)
 	, m_energy(100)
+	, m_moveSpeedMultiplicator(0.0f)
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
@@ -105,7 +107,10 @@ ASurvivalCharacter::ASurvivalCharacter(const FObjectInitializer& objectInitializ
 	RootComponent->bAbsoluteRotation = true;
 
 	m_inventory = CreateDefaultSubobject<UInventory>(TEXT("Inventory"));
+	this->AddOwnedComponent(m_inventory);
 	m_abilities = CreateDefaultSubobject<UAbilities>(TEXT("Abilities"));
+	m_stats = CreateDefaultSubobject<UCharStats>(TEXT("Stats"));
+	m_inventory->SetCharStats(m_stats);
 }
 
 void ASurvivalCharacter::BeginPlay()
@@ -405,6 +410,7 @@ bool ASurvivalCharacter::SafeMoveRight(float value)
 	return false;
 }
 
+
 FHitResult ASurvivalCharacter::CheckClimbingObstacle()
 {
 	FHitResult outHit = CheckObstacleInFront();
@@ -436,7 +442,7 @@ FHitResult  ASurvivalCharacter::CheckObstacleInFront()
 		UClimbPhysMat* cPhysMat = Cast<UClimbPhysMat>(outHit.PhysMaterial.Get());
 		if (cPhysMat)
 		{
-			if (cPhysMat->GetReqClimbLvl() >= m_abilities->m_abilities.ClimbLvl)
+			if (cPhysMat->GetReqClimbLvl() >= m_stats->m_props.ClimbLvl)
 			{
 				ReceiveInteractionInfo(EInteractionType::VE_Climbing);
 				m_bClimbIsPossible = true;
@@ -491,38 +497,51 @@ void ASurvivalCharacter::UpdateMoveSpeed()
 	switch (m_moveSpeed)
 	{
 	case EMoveSpeed::VE_Walk:
-		m_moveComp->MaxWalkSpeed = m_walkSpeed;
-		m_moveComp->MaxWalkSpeedCrouched = m_walkSpeed;
+		m_moveComp->MaxWalkSpeed = m_walkSpeed * m_moveSpeedMultiplicator;
+		m_moveComp->MaxWalkSpeedCrouched = m_walkSpeed * m_moveSpeedMultiplicator;
 		break;
 	case EMoveSpeed::VE_Jog:
-		m_moveComp->MaxWalkSpeed = m_jogSpeed;
-		m_moveComp->MaxWalkSpeedCrouched = m_jogSpeed;
+		m_moveComp->MaxWalkSpeed = m_jogSpeed * m_moveSpeedMultiplicator;
+		m_moveComp->MaxWalkSpeedCrouched = m_jogSpeed * m_moveSpeedMultiplicator;
 		break;
 	case EMoveSpeed::VE_Run:
-		m_moveComp->MaxWalkSpeed = m_runSpeed;
-		m_moveComp->MaxWalkSpeedCrouched = m_runSpeed;
+		m_moveComp->MaxWalkSpeed = m_runSpeed * m_moveSpeedMultiplicator;
+		m_moveComp->MaxWalkSpeedCrouched = m_runSpeed * m_moveSpeedMultiplicator;
 		break;
 	case EMoveSpeed::VE_Sprint:
-		m_moveComp->MaxWalkSpeed = m_sprintSpeed;
-		m_moveComp->MaxWalkSpeedCrouched = m_sprintSpeed;
+		m_moveComp->MaxWalkSpeed = m_sprintSpeed * m_moveSpeedMultiplicator;
+		m_moveComp->MaxWalkSpeedCrouched = m_sprintSpeed * m_moveSpeedMultiplicator;
 		break;
 	}
 }
 
 void ASurvivalCharacter::CheckGroundAngle()
 {
-	FHitResult outHit(ForceInit); 
+	FHitResult outHit(ForceInit);
 	FCollisionQueryParams collParams;
 	collParams.AddIgnoredActor(this);
 	collParams.bTraceComplex = false;
 	collParams.bReturnPhysicalMaterial = true;
 	FVector start = GetActorLocation() - FVector(0, 0, GetCapsuleComponent()->GetUnscaledCapsuleHalfHeight());
-	FVector end = start - 20 * GetActorUpVector(); 
+	FVector end = start - 20 * GetActorUpVector();
 	if (GetWorld()->LineTraceSingleByChannel(outHit, start, end, ECC_WorldStatic, collParams))
 	{
 		DrawDebugLine(GetWorld(), outHit.ImpactPoint, outHit.ImpactPoint + outHit.ImpactNormal * 30, FColor::Black);
 		double angle = FMath::RadiansToDegrees(acos(FVector::DotProduct(GetActorUpVector().GetSafeNormal(), outHit.ImpactNormal.GetSafeNormal())));
-		UE_LOG(LogTemp, Warning, TEXT("%f"), angle);
+		float multiplicator = 0.0f;
+		if (FVector::DotProduct(GetActorForwardVector(), outHit.ImpactNormal) > 0)
+		{
+			multiplicator = (100 + angle) / 100;
+		}
+		else
+		{
+			multiplicator = (100 - angle) / 100;
+		}
+		if (!FMath::IsNearlyEqual(multiplicator, m_moveSpeedMultiplicator))
+		{
+			m_moveSpeedMultiplicator = multiplicator; 
+			UpdateMoveSpeed();
+		}
 	}
 }
 
@@ -578,6 +597,7 @@ void ASurvivalCharacter::ReceiveInteraction(const EInteractionType & interaction
 void ASurvivalCharacter::ReceiveInteractionInfo(const EInteractionType & interactionType)
 {
 	m_availableInteractions |= (int32)interactionType;
+	m_currentSelectedInteraction = interactionType;
 	UE_LOG(LogTemp, Warning, TEXT("%d"), m_availableInteractions);
 }
 
@@ -672,14 +692,45 @@ void ASurvivalCharacter::AddControllerYawInput(float Val)
 	switch (m_controlMode)
 	{
 	case EControlMode::VE_Default:
-		Super::AddControllerYawInput(Val);
+		if (!m_freeLook)
+		{
+			Super::AddControllerYawInput(Val);
+		}
+		else
+		{
+			FRotator rot = FirstPersonCameraComponent->GetRelativeTransform().Rotator();
+
+			if ((rot.Yaw < 85 && Val > 0) || (rot.Yaw > -85 && Val < 0))
+			{
+				FirstPersonCameraComponent->AddRelativeRotation(FRotator(0, Val, 0));
+			}
+		}
 		break;
 	}
 }
 
 void ASurvivalCharacter::AddControllerPitchInput(float Val)
 {
-	Super::AddControllerPitchInput(Val);
+	if (!m_freeLook)
+	{
+		Super::AddControllerPitchInput(Val);
+	}
+	else
+	{
+		FRotator rot = FirstPersonCameraComponent->GetRelativeTransform().Rotator();
+		if ((rot.Pitch < 85 && Val < 0) || (rot.Pitch > -85 && Val > 0))
+		{
+			FirstPersonCameraComponent->AddRelativeRotation(FRotator(-Val, 0, 0));
+		}
+		else if (rot.Pitch > 85)
+		{
+			FirstPersonCameraComponent->SetRelativeRotation(FRotator(85, rot.Yaw, 0));
+		}
+		else if (rot.Pitch < -85)
+		{
+			FirstPersonCameraComponent->SetRelativeRotation(FRotator(-85, rot.Yaw, 0));
+		}
+	}
 }
 
 //Commenting this section out to be consistent with FPS BP template.
@@ -836,6 +887,16 @@ void ASurvivalCharacter::OrientBodyToSight()
 void ASurvivalCharacter::ToggleFreeLook()
 {
 	m_freeLook = !m_freeLook;
+	if (m_freeLook)
+	{
+		FirstPersonCameraComponent->bUsePawnControlRotation = false;
+		return;
+	}
+	if (!m_freeLook)
+	{
+		FirstPersonCameraComponent->bUsePawnControlRotation = true;
+		return;
+	}
 }
 
 void ASurvivalCharacter::LookUpAtRate(float Rate)

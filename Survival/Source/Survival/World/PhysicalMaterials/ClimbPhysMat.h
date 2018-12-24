@@ -18,9 +18,9 @@ class SURVIVAL_API UClimbPhysMat : public UPhysicalMaterial
 {
 	GENERATED_BODY()
 protected:
-	UPROPERTY(EditAnywhere, Category = Propterty)
+	UPROPERTY(EditAnywhere, Category = "Propterty")
 		unsigned int m_neededClimbLevel;
-	UPROPERTY(EditAnywhere, Category = Property)
+	UPROPERTY(EditAnywhere, Category = "Propterty")
 		ESurfaceType m_surfaceType;
 public:
 	UClimbPhysMat();

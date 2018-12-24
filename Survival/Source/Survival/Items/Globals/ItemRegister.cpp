@@ -2,9 +2,8 @@
 
 #include "ItemRegister.h"
 
-#include "Items/Interfaces/Consumables.h"
-#include "Items/Interfaces/Weapons/MeleeWeapon.h"
-#include "Items/Interfaces/Weapons/RangeWeapon.h"
+#include "Items/MeleeWeapon.h"
+#include "Items/RangeWeapon.h"
 #include "Items/Globals/ItemHelpers.h"
 
 
@@ -12,13 +11,6 @@ unsigned int UItemRegister::RegisterItem(AItem * item)
 {
 	switch (item->GetProps().Type)
 	{
-	case EItemType::VE_Consumable: 
-		for (AConsumables* consumable : m_consumables)
-		{
-			if (item == consumable)
-				return consumable->GetProps().RegisteredID;
-		}
-		return m_consumables.Add(Cast<AConsumables>(item));
 	case EItemType::VE_MeleeWeapon: 
 		for (AMeleeWeapon* meleeWeapon : m_meleeWeapons)
 		{
@@ -43,8 +35,6 @@ AItem * UItemRegister::GetItem(FItemProperties props)
 {
 	switch (props.Type)
 	{
-	case EItemType::VE_Consumable:
-		return m_consumables[props.RegisteredID];
 	case EItemType::VE_MeleeWeapon:
 		return m_meleeWeapons[props.RegisteredID];
 	case EItemType::VE_RangeWeapon:

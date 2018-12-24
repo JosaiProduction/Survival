@@ -11,6 +11,7 @@ class UInputComponent;
 class UInventory;
 class UCharacterMovementComponent;
 class UAbilities;
+class UCharStats;
 
 UENUM(BlueprintType)
 enum class EMoveSpeed :uint8 {
@@ -31,27 +32,27 @@ class ASurvivalCharacter : public ACharacter
 	GENERATED_BODY()
 
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category=Mesh)
+	UPROPERTY(VisibleDefaultsOnly, Category="Mesh")
 	class USkeletalMeshComponent* Mesh1P;
 
 	/** Gun mesh: 1st person view (seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(VisibleDefaultsOnly, Category = "Mesh")
 	class USkeletalMeshComponent* FP_Gun;
 
 	/** Location on gun mesh where projectiles should spawn. */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(VisibleDefaultsOnly, Category = "Mesh")
 	class USceneComponent* FP_MuzzleLocation;
 
 	/** Gun mesh: VR view (attached to the VR controller directly, no arm, just the actual gun) */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(VisibleDefaultsOnly, Category = "Mesh")
 	class USkeletalMeshComponent* VR_Gun;
 
 	/** Location on VR gun mesh where projectiles should spawn. */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(VisibleDefaultsOnly, Category = "Mesh")
 	class USceneComponent* VR_MuzzleLocation;
 
 	/** First person camera */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera", meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FirstPersonCameraComponent;
 
 	/** Motion controller (right hand) */
@@ -70,54 +71,58 @@ protected:
 	virtual void Tick(float DeltaSeconds) override;
 public:
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Camera")
 	float BaseTurnRate;
 
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Camera")
 	float BaseLookUpRate;
 
 	/** Gun muzzle's offset from the characters location */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Gameplay")
 	FVector GunOffset;
 
 	/** Projectile class to spawn */
-	UPROPERTY(EditDefaultsOnly, Category=Projectile)
+	UPROPERTY(EditDefaultsOnly, Category="Projectile")
 	TSubclassOf<class AProjectile> ProjectileClass;
 
 	/** Sound to play each time we fire */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Gameplay")
 	class USoundBase* FireSound;
 
 	/** AnimMontage to play each time we fire */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
 	class UAnimMontage* FireAnimation;
 
 	/** Whether to use motion controller location for aiming. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
 	uint32 bUsingMotionControllers : 1;
 
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Tools)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Tools")
 		UInventory* m_inventory;
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Tools)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Tools")
 		UAbilities* m_abilities;
-	UPROPERTY(VisibleAnywhere, Category = Movement)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tools")
+		UCharStats* m_stats;
+	UPROPERTY(VisibleAnywhere, Category = "Movement")
 		class UAdvancedCharMovementComp* m_moveComp;
 
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(EditAnywhere, Category = "Movement")
 		float m_walkSpeed;
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(EditAnywhere, Category = "Movement")
 		float m_jogSpeed; 
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(EditAnywhere, Category = "Movement")
 		float m_runSpeed; 
-	UPROPERTY(EditAnywhere, Category = Movement)
+	UPROPERTY(EditAnywhere, Category = "Movement")
 		float m_sprintSpeed; 
-	UPROPERTY(VisibleAnywhere, Category = Movement)
+	UPROPERTY(VisibleAnywhere, Category = "Movement")
 		EControlMode m_controlMode; 
-	UPROPERTY(VisibleAnywhere, Category = Interaction)
+	UPROPERTY(VisibleAnywhere, Category = "Interaction")
 		uint32 m_availableInteractions;
+	UPROPERTY(VisibleAnywhere, Category = "Interaction")
+		EInteractionType m_currentSelectedInteraction;
 
-	UPROPERTY(EditAnywhere, Category = FreeLook)
+	UPROPERTY(EditAnywhere, Category = "FreeLook")
 		bool m_freeLook; 
 
 	bool m_bClimbIsPossible;
@@ -184,6 +189,7 @@ protected:
 
 	float m_startCapsuleRadius;
 	float m_energy;
+	float m_moveSpeedMultiplicator;
 
 	FHitResult CheckClimbingObstacle();
 
@@ -232,6 +238,10 @@ public:
 
 		virtual void AddControllerYawInput(float Val) override;
 		virtual void AddControllerPitchInput(float Val) override;
+
+private: 
+	FTimerHandle m_timerHandle;
+
 
 protected:
 	// APawn interface

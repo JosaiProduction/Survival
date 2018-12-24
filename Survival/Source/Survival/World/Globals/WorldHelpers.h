@@ -11,11 +11,11 @@ struct FTime
 {
 	GENERATED_BODY()
 public: 
-	UPROPERTY(EditAnywhere, Category = Time)
+	UPROPERTY(EditAnywhere, Category = "Time")
 		uint8 Hours; 
-	UPROPERTY(EditAnywhere, Category = Time)
+	UPROPERTY(EditAnywhere, Category = "Time")
 		uint8 Minutes; 
-	UPROPERTY(EditAnywhere, Category = Time)
+	UPROPERTY(EditAnywhere, Category = "Time")
 		uint8 Seconds;
 };
 

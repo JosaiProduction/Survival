@@ -24,20 +24,20 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, Category = Stats)
+	UPROPERTY(EditAnywhere, Category = "Time")
 		bool m_bIsSummer;
-	UPROPERTY(EditAnywhere, Category = Stats)
+	UPROPERTY(EditAnywhere, Category = "Time")
 		FTime m_initTime;
-	UPROPERTY(EditAnywhere, Category = Stats)
+	UPROPERTY(EditAnywhere, Category = "Time")
 	FTime m_currTime; 
-	UPROPERTY(EditAnywhere, Category = Stats)
+	UPROPERTY(EditAnywhere, Category = "Time")
 	int m_dayDuration; 
-	UPROPERTY(EditAnywhere, Category = Stats)
+	UPROPERTY(EditAnywhere, Category = "Time")
 	int m_nightDuration;
 
-	UPROPERTY(EditAnywhere, Category = Sun)
+	UPROPERTY(EditAnywhere, Category = "Sun")
 	class UDirectionalLightComponent* m_sun;
-	UPROPERTY(EditAnywhere, Category = Sun)
+	UPROPERTY(EditAnywhere, Category = "Sun")
 	class USceneComponent* m_root;
 
 	void ChangeSeason();

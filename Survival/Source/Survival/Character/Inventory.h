@@ -18,13 +18,24 @@ class SURVIVAL_API UInventory : public UActorComponent
 	GENERATED_BODY()
 public:
 	UInventory();
+protected: 
+	virtual void BeginPlay() override;
 
-private: 
-	UPROPERTY(VisibleAnywhere, Category = Items)
+private:
+	UPROPERTY(VisibleAnywhere, Category = "Inventory")
 		TArray<FItemProperties> m_itemProps;
+	UPROPERTY(VisibleAnywhere, Category = "Inventory| Energy")
+		TArray<FItemProperties> m_energyRelatedItemProps;
 
-	UPROPERTY(VisibleAnywhere, Category = Items)
+	UPROPERTY(EditAnywhere, Category = "Inventory")
+		TArray<TSubclassOf<AItem>> m_startItems;
+
+	UPROPERTY(VisibleAnywhere, Category = "Inventory")
 		bool m_isActive;
+
+	class FTimerManager m_timerMgr;
+
+	class UCharStats* m_charStats;
 public:
 	void AddItem(AItem* item);
 
@@ -35,6 +46,8 @@ public:
 	void Enable(); 
 
 	void Disable();
+
+	void SetCharStats(class UCharStats* stats) { m_charStats = stats; }
 
 	UFUNCTION(BlueprintCallable)
 		TArray<FItemProperties> GetItemProps() const;
