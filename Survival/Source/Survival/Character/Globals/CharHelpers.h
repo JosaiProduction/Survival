@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "Items/Globals/ItemHelpers.h"
 #include "CharHelpers.generated.h"
 
 
@@ -40,10 +41,35 @@ public:
 		float EnergyGain;
 	UPROPERTY(VisibleAnywhere, Category = "Properties| Energy")
 		float EnergyConsumption;
-	UPROPERTY(EditAnywhere, Category = "Properties| Energy")
-		float EnergyRegeneration;
 	UPROPERTY(VisibleAnywhere, Category = "Properties")
 		int ClimbLvl;
+};
+
+USTRUCT(BlueprintType)
+struct FModuleProperties
+{
+	GENERATED_BODY()
+public:
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FFootModuleProperties LeftFootProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FFootModuleProperties RightFootProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FLegModuleProperties LeftLegProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FLegModuleProperties RightLegProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FTorsoModuleProperties TorsoProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FArmModuleProperties LeftArmProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FArmModuleProperties RightArmProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FHandModuleProperties LeftHandProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FHandModuleProperties RightHandProps;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
+		FHeadModuleProperties HeadProps;
 };
 
 
@@ -57,6 +83,4 @@ class SURVIVAL_API UCharHelpers : public UObject
 public: 
 	UCharHelpers(); 
 	~UCharHelpers();
-	
-	
 };

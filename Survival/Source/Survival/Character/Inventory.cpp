@@ -6,6 +6,8 @@
 #include "Character/CharStats.h"
 #include "Character/SurvivalCharacter.h"
 #include "Runtime/Core/Public/Containers/Array.h"
+#include "Items/Modules/FootModule.h"
+#include "Items/Modules/Interfaces/ModuleItemInterface.h"
 #include "Items/Interfaces/Item.h"
 
 UInventory::UInventory()
@@ -62,6 +64,29 @@ void UInventory::AddItem(AItem * item)
 				case EEnergyItemType::VE_Consumption:
 					m_charStats->AddEnergyConsumption(eItem->m_energyProps[i].Value);
 					break;
+				}
+			}
+		}
+		case EItemType::VE_Module:
+		{
+			IModuleItemInterface* moduleInterface = Cast<IModuleItemInterface>(item);
+			if (moduleInterface)
+			{
+				switch (moduleInterface->GetModuleType())
+				{
+				case ECharModuleType::VE_FootModule:
+				{
+					if (!m_leftModule)
+					{
+						m_leftModule = Cast<AFootModule>(item);
+						m_charStats->m_moduleProps.LeftFootProps = m_leftModule->m_props;
+					}
+					else
+					{
+						m_rightModule = Cast<AFootModule>(item);
+						m_charStats->m_moduleProps.RightFootProps = m_rightModule->m_props;
+					}
+				}
 				}
 			}
 		}

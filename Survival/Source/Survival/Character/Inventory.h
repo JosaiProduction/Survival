@@ -32,8 +32,10 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Inventory")
 		bool m_isActive;
-
-	class FTimerManager m_timerMgr;
+	UPROPERTY(VisibleAnywhere, Category = "Inventory| Modules")
+		class AFootModule* m_rightModule;
+	UPROPERTY(VisibleAnywhere, Category = "Inventory| Modules")
+		class AFootModule* m_leftModule;
 
 	class UCharStats* m_charStats;
 public:

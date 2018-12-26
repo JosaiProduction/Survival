@@ -7,20 +7,21 @@
 UCharStats::UCharStats()
 {
 	m_props = {};
+	m_moduleProps = {};
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UCharStats::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	RegenerateEnergy(DeltaTime);
+	UpdateEnergy(DeltaTime);
 }
 
-void UCharStats::RegenerateEnergy(float DeltaTime)
+void UCharStats::UpdateEnergy(float DeltaTime)
 {
 	if (m_props.CurrentEnergyStorage < m_props.MaxEnergyStorage)
 	{
-		m_props.CurrentEnergyStorage += m_props.EnergyGain/(1/DeltaTime);
+		m_props.CurrentEnergyStorage += (m_props.EnergyGain - m_props.EnergyConsumption)/(1/DeltaTime);
 	}
 	if (m_props.CurrentEnergyStorage >= m_props.MaxEnergyStorage)
 	{
