@@ -15,11 +15,11 @@ public:
 	// Sets default values for this actor's properties
 	AProjectile();
 
-	UPROPERTY(EditAnywhere, Category = Components)
+	UPROPERTY(EditAnywhere, Category = "Components")
 		class USphereComponent* m_collider; 
-	UPROPERTY(EditAnywhere, Category = Components)
+	UPROPERTY(EditAnywhere, Category = "Components")
 		class UProjectileMovementComponent* m_projectileComp;
-	UPROPERTY(EditAnywhere, Category = Components)
+	UPROPERTY(EditAnywhere, Category = "Components")
 		class UStaticMeshComponent* m_mesh;
 protected:
 	// Called when the game starts or when spawned

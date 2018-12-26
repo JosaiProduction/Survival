@@ -29,7 +29,7 @@ public:
 	UFUNCTION()
 		void UnLayDown();
 
-	UPROPERTY(EditAnywhere, Category = Pose)
+	UPROPERTY(EditAnywhere, Category = "Movement|Pose")
 		float m_lieEyeHeight;
 
 protected: 

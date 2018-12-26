@@ -7,7 +7,6 @@
 #include "ItemRegister.generated.h"
 
 class AItem;
-class AConsumables; 
 class AMeleeWeapon; 
 class ARangeWeapon;
 struct FItemProperties;
@@ -20,7 +19,6 @@ class SURVIVAL_API UItemRegister : public UObject
 {
 	GENERATED_BODY()
 private:
-	TArray<AConsumables*> m_consumables; 
 	TArray<AMeleeWeapon*> m_meleeWeapons;
 	TArray<ARangeWeapon*> m_rangeWeapons;
 public:

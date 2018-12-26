@@ -30,6 +30,7 @@ FItemProperties AItem::GetProps() const
 
 AItem::AItem()
 {
+	m_itemProps = {};
 	m_itemProps.ID = s_itemID;
 	s_itemID++;
 	m_root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));

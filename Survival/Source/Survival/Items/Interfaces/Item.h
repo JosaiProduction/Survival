@@ -26,16 +26,15 @@ protected:
 	virtual void BeginPlay() final;
 	virtual void PostInit() PURE_VIRTUAL(AItem::PostInit, ;);
 
-private:
-	UPROPERTY(EditAnywhere, Category = Item)
+	UPROPERTY(EditAnywhere, Category = "Properties| Basics")
 		UTexture2D* m_image;
-	UPROPERTY(EditAnywhere, Category = Item)
+	UPROPERTY(EditAnywhere, Category = "Properties| Basics")
 		UStaticMeshComponent* m_mesh;
-	UPROPERTY(EditAnywhere, Category = Item)
+	UPROPERTY(EditAnywhere, Category = "Properties| Basics")
 		class UBoxComponent* m_trigger;
-	UPROPERTY(EditAnywhere, Category = Item)
+	UPROPERTY(EditAnywhere, Category = "Properties| Basics")
 		FItemProperties m_itemProps;
-	UPROPERTY(EditAnywhere, Category = Item)
+	UPROPERTY(EditAnywhere, Category = "Properties| Basics")
 		USceneComponent* m_root;
 
 public:

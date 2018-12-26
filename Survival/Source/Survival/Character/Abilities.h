@@ -16,7 +16,7 @@ class SURVIVAL_API UAbilities : public UActorComponent
 	GENERATED_BODY()
 	
 public: 
-	UPROPERTY(EditAnywhere, Category = Abilities)
+	UPROPERTY(EditAnywhere, Category = "Abilities")
 		FCharAbilities m_abilities;
 
 	UAbilities();

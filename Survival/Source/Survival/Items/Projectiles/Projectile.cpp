@@ -2,6 +2,7 @@
 
 #include "Projectile.h"
 #include "Runtime/Engine/Classes/Components/SphereComponent.h"
+#include "Runtime/Engine/Classes/Components/StaticMeshComponent.h"
 #include "Runtime/Engine/Classes/GameFramework/ProjectileMovementComponent.h"
 
 // Sets default values
@@ -54,7 +55,6 @@ void AProjectile::OnBeginOverlap(UPrimitiveComponent* HitComp, AActor* OtherActo
 	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
 	{
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
-
 	}
 	Destroy();
 }

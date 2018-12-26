@@ -19,22 +19,30 @@ USTRUCT(BlueprintType)
 struct FCharAbilities
 {
 	GENERATED_BODY()
+public: 
+
+};
+
+USTRUCT(BlueprintType)
+struct FCharProps
+{
+	GENERATED_BODY()
 public:
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
+	UPROPERTY(VisibleAnywhere, Category = "Properties")
 		int Mood;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
+	UPROPERTY(VisibleAnywhere, Category = "Properties")
 		int Health;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int Stamina;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int Adrenaline;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int Exhaustion;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int StressLevel;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
-		int Tiredness;
-	UPROPERTY(VisibleAnywhere, Category = Abilities)
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Energy")
+		float MaxEnergyStorage;
+	UPROPERTY(EditAnywhere, Category = "Properties| Energy")
+		float CurrentEnergyStorage;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Energy")
+		float EnergyGain;
+	UPROPERTY(VisibleAnywhere, Category = "Properties| Energy")
+		float EnergyConsumption;
+	UPROPERTY(EditAnywhere, Category = "Properties| Energy")
+		float EnergyRegeneration;
+	UPROPERTY(VisibleAnywhere, Category = "Properties")
 		int ClimbLvl;
 };
 
