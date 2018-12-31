@@ -16,6 +16,15 @@ enum class EInteractionType :uint8 {
 	VE_Use = 1 << 2 UMETA(DisplayName = "Use"),
 };
 
+UENUM(BlueprintType)
+enum class EMoveSpeed :uint8 {
+	VE_Immobile UMETA(DisplayName = "Immobile"),
+	VE_Walk UMETA(DisplayName = "Walk"),
+	VE_Jog UMETA(DisplayName = "Jog"),
+	VE_Run UMETA(DisplayName = "Run"),
+	VE_Sprint UMETA(DisplayName = "Sprint")
+};
+
 USTRUCT(BlueprintType)
 struct FCharAbilities
 {
@@ -34,43 +43,41 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Properties")
 		int Health;
 	UPROPERTY(VisibleAnywhere, Category = "Properties| Energy")
-		float MaxEnergyStorage;
+		float MaxEnergyStorage = 0;
 	UPROPERTY(EditAnywhere, Category = "Properties| Energy")
-		float CurrentEnergyStorage;
+		float CurrentEnergyStorage = 0;
 	UPROPERTY(VisibleAnywhere, Category = "Properties| Energy")
 		float EnergyGain;
 	UPROPERTY(VisibleAnywhere, Category = "Properties| Energy")
-		float EnergyConsumption;
+		float EnergyConsumption = 0;
 	UPROPERTY(VisibleAnywhere, Category = "Properties")
 		int ClimbLvl;
 };
-
 USTRUCT(BlueprintType)
-struct FModuleProperties
+struct FMovementProps
 {
 	GENERATED_BODY()
-public:
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FFootModuleProperties LeftFootProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FFootModuleProperties RightFootProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FLegModuleProperties LeftLegProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FLegModuleProperties RightLegProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FTorsoModuleProperties TorsoProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FArmModuleProperties LeftArmProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FArmModuleProperties RightArmProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FHandModuleProperties LeftHandProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FHandModuleProperties RightHandProps;
-	UPROPERTY(VisibleAnywhere, Category = "Properties| Module")
-		FHeadModuleProperties HeadProps;
+public: 
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement")
+		EMoveSpeed MovementMode = EMoveSpeed::VE_Walk;
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement")
+		float WalkSpeed;
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement| Energy")
+		float WalkEnergyConsumption;
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement")
+		float JogSpeed;
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement| Energy")
+		float JogEnergyConsumption;
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement")
+		float RunSpeed;
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement| Energy")
+		float RunEnergyConsumption;
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement")
+		float SprintSpeed;
+	UPROPERTY(EditAnywhere, Category = "Stats| Movement| Energy")
+		float SpringEnergyConsumption;
 };
+
 
 
 /**

@@ -58,7 +58,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Properties| Energy")
 	EEnergyItemType EnergyRelation;
 	UPROPERTY(EditAnywhere, Category = "Properties| Energy")
-		float Value; 
+		float Efficiency = 100;
+	UPROPERTY(EditAnywhere, Category = "Properties| Energy")
+		float Value = Value *Efficiency/100; 
 };
 
 USTRUCT(BlueprintType)

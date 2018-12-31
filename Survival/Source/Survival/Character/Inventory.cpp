@@ -34,7 +34,8 @@ void UInventory::BeginPlay()
 			}
 		}
 	}
-
+	AItem* item = m_startTorso.GetDefaultObject();
+	this->AddItem(item);
 }
 
 void UInventory::AddItem(AItem * item)
@@ -53,41 +54,26 @@ void UInventory::AddItem(AItem * item)
 				{
 				case EEnergyItemType::VE_Storage:
 				{
-					m_charStats->AddEnergyStorage(eItem->m_energyProps[i].Value);
+					m_charStats->IncreaseEnergyStorage(eItem->m_energyProps[i].Value);
 					break;
 				}
 				case EEnergyItemType::VE_Gain:
 				{
-					m_charStats->AddEnergyGain(eItem->m_energyProps[i].Value);
+					m_charStats->IncreaseEnergyGain(eItem->m_energyProps[i].Value);
 					break;
 				}
 				case EEnergyItemType::VE_Consumption:
-					m_charStats->AddEnergyConsumption(eItem->m_energyProps[i].Value);
+					m_charStats->IncreaseEnergyConsumption(eItem->m_energyProps[i].Value);
 					break;
 				}
 			}
 		}
 		case EItemType::VE_Module:
 		{
-			IModuleItemInterface* moduleInterface = Cast<IModuleItemInterface>(item);
-			if (moduleInterface)
+			ATorsoModule* torso = Cast<ATorsoModule>(item);
+			if (torso)
 			{
-				switch (moduleInterface->GetModuleType())
-				{
-				case ECharModuleType::VE_FootModule:
-				{
-					if (!m_leftModule)
-					{
-						m_leftModule = Cast<AFootModule>(item);
-						m_charStats->m_moduleProps.LeftFootProps = m_leftModule->m_props;
-					}
-					else
-					{
-						m_rightModule = Cast<AFootModule>(item);
-						m_charStats->m_moduleProps.RightFootProps = m_rightModule->m_props;
-					}
-				}
-				}
+				m_torso = torso;
 			}
 		}
 		}
@@ -120,6 +106,11 @@ void UInventory::Disable()
 TArray<FItemProperties> UInventory::GetItemProps() const
 {
 	return m_itemProps;
+}
+
+ATorsoModule* UInventory::GetTorsoModule()
+{
+	return m_torso;
 }
 
 bool UInventory::IsEnabled()

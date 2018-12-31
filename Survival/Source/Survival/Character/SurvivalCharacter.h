@@ -14,16 +14,10 @@ class UAbilities;
 class UCharStats;
 
 UENUM(BlueprintType)
-enum class EMoveSpeed :uint8 {
-	VE_Walk UMETA(DisplayName = "Walk"),
-	VE_Jog UMETA(DisplayName = "Jog"),
-	VE_Run UMETA(DisplayName = "Run"),
-	VE_Sprint UMETA(DisplayName = "Sprint")
-};
-UENUM(BlueprintType)
 enum class EControlMode : uint8 {
 	VE_Default UMETA(DisplayName = "Default"), 
-	VE_Climbing UMETA(DisplayName = "Climbing")
+	VE_Climbing UMETA(DisplayName = "Climbing"), 
+	VE_Inventory UMETA(DisplayName = "Inventory")
 };
 
 UCLASS(config=Game)
@@ -106,15 +100,6 @@ public:
 		UCharStats* m_stats;
 	UPROPERTY(VisibleAnywhere, Category = "Movement")
 		class UAdvancedCharMovementComp* m_moveComp;
-
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float m_walkSpeed;
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float m_jogSpeed; 
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float m_runSpeed; 
-	UPROPERTY(EditAnywhere, Category = "Movement")
-		float m_sprintSpeed; 
 	UPROPERTY(VisibleAnywhere, Category = "Movement")
 		EControlMode m_controlMode; 
 	UPROPERTY(VisibleAnywhere, Category = "Interaction")
@@ -235,6 +220,8 @@ public:
 		UInventory* GetInventory() const;
 	UFUNCTION(BlueprintCallable)
 		UAbilities* GetAbilities() const; 
+	UFUNCTION(BlueprintCallable)
+		UCharStats* GetStats() const { return m_stats; }
 
 		virtual void AddControllerYawInput(float Val) override;
 		virtual void AddControllerPitchInput(float Val) override;
