@@ -18,6 +18,13 @@ bool ALegModule::GetLimbType()
 	return false;
 }
 
+FString ALegModule::GenerateToolTip() const
+{
+	FString currentToolTip = Super::GenerateToolTip();
+	const UEnum* enumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("ECharModuleType"), true);
+	return FString(currentToolTip + LINE_TERMINATOR + enumPtr->GetDisplayNameTextByValue((int64)m_props.ModuleType).ToString());
+}
+
 ALegModule::ALegModule()
 	:Super::ALimbsModule()
 {

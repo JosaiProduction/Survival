@@ -17,15 +17,16 @@ class SURVIVAL_API AArmModule : public ALimbsModule
 	GENERATED_BODY()
 public:
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
-		FHandModuleProperties m_props;
+		FArmModuleProperties m_props;
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
 		TSubclassOf<class AHandModule> m_handModule;
 
 	UFUNCTION(BlueprintCallable)
 		class AHandModule* GetHandModule() const;
-
+	UFUNCTION(BlueprintCallable)
 	virtual ECharModuleType GetModuleType() override;
 	virtual bool GetLimbType() final;
+	virtual FString GenerateToolTip() const override; 
 
 	AArmModule();
 

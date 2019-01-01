@@ -18,9 +18,10 @@ class SURVIVAL_API AHeadModule : public AItem, public IModuleItemInterface
 
 public:
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
-		FHandModuleProperties m_props;
-
+		FHeadModuleProperties m_props;
+	UFUNCTION(BlueprintCallable)
 	virtual ECharModuleType GetModuleType() override;
+	virtual FString GenerateToolTip() const override;
 	AHeadModule();
 
 	

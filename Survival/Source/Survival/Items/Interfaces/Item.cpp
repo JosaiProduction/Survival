@@ -45,7 +45,6 @@ AItem::AItem()
 	m_trigger->SetupAttachment(RootComponent);
 	m_trigger->OnComponentBeginOverlap.AddDynamic(this, &AItem::OnBeginOverlap);
 	m_trigger->OnComponentEndOverlap.AddDynamic(this, &AItem::OnEndOverlap);
-
 }
 
 AItem::~AItem()
@@ -78,5 +77,6 @@ FString AItem::GetToolTip() const
 
 FString AItem::GenerateToolTip() const
 {
-	return m_itemProps.Name + LINE_TERMINATOR + FString::FromInt(m_itemProps.RequiredSlots);
+	const UEnum* enumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EItemType"), true);
+	return m_itemProps.Name + LINE_TERMINATOR+ enumPtr->GetDisplayNameTextByValue((int64)m_itemProps.Type).ToString()+ LINE_TERMINATOR + FString::FromInt(m_itemProps.RequiredSlots);
 }

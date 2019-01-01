@@ -6,33 +6,48 @@
 
 AHeadModule * ATorsoModule::GetHeadModule() const
 {
-	return Cast<AHeadModule>(m_headModule.GetDefaultObject());
+	return m_headModule.GetDefaultObject();
 }
 
 ALimbsModule * ATorsoModule::GetUpperLeftModule() const
 {
-	return Cast<ALimbsModule>(m_upperLeftLimb.GetDefaultObject());
+	return m_upperLeftLimbModule.GetDefaultObject();
 }
 
 ALimbsModule * ATorsoModule::GetUpperRightModule() const
 {
-	return Cast<ALimbsModule>(m_upperRightLimb.GetDefaultObject());
-
+	return m_upperRightLimbModule.GetDefaultObject();
 }
 
 ALimbsModule * ATorsoModule::GetLowerLeftModule() const
 {
-	return Cast<ALimbsModule>(m_lowerLeftLimb.GetDefaultObject());
+	return m_lowerLeftLimbModule.GetDefaultObject();
 }
 
 ALimbsModule * ATorsoModule::GetLowerRightModule() const
 {
-	return Cast<ALimbsModule>(m_lowerRightLimb.GetDefaultObject());
+	return m_lowerRightLimbModule.GetDefaultObject();
+}
+
+void ATorsoModule::UpdateHeadModule(AHeadModule * headModule)
+{
+}
+
+void ATorsoModule::UpdateLimbModule(ALimbsModule* limbModule, ALimbsModule * newLimbModule)
+{
+	limbModule = newLimbModule;
 }
 
 ECharModuleType ATorsoModule::GetModuleType()
 {
 	return m_props.ModuleType;
+}
+
+FString ATorsoModule::GenerateToolTip() const
+{
+	FString currentToolTip = Super::GenerateToolTip();
+	const UEnum* enumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("ECharModuleType"), true);
+	return FString(currentToolTip + LINE_TERMINATOR + enumPtr->GetDisplayNameTextByValue((int64)m_props.ModuleType).ToString());
 }
 
 ATorsoModule::ATorsoModule()

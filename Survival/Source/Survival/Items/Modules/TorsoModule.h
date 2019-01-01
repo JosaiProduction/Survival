@@ -24,13 +24,13 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
 		TSubclassOf<class AHeadModule> m_headModule;
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
-		TSubclassOf<class ALimbsModule> m_upperLeftLimb; 
+		TSubclassOf<class ALimbsModule> m_upperLeftLimbModule;
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
-		TSubclassOf<class ALimbsModule> m_upperRightLimb;
+		TSubclassOf<class ALimbsModule> m_upperRightLimbModule;
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
-		TSubclassOf<class ALimbsModule> m_lowerLeftLimb;
+		TSubclassOf<class ALimbsModule> m_lowerLeftLimbModule;
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
-		TSubclassOf<class ALimbsModule> m_lowerRightLimb;
+		TSubclassOf<class ALimbsModule> m_lowerRightLimbModule; 
 
 	UFUNCTION(BlueprintCallable)
 		class AHeadModule* GetHeadModule() const;
@@ -43,7 +43,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 		 ALimbsModule* GetLowerRightModule() const;
 
+	UFUNCTION(BlueprintCallable)
+		void UpdateHeadModule(class AHeadModule* headModule); 
+	UFUNCTION(BlueprintCallable)
+		void UpdateLimbModule(class ALimbsModule* limbModule, class ALimbsModule* newLimbModule);
 
+	UFUNCTION(BlueprintCallable)
 	virtual ECharModuleType GetModuleType() override;
+	virtual FString GenerateToolTip() const override; 
 	ATorsoModule();
 };

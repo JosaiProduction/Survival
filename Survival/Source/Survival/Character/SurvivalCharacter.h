@@ -15,9 +15,10 @@ class UCharStats;
 
 UENUM(BlueprintType)
 enum class EControlMode : uint8 {
-	VE_Default UMETA(DisplayName = "Default"), 
-	VE_Climbing UMETA(DisplayName = "Climbing"), 
-	VE_Inventory UMETA(DisplayName = "Inventory")
+	VE_Default UMETA(DisplayName = "Default"),
+	VE_Inventory UMETA(DisplayName = "Inventory"),
+	VE_Climbing UMETA(DisplayName = "Climbing"),
+	VE_Disable UMETA(DisplayName = "Disable"),
 };
 
 UCLASS(config=Game)
@@ -222,7 +223,12 @@ public:
 		UAbilities* GetAbilities() const; 
 	UFUNCTION(BlueprintCallable)
 		UCharStats* GetStats() const { return m_stats; }
-
+	UFUNCTION(BlueprintCallable)
+		EControlMode GetCurrentControlMode() const {return m_controlMode;}
+	UFUNCTION(BlueprintCallable)
+		void DisableMovement(); 
+	UFUNCTION(BlueprintCallable)
+		void ReenableMovement();
 		virtual void AddControllerYawInput(float Val) override;
 		virtual void AddControllerPitchInput(float Val) override;
 

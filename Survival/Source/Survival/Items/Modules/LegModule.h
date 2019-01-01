@@ -24,8 +24,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 		class AFootModule* GetFootModule() const;
-
+	UFUNCTION(BlueprintCallable)
 	virtual ECharModuleType GetModuleType() override;
 	virtual bool GetLimbType() final;
+	virtual FString GenerateToolTip() const override;
 	ALegModule();
 };

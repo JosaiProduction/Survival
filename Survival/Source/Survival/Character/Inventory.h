@@ -26,7 +26,8 @@ private:
 		TArray<FItemProperties> m_itemProps;
 	UPROPERTY(VisibleAnywhere, Category = "Inventory| Energy")
 		TArray<FItemProperties> m_energyRelatedItemProps;
-
+	UPROPERTY(VisibleAnywhere, Category = "Inventory")
+		unsigned int m_itemSlots;
 	UPROPERTY(EditAnywhere, Category = "Inventory")
 		TArray<TSubclassOf<AItem>> m_startItems;
 

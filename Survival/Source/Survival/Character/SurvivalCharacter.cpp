@@ -127,6 +127,7 @@ void ASurvivalCharacter::BeginPlay()
 		VR_Gun->SetHiddenInGame(true, true);
 		Mesh1P->SetHiddenInGame(false, true);
 	}
+	m_moveSpeed = m_stats->m_currentMoveSpeed;
 }
 
 void ASurvivalCharacter::Tick(float DeltaSeconds)
@@ -657,6 +658,16 @@ UAbilities * ASurvivalCharacter::GetAbilities() const
 	return m_abilities;
 }
 
+void ASurvivalCharacter::DisableMovement()
+{
+	m_controlMode = EControlMode::VE_Disable;
+}
+
+void ASurvivalCharacter::ReenableMovement()
+{
+	m_controlMode = EControlMode::VE_Default;
+}
+
 void ASurvivalCharacter::AddControllerYawInput(float Val)
 {
 	switch (m_controlMode)
@@ -762,11 +773,12 @@ void ASurvivalCharacter::MoveForward(float Value)
 		// add movement in that direction
 		if (Value != 0.0f)
 		{
-			if (m_stats->m_movementProps.MovementMode == EMoveSpeed::VE_Immobile)
+			if (m_stats->m_movementProps.MovementMode != m_moveSpeed)
 			{
 				m_stats->SetCurrentMovementConsumption();
 				UpdateMoveSpeed();
 			}
+			m_moveSpeed = m_stats->m_currentMoveSpeed;
 			AddMovementInput(GetActorForwardVector(), Value);
 		}
 		break;
@@ -801,11 +813,12 @@ void ASurvivalCharacter::MoveRight(float Value)
 		// add movement in that direction
 		if (Value != 0.0f)
 		{
-			if (m_stats->m_movementProps.MovementMode == EMoveSpeed::VE_Immobile)
+			if (m_stats->m_movementProps.MovementMode != m_moveSpeed)
 			{
 				m_stats->SetCurrentMovementConsumption();
 				UpdateMoveSpeed();
 			}
+			m_moveSpeed = m_stats->m_currentMoveSpeed;
 			AddMovementInput(GetActorRightVector(), Value);
 		}
 		break;

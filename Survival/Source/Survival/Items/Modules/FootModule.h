@@ -19,7 +19,8 @@ class SURVIVAL_API AFootModule : public AItem, public IModuleItemInterface
 public: 
 	UPROPERTY(EditAnywhere, Category = "Properties| Module")
 		FFootModuleProperties m_props;
-
+	UFUNCTION(BlueprintCallable)
 	virtual ECharModuleType GetModuleType() override;
+	virtual FString GenerateToolTip() const override;
 	AFootModule();
 };
