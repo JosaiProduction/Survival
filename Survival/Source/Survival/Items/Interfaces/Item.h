@@ -14,7 +14,7 @@ static unsigned int s_itemID;
 /**
  * 
  */
-UCLASS(abstract)
+UCLASS(abstract, meta = (IsBlueprintBase = "false"))
 class SURVIVAL_API AItem : public AActor
 {
 	GENERATED_BODY()
@@ -47,6 +47,9 @@ public:
 	void Use(ASurvivalCharacter* character);
 
 	FItemProperties GetProps() const;
+	UFUNCTION(BlueprintCallable)
+		FString GetToolTip() const;
+	virtual FString GenerateToolTip() const;
 
 	UFUNCTION()
 	void OnBeginOverlap(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp,

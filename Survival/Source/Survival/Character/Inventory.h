@@ -4,11 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Items/Globals/ItemHelpers.h"
+#include "Items/Modules/TorsoModule.h"
 #include "Inventory.generated.h"
 
 class ASurvivalCharacter;
 class AItem;
-
 /**
  * 
  */
@@ -26,14 +26,17 @@ private:
 		TArray<FItemProperties> m_itemProps;
 	UPROPERTY(VisibleAnywhere, Category = "Inventory| Energy")
 		TArray<FItemProperties> m_energyRelatedItemProps;
-
+	UPROPERTY(VisibleAnywhere, Category = "Inventory")
+		unsigned int m_itemSlots;
 	UPROPERTY(EditAnywhere, Category = "Inventory")
 		TArray<TSubclassOf<AItem>> m_startItems;
 
 	UPROPERTY(VisibleAnywhere, Category = "Inventory")
 		bool m_isActive;
-
-	class FTimerManager m_timerMgr;
+	UPROPERTY(EditAnywhere, Category = "Inventory")
+		TSubclassOf<ATorsoModule> m_startTorso;
+	UPROPERTY(VisibleAnywhere, Category = "Inventory")
+		ATorsoModule* m_torso;
 
 	class UCharStats* m_charStats;
 public:
@@ -43,14 +46,17 @@ public:
 
 	void UseItem(unsigned int index);
 
+	UFUNCTION(BlueprintCallable)
 	void Enable(); 
-
+	UFUNCTION(BlueprintCallable)
 	void Disable();
 
 	void SetCharStats(class UCharStats* stats) { m_charStats = stats; }
 
 	UFUNCTION(BlueprintCallable)
 		TArray<FItemProperties> GetItemProps() const;
+	UFUNCTION(BlueprintCallable)
+		ATorsoModule* GetTorsoModule(); 
 
 	UFUNCTION(BlueprintCallable)
 		bool IsEnabled();

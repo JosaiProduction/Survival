@@ -17,20 +17,36 @@ public:
 	// Sets default values for this component's properties
 	UCharStats();
 
+	virtual void BeginPlay() override;
+
 	UPROPERTY(EditAnywhere, Category = "Stats")
 		FCharProps m_props;
-
+	UPROPERTY(EditAnywhere, Category = "Stats")
+		FMovementProps m_movementProps;
+	EMoveSpeed m_currentMoveSpeed;
 	UFUNCTION()
-		void AddEnergyStorage(float storage) { m_props.MaxEnergyStorage += storage; }
+		void IncreaseEnergyStorage(float storage) { m_props.MaxEnergyStorage += storage; }
 	UFUNCTION()
-		void AddEnergyGain(float gain) { m_props.EnergyGain += gain; }
+		void IncreaseEnergyGain(float gain) { m_props.EnergyGain += gain; }
 	UFUNCTION()
-		void AddEnergyConsumption(float consumption) { m_props.EnergyConsumption += consumption; }
+		void IncreaseEnergyConsumption(float consumption) { m_props.EnergyConsumption += consumption; }
 	UFUNCTION()
-		void ReduceEnergyRegeneration(float regen) { m_props.EnergyRegeneration -= regen; }
+		float GetCurrentMoveSpeed();
+	UFUNCTION()
+		void UpdateMoveSpeedConsumption(EMoveSpeed currentMoveSpeed, EMoveSpeed nextMoveSpeed);
+	UFUNCTION()
+		void IncreaseMoveSpeed();
+	UFUNCTION()
+		void DecreaseMoveSpeed();
+	UFUNCTION()
+		void SetMovementConsumptionToZero();
+	UFUNCTION()
+		void SetCurrentMovementConsumption();
+	UFUNCTION(BlueprintCallable)
+		float GetCurrentEnergyAsPercent();
 private:
 
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction) override;
 	UFUNCTION()
-		void RegenerateEnergy(float DeltaTime);
+		void UpdateEnergy(float DeltaTime);
 };

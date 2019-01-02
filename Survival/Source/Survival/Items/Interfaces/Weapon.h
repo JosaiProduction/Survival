@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS(abstract)
+UCLASS(abstract, meta = (IsBlueprintBase = "false"))
 class SURVIVAL_API AWeapon : public AItem
 {
 	GENERATED_BODY()

@@ -70,3 +70,13 @@ void AItem::OnEndOverlap(UPrimitiveComponent * OverlappedComp, AActor * OtherAct
 	}
 }
 
+FString AItem::GetToolTip() const
+{
+	return GenerateToolTip();
+}
+
+FString AItem::GenerateToolTip() const
+{
+	const UEnum* enumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EItemType"), true);
+	return m_itemProps.Name + LINE_TERMINATOR+ enumPtr->GetDisplayNameTextByValue((int64)m_itemProps.Type).ToString()+ LINE_TERMINATOR + FString::FromInt(m_itemProps.RequiredSlots);
+}
