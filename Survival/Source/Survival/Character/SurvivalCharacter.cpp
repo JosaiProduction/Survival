@@ -376,10 +376,15 @@ void ASurvivalCharacter::Interact()
 		if (m_bClimbIsPossible && !m_bIsClimbing)
 		{
 			ActivateClimbMode();
-		}
-		else if (m_bIsClimbing)
+			return;
+		}		
+	}
+	case EControlMode::VE_Climbing:
+	{
+		if (m_bIsClimbing)
 		{
 			DeactivateClimbMode();
+			return;
 		}
 	}
 	}
@@ -590,7 +595,7 @@ void ASurvivalCharacter::ReceiveInteraction(const EInteractionType & interaction
 			m_moveComp->SetMovementMode(MOVE_Flying);
 			return;
 		}
-		else if (m_bIsClimbing)
+		if (m_bIsClimbing)
 		{
 			m_bIsClimbing = false;
 			m_controlMode = EControlMode::VE_Default;
@@ -763,6 +768,7 @@ void ASurvivalCharacter::MoveForward(float Value)
 	switch (m_controlMode)
 	{
 	case EControlMode::VE_Default:
+	case EControlMode::VE_Inventory:
 		if (m_bSafeMode)
 		{
 			if (!SafeMoveForward(Value) && Value != 0.0f)
@@ -802,6 +808,7 @@ void ASurvivalCharacter::MoveRight(float Value)
 	switch (m_controlMode)
 	{
 	case EControlMode::VE_Default:
+	case EControlMode::VE_Inventory: 
 	{
 		if (m_bSafeMode)
 		{
