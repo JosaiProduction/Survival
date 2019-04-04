@@ -31,8 +31,8 @@ ASurvivalCharacter::ASurvivalCharacter(const FObjectInitializer& objectInitializ
 	:Super(objectInitializer.SetDefaultSubobjectClass<UAdvancedCharMovementComp>(ACharacter::CharacterMovementComponentName))
 	, m_freeLook(false)
 	, m_bClimbIsPossible(false)
-	, m_bFoundEdge(false)
 	, m_bIsClimbingOnEdge(false)
+	, m_bFoundEdge(false)
 	, m_energy(100)
 	, m_moveSpeedMultiplicator(0.0f)
 {

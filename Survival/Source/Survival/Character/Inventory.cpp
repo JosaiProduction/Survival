@@ -11,8 +11,8 @@
 #include "Items/Interfaces/Item.h"
 
 UInventory::UInventory()
-	:m_isActive(false)
-	, m_itemSlots(20)
+	:m_itemSlots(20)
+	,m_isActive(false)
 {
 	bWantsBeginPlay = true;
 }
