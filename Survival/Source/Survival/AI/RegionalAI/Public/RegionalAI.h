@@ -4,6 +4,15 @@
 #include "GameFramework/Actor.h"
 #include "RegionalAI.generated.h"
 
+
+USTRUCT()
+struct FRegionalInformation
+ {
+	GENERATED_BODY()
+
+
+};
+
 UCLASS()
 class SURVIVAL_API ARegionalAI : public AActor
 {
