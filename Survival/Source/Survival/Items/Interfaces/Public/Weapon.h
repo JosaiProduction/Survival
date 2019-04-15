@@ -1,0 +1,32 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Items/Interfaces/Public/Item.h"
+#include "Weapon.generated.h"
+
+/**
+ * 
+ */
+UCLASS(abstract, meta = (IsBlueprintBase = "false"))
+class SURVIVAL_API AWeapon : public AItem
+{
+	GENERATED_BODY()
+public: 
+	UPROPERTY(EditAnywhere, Category = "Stats")
+		float m_attackSpeed;
+	UPROPERTY(EditAnywhere, Category = "Stats")
+		float m_damage;
+
+	virtual void PostInit() final;
+
+
+
+
+public: 
+	UFUNCTION()
+		void Attack(); 
+
+
+};

@@ -1,0 +1,1201 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Survival(WorkingTitle) - programming</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        /* === GENERAL === */
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, Monospace;
+    white-space: pre-wrap;
+}
+
+.pre--multiline {
+    margin-top: 4px;
+    padding: 8px;
+    border: 2px solid;
+    border-radius: 5px;    
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.emoji {
+    width: 24px;
+    height: 24px;
+    margin: 0 1px;
+    vertical-align: middle;
+}
+
+.emoji--small {
+    width: 16px;
+    height: 16px;
+}
+
+.emoji--large {
+    width: 32px;
+    height: 32px;
+}
+
+.mention {
+    font-weight: 600;
+}
+
+/* === INFO === */
+
+.info {
+    display: flex;
+    max-width: 100%;
+    margin: 0 5px 10px 5px;    
+}
+
+.info__guild-icon-container {
+    flex: 0;
+}
+
+.info__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.info__metadata {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.info__guild-name {
+    font-size: 1.4em;
+}
+
+.info__channel-name {
+    font-size: 1.2em;
+}
+
+.info__channel-topic {
+    margin-top: 2px;
+}
+
+.info__channel-message-count {
+    margin-top: 2px;
+}
+
+.info__channel-date-range {
+    margin-top: 2px;
+}
+
+/* === CHATLOG === */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: flex;
+    margin: 0 10px;
+    padding: 15px 0;
+    border-top: 1px solid;
+}
+
+.chatlog__author-avatar-container {
+    flex: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    flex: 1;
+    min-width: 50%;
+    margin-left: 20px;
+}
+
+.chatlog__author-name {
+    font-size: 1em;
+}
+
+.chatlog__timestamp {
+    margin-left: 5px;
+    font-size: .75em;
+}
+
+.chatlog__content {
+    padding-top: 5px;
+    font-size: .9375em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 5px;
+    font-size: .8em;
+}
+
+.chatlog__attachment {
+    margin: 5px 0;
+}
+
+.chatlog__attachment-thumbnail {
+    max-width: 50%;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    max-width: 520px;
+    margin-top: 5px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 4px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    width: 100%;
+    display: flex;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.chatlog__embed-author-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 10px;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-size: .875em;
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 20px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 10px;
+}
+
+.chatlog__embed-image {    
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 10px;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-weight: 600;
+    font-size: .75em;
+}
+
+.chatlog__reactions {
+    display: flex;    
+}
+
+.chatlog__reaction {
+    margin: 6px 2px 2px 2px;
+    padding: 2px 6px 2px 2px;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-emoji {
+    margin-left: 3px;
+    vertical-align: middle;
+}
+
+.chatlog__reaction-count {
+    font-size: .875em;
+    vertical-align: middle;
+}
+/* === GENERAL === */
+
+body {
+    background-color: #36393e;
+    color: #ffffffb3;
+}
+
+a {
+    color: #0096cf;
+}
+
+.pre {
+    background-color: #2f3136;
+}
+
+.pre--multiline {
+    border-color: #282b30;
+    color: #839496;
+}
+
+.mention {
+    background-color: #738bd71a;
+    color: #7289da;
+}
+
+/* === INFO === */
+
+.info__guild-name {
+    color: #ffffff;
+}
+
+.info__channel-name {
+    color: #ffffff;
+}
+
+.info__channel-topic {
+    color: #ffffff;
+}
+
+/* === CHATLOG === */
+
+.chatlog__message-group {
+    border-color: #ffffff0a;
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: #ffffff33;
+}
+
+.chatlog__edited-timestamp {
+    color: #ffffff33;
+}
+
+.chatlog__embed-content-container {
+    background-color: #2e30364d;
+    border-color: #2e303699;
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: #ffffff99;
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: #ffffff99;
+}
+
+.chatlog__embed-footer {
+    color: #ffffff99;
+}
+
+.chatlog__reaction {
+    background-color: #ffffff0a;
+}
+
+.chatlog__reaction-count {
+    color: #ffffff4d;
+}
+    </style>
+</head>
+<body>
+    
+<div class="info">
+    <div class="info__guild-icon-container">
+        <img class="info__guild-icon" src="https://cdn.discordapp.com/embed/avatars/0.png" />
+    </div>
+    <div class="info__metadata">
+        <div class="info__guild-name">Survival(WorkingTitle)</div>
+        <div class="info__channel-name">programming</div>
+        
+
+        <div class="info__channel-message-count">54 messages</div>
+        
+    </div>
+</div>
+
+<div class="chatlog">
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 06:00 PM</span>
+
+                        <div class="chatlog__content">
+                            Und Trish schon ne Ahnung, was du gerne machen wollen w&#252;rdest?
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Wir haben auch sehr viel AI-Arbeit &#128521;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/277476394802479115/8cd7d27f84e045f098e47d5679bbf248.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Kanda#8567">Kanda</span>
+                <span class="chatlog__timestamp">19-Sep-18 06:02 PM</span>
+
+                        <div class="chatlog__content">
+                            ehm lass mich mal heut dr&#252;ber nachdenken
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            &#128516; bin erst heimgekomm
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 06:03 PM</span>
+
+                        <div class="chatlog__content">
+                            mach nur &#128521;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 07:45 PM</span>
+
+                        <div class="chatlog__content">
+                            Wenn du dir was ausgesucht hast, w&#252;rde ich dir wieder, etwas kleine Teile des ganzen geben und dir dabei eine Einf&#252;hrung in Unreal geben, wenn das ok f&#252;r dich ist &#128521; Ansonsten w&#228;rst du dann f&#252;r die Abteilung zust&#228;ndig, kannst mich aber dann nat&#252;rlich immer fragen, wenn du etwas wissen willst
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 08:19 PM</span>
+
+                        <div class="chatlog__content">
+                            Noah, sag mir einfach was du gerne machen wollen w&#252;rdest &#128521;
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Kennst du dich mit Unreal aus?
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            achso Version 4.20.3
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:05 PM</span>
+
+                        <div class="chatlog__content">
+                            Ach Noah, wir haben noch nen Haufen AI Stuff, das ist doch sicher was f&#252;r dich &#128521;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/277476394802479115/8cd7d27f84e045f098e47d5679bbf248.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Kanda#8567">Kanda</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:18 PM</span>
+
+                        <div class="chatlog__content">
+                            so ich bin noch am denken ich ignorier euch nich, hab nur was gemacht &#128516;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:19 PM</span>
+
+                        <div class="chatlog__content">
+                            ist schon ok &#128521;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:45 PM</span>
+
+                        <div class="chatlog__content">
+                            ich hab aufjedenfall quasi kein plan von unreal ich hab mir da aufs zweite semester nen par tutorials gegeben ich  schau mir erstmal die engine an
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:46 PM</span>
+
+                        <div class="chatlog__content">
+                            also ich kann auf jeden Fall ein kleines Tutorial dar&#252;ber machen, was ich so wei&#223;, aber ich lerne auch noch xD
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Vom Prinzip her sind die Basics relativ easy, wird halt dann etwas komplexer, wenn man fancy stuff machen will und optimization
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:49 PM</span>
+
+                        <div class="chatlog__content">
+                            jo ich muss warscheinlich nur mal grob in das mindset kommen das sollte das kein problem sein k&#246;nen wja mal schauen wann wir ne kurtze einf&#252;hrung organisieren k&#246;nnen
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:50 PM</span>
+
+                        <div class="chatlog__content">
+                            klar &#128515; hab grad Bennet auch noch angehauen, w&#252;rde ich dann mit allen zusammen machen, wenn das irgendwie m&#246;glich ist
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Wenn ihr noch vor allem progger kennt, die Interesse h&#228;tten und sich am Besten auch ein wenig in C++ und/oder Unreal auskennen, w&#228;re ich auf jeden Fall nicht abgeneigt xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:52 PM</span>
+
+                        <div class="chatlog__content">
+                            ich kann mal jannik fragen ich glabue aber der is ziemlich besch&#228;ftigt
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:52 PM</span>
+
+                        <div class="chatlog__content">
+                            Der ist immer besch&#228;ftigt xD
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            also ich hab mit AI in Unreal noch keine sonderlich guten Erfahrungen gemacht, aber ich hatte damals auch nicht sonderlich viel Motivation in dem Team mir das genauer anzuschauen xD Da habe ich leider wenig C++ Stuff gefunden, daf&#252;r viel Blueprint Stuff.
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 09:59 PM</span>
+
+                        <div class="chatlog__content">
+                            jup diese blackboards ne?
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:00 PM</span>
+
+                        <div class="chatlog__content">
+                            genau. Damit wollte ich am Anfang nicht unbedingt arbeiten, weil alles andere in C++ war und hatte dann am Ende zu wenig Zeit zum switchen. Allgemein ist oft das Problem, dass du sehr viel mehr &#252;ber Blueprints als &#252;ber C++ Stuff findest.
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Von mir aus k&#246;nnen wir auch Blueprints machen, aber ich finde das ein wenig schlecht, da wir ja immerhin progger sind xD
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Gibt halt super viele nicht-progger, die mit der Engine arbeiten und dann nen Haufen Zeug in dem Forum und so posten
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Hab btw heute auch nen ziemlich lustigen Fehler bei mir und wei&#223; nicht, wie ich den beheben kann xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:02 PM</span>
+
+                        <div class="chatlog__content">
+                            wen ich mich da ans tutorial errinere baust du quasi die nodes f&#252;r das AI Board
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:03 PM</span>
+
+                        <div class="chatlog__content">
+                            Ja nodes und decorations. Theoretisch kannst du aber auch alles im Code machen. Aber da hab ich immer nur Fetzen an hilfreichen Sachen gefunden
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:04 PM</span>
+
+                        <div class="chatlog__content">
+                            Joa wir werden sehen
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:06 PM</span>
+
+                        <div class="chatlog__content">
+                            Aber Beste ist eigentlich: <br />Ich hab die Item class und will da eine UFUNCTION OnComponentOverlapBegin() hinzuf&#252;gen, das funktioniert nicht, da sagt er mir bei x anderen files, unresolved external error. <br />Ich mache genau das gleiche (wirklich copy &amp; taste) in einer von der Klasse abgeleiteten Klasse und es compiled xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:07 PM</span>
+
+                        <div class="chatlog__content">
+                            heheh copy &amp; taste
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:07 PM</span>
+
+                        <div class="chatlog__content">
+                            Im Forum hat mir dazu einer geantwortet und der hatte keine Ahnung, was ich von dem will xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:07 PM</span>
+
+                        <div class="chatlog__content">
+                            jup das klingt strange
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:22 PM</span>
+
+                        <div class="chatlog__content">
+                            Dieses Forum ist so behindert manchmal xD vorhin hat der mir als ich nen code sample posten wollte einfach paar von den [CODE][/CODE] Makros reingehauen, jetzt sieht das super behindert aus, weil der code in einige Teile unterteilt ist xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:23 PM</span>
+
+                        <div class="chatlog__content">
+                            GG
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">19-Sep-18 10:24 PM</span>
+
+                        <div class="chatlog__content">
+                            ja und jetzt hab ich in dem Answerhub geschrieben und wollte ein Kommentar oben hinmachen und obwohl ich das &lt;pre&gt; makro zum anfangen von code hingemacht habe, ignoriert er den Kommentar einfach xD steht mit im Flie&#223;text xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">20-Sep-18 12:19 AM</span>
+
+                        <div class="chatlog__content">
+                            Wenn jmd schon arbeiten m&#246;chte, dann macht euch doch bitte eure eigene Map, worin ihr in Ruhe arbeiten k&#246;nnt, wegen mergen etc. &#128521;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">20-Sep-18 11:02 PM</span>
+
+                        <div class="chatlog__content">
+                            ich hab unter Survival/Documents/Progger noch eine kleine Einweisung in ein paar Dinge f&#252;r Unreal und eine kleines StyleSheet gepackt, ist vorl&#228;ufig und nicht final. Das Unreal Sheet ist auch mehr ein Merkblatt, eine genauere Einweisung w&#252;rde ich noch machen xD
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            *Survival/Documents/Programming
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Ist noch alles auf deutsch, werde noch alles auf Englisch machen, h&#228;tte n&#228;mlich gerne alle finalen Dokumente auf englisch xD
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            Ach und h&#228;tte auch gerne noch wen, der dann meine Pull Requests durchschaut xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">22-Sep-18 08:05 PM</span>
+
+                        <div class="chatlog__content">
+                            Na, wie sieht&#39;s aus? Wollt ihr mich ein wenig unterst&#252;tzen? &#128515;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">22-Sep-18 08:14 PM</span>
+
+                        <div class="chatlog__content">
+                            muss mich erstmal weiter in unreal ein arbeiten. was gibts denn?
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">22-Sep-18 08:15 PM</span>
+
+                        <div class="chatlog__content">
+                            nun, ich wollte einfach wissen, wie denn der Stand so ist und was du gerne &#252;bernehmen wollen w&#252;rdest &#128515;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">23-Sep-18 07:54 PM</span>
+
+                        <div class="chatlog__content">
+                            Wenn ihr Interesse habt, k&#246;nnen wir auch auf CryEngine umsteigen, da kam ja jetzt das neue Update 5.5 mit neuer Doku etc. Die haben das wohl sehr viel einfacher gemacht reinzukommen. Aber hab keine Ahnung, wie gut das jetzt ist und ob es  interessanter als unreal ist
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            &quot;Getting Started Course: Our new beginner’s course shows users with no experience in game development how to create a full game in CRYENGINE in just 10 chapters. &quot;<br />Klingt auf jeden Fall nicht schlecht xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">27-Sep-18 12:09 PM</span>
+
+                        <div class="chatlog__content">
+                            Wenn du dich entschieden hast. Dann einmal, was du gerne machen wollen w&#252;rdest und wie gut du dich mit der Unreal Engine 4.20.3 auskennst und ob du zur CryEngine wechseln wollen w&#252;rdest oder nicht &#128515;
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">27-Sep-18 12:12 PM</span>
+
+                        <div class="chatlog__content">
+                            Ich schau mir das aufjeden fall mal an
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">27-Sep-18 12:13 PM</span>
+
+                        <div class="chatlog__content">
+                            das projekt?
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">27-Sep-18 12:13 PM</span>
+
+                        <div class="chatlog__content">
+                            Das tutorial
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">27-Sep-18 12:13 PM</span>
+
+                        <div class="chatlog__content">
+                            von der cryengine?
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/121743220236353538/c1f46ecbbdacf12018903eaf3d8f682c.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Crafter440#7331">Crafter440</span>
+                <span class="chatlog__timestamp">27-Sep-18 12:14 PM</span>
+
+                        <div class="chatlog__content">
+                            Ich vertraue crytek nicht irgend was vern&#252;nftiges auf die Beine zu stellen
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/2.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Josai#8052">Josai</span>
+                <span class="chatlog__timestamp">27-Sep-18 12:16 PM</span>
+
+                        <div class="chatlog__content">
+                            das kann ich verstehen, aber auf mehreren Seiten habe ich einiges gutes dar&#252;ber gelesen. Ich denke jetzt am Wochenende werde ich mir das auf jeden Fall mal anschauen &#128515; <br />Es reizt mich halt schon mal was in der CryEngine zu machen xD
+
+                        </div>
+
+
+
+            </div>
+        </div>
+</div>
+
+</body>
+</html>
