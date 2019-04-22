@@ -93,23 +93,25 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay")
 	uint32 bUsingMotionControllers : 1;
 
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Tools")
-		UInventory* m_inventory;
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Tools")
-		UAbilities* m_abilities;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tools")
-		UCharStats* m_stats;
+		UInventory* Inventory;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tools")
+		UAbilities* Abilities;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Tools")
+		UCharStats* Stats;
 	UPROPERTY(VisibleAnywhere, Category = "Movement")
-		class UAdvancedCharMovementComp* m_moveComp;
+		class UAdvancedCharMovementComp* MoveComp;
 	UPROPERTY(VisibleAnywhere, Category = "Movement")
-		EControlMode m_controlMode; 
+		EControlMode ControlMode; 
 	UPROPERTY(VisibleAnywhere, Category = "Interaction")
-		uint32 m_availableInteractions;
+		uint32 AvailableInteractions;
 	UPROPERTY(VisibleAnywhere, Category = "Interaction")
-		EInteractionType m_currentSelectedInteraction;
+		EInteractionType CurrentSelectedInteraction;
 
 	UPROPERTY(EditAnywhere, Category = "FreeLook")
-		bool m_freeLook; 
+		bool FreeLook; 
+	UPROPERTY(VisibleAnywhere, Category = "Movement")
+	EMoveSpeed MoveSpeed;
 
 	bool m_bClimbIsPossible;
 	bool m_bIsClimbing; 
@@ -121,8 +123,6 @@ public:
 	bool m_bSafeMode;
 
 	float m_climbDist;
-
-	EMoveSpeed m_moveSpeed; 
 protected:
 	
 	/** Fires a projectile. */
@@ -222,9 +222,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 		UAbilities* GetAbilities() const; 
 	UFUNCTION(BlueprintCallable)
-		UCharStats* GetStats() const { return m_stats; }
+		UCharStats* GetStats() const { return Stats; }
 	UFUNCTION(BlueprintCallable)
-		EControlMode GetCurrentControlMode() const {return m_controlMode;}
+		EControlMode GetCurrentControlMode() const {return ControlMode;}
 	UFUNCTION(BlueprintCallable)
 		void DisableMovement(); 
 	UFUNCTION(BlueprintCallable)

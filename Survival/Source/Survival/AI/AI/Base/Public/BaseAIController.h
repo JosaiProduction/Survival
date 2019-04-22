@@ -1,13 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Controller.h"
+#include "Runtime/AIModule/Classes/AIController.h"
 #include "BaseAIController.generated.h"
 
 
-UCLASS()
-class ABaseAIController : public AController
+UCLASS(BlueprintType, Blueprintable)
+class ABaseAIController : public AAIController
 {
 	GENERATED_BODY()
 
-		ABaseAIController();
+public:
+		ABaseAIController(); 
+
+	virtual void BeginPlay() override; 
+	virtual void Tick(float deltaSeconds) override;
+	UPROPERTY(VisibleAnywhere, Category = "Perception")
+	class UAIPerceptionComponent* Perception;
+	UPROPERTY(EditAnywhere, Category = "Perception")
+	class UAISenseConfig_Sight* SightConfig;
+
 };
