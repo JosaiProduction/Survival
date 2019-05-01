@@ -14,7 +14,6 @@ UInventory::UInventory()
 	:m_itemSlots(20)
 	,m_isActive(false)
 {
-	bWantsBeginPlay = true;
 }
 
 void UInventory::BeginPlay()

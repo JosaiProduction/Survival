@@ -8,7 +8,7 @@
 #include "CharStats.generated.h"
 
 
-UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+UCLASS(ClassGroup = (Character), meta = (BlueprintSpawnableComponent))
 class SURVIVAL_API UCharStats : public UActorComponent
 {
 	GENERATED_BODY()

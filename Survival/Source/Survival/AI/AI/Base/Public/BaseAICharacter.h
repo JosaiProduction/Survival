@@ -11,10 +11,14 @@ class ABaseAICharacter : public ACharacter
 
 
 		ABaseAICharacter();
+public: 
 
 	virtual void BeginPlay() override;
 	virtual void Tick(float deltaSeconds) override;
 	virtual void GetActorEyesViewPoint(FVector& location, FRotator& rotation) const override;
+
+	UFUNCTION()
+		void ReceiveStimuli(class UStimuliComponent* stimuli);
 
 	UPROPERTY(EditAnywhere, Category = "Navigation")
 		class UNavigationInvokerComponent* NavigationInvoker;
@@ -25,4 +29,7 @@ class ABaseAICharacter : public ACharacter
 		float TileRemovalRadius;
 	UPROPERTY(EditAnywhere, Category = "Pereception")
 		FName HeadSocketName;
+	UPROPERTY(EditAnywhere, Category = "Perception")
+		class UAdvancedAIPerceptionComponent* Perception;
+
 };

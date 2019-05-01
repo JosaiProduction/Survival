@@ -3,11 +3,14 @@
 #include "Runtime/NavigationSystem/Public/NavigationInvokerComponent.h"
 #include "Runtime/Engine/Classes/Components/SkeletalMeshComponent.h"
 #include "Runtime/Engine/Classes/Engine/SkeletalMeshSocket.h"
+#include "AI/AI/Base/Components/Public/AdvancedAIPerceptionComponent.h"
 
 
 ABaseAICharacter::ABaseAICharacter()
 {
 	NavigationInvoker = CreateDefaultSubobject<UNavigationInvokerComponent>(TEXT("Invoker Component"));
+	Perception = CreateDefaultSubobject<UAdvancedAIPerceptionComponent>(TEXT("Perception"));
+	this->AddOwnedComponent(Perception);
 }
 
 void ABaseAICharacter::BeginPlay()
@@ -38,5 +41,10 @@ void ABaseAICharacter::GetActorEyesViewPoint(FVector& location, FRotator& rotati
 	}
 	location = headSocket->GetSocketLocation(GetMesh());
 	rotation = headSocket->GetSocketTransform(GetMesh()).Rotator();
+}
+
+void ABaseAICharacter::ReceiveStimuli(UStimuliComponent* stimuli)
+{
+
 }
 

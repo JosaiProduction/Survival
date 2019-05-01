@@ -14,9 +14,8 @@ public:
 
 	virtual void BeginPlay() override; 
 	virtual void Tick(float deltaSeconds) override;
-	UPROPERTY(VisibleAnywhere, Category = "Perception")
-	class UAIPerceptionComponent* Perception;
-	UPROPERTY(EditAnywhere, Category = "Perception")
-	class UAISenseConfig_Sight* SightConfig;
 
+
+	UPROPERTY(EditAnywhere, Category = "Perception")
+	class UAdvancedAIPerceptionComponent* Perception; 
 };

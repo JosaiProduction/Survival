@@ -212,7 +212,7 @@ void ASurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 	PlayerInputComponent->BindAxis("LookUpRate", this, &ASurvivalCharacter::LookUpAtRate);
 
 	// Bind pose events
-	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ASurvivalCharacter::Crouch);
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ASurvivalCharacter::LowerPose);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASurvivalCharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ASurvivalCharacter::StopJumping);
 
@@ -302,7 +302,7 @@ void ASurvivalCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const FVe
 	TouchItem.bIsPressed = false;
 }
 
-void ASurvivalCharacter::Crouch()
+void ASurvivalCharacter::LowerPose()
 {
 	switch (ControlMode)
 	{

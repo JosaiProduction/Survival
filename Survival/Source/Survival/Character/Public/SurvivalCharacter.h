@@ -163,7 +163,7 @@ protected:
 	void TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location);
 	TouchData	TouchItem;
 	
-	void Crouch();
+	void LowerPose();
 
 	void Jump() override;
 	void StopJumping() override;
